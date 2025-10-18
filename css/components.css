@@ -89,7 +89,6 @@
     left: 0;
     width: 100%;
     height: 71px;
-    /* matches SVG viewBox */
     z-index: 3;
     /* background-color: #fff; */
 }
@@ -245,7 +244,6 @@
 .subtitle {
     font-family: 'Proxima Nova', sans-serif;
     font-weight: 800;
-    /* ExtraBold */
     font-size: 16px;
     color: #EAA06C;
     margin: 0;
@@ -254,7 +252,6 @@
 .info {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 600;
-    /* SemiBold */
     font-size: 10px;
     color: #1F1F39;
     margin: 5px 0px 0px 0px;
@@ -264,7 +261,6 @@
     display: block;
     font-family: 'Bebas Kai', sans-serif;
     font-weight: 400;
-    /* Regular */
     font-size: 24px;
     color: #DA2028;
     margin: 0;
@@ -329,7 +325,6 @@
     display: flex;
     overflow-x: auto;
     gap: 20px;
-    /* space between items */
     padding: 16px 0;
     scrollbar-width: none;
 }
@@ -340,9 +335,7 @@
 
 .exp-item {
     flex: 0 0 auto;
-    /* prevents items from stretching */
     text-align: center;
-    /* remove width */
 }
 
 .icon img {
@@ -476,7 +469,6 @@
     border-radius: 50%;
     cursor: pointer;
 
-    /* Frosted glass effect */
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
@@ -493,17 +485,14 @@
 .like-btn img {
     width: 22px;
     height: 22px;
-    /* filter: brightness(100%); */
 }
 
 /* ribbon */
 .ribbon {
     position: absolute;
     top: -6px;
-    /* makes it slightly above the image */
     left: -8px;
     background: #16469d;
-    /* Deep blue */
     color: #fff;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
