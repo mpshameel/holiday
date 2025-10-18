@@ -1,0 +1,173 @@
+:root {
+    /* 🎨 Brand Colors */
+    --brand: #16469D;
+    --accent: #ffb000;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --card: #008ED933;
+    --radius: 14px;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+
+    /* 🖋 Font Variables (from typography.css families) */
+    --font-primary: 'Poppins', 'Segoe UI', sans-serif;
+    --font-secondary: 'Proxima Nova', 'Roboto', sans-serif;
+    --font-heading: 'Bebas Kai', 'Proxima Nova', sans-serif;
+    --font-ui: 'Segoe UI', 'Poppins', sans-serif;
+
+    /* ⚖ Font Sizes */
+    --fs-xs: 12px;
+    --fs-sm: 14px;
+    --fs-base: 16px;
+    --fs-md: 18px;
+    --fs-lg: 24px;
+    --fs-xl: 32px;
+    --fs-xxl: 48px;
+
+    /* 🧱 Font Weights */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset & Global Config */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    color: #0f172a;
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+
+.view-all {
+    font-size: 13px;
+}
+
+/* Typography Defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--fw-regular);
+    color: #111827;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--fs-xxl);
+}
+
+h2 {
+    font-size: var(--fs-xl);
+}
+
+h3 {
+    font-size: var(--fs-lg);
+}
+
+h4 {
+    font-size: var(--fs-md);
+}
+
+p {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-regular);
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    color: var(--brand);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* Buttons */
+button {
+    font-family: var(--font-ui);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-sm);
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    padding: 0.6rem 1.2rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+/* Cards */
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card--blue {
+    background: #008ED933;
+}
+
+.card--white {
+    background: #ffffff;
+    width: 205px !important;
+}
+
+
+/* Utility */
+.text-muted {
+    color: var(--muted);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.text-brand {
+    color: var(--brand);
+}
+
+.text-bold {
+    font-weight: var(--fw-bold);
+}

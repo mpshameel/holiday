@@ -1,0 +1,112 @@
+/* Poppins */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* Proxima Nova */
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNova/proximanova_regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNova/proximanova_bold.otf') format('opentype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNova/proximanova_extrabold.otf') format('opentype');
+    font-weight: 800;
+    font-display: swap;
+}
+
+/* Bebas Kai */
+@font-face {
+    font-family: 'Bebas Kai';
+    src: url('../fonts/BebasKai/BebasKai.otf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+
+/* Calibri */
+@font-face {
+    font-family: 'Calibri';
+    src: url('../fonts/ProximaNova/calibri.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNova/calibri_bold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+/* Active */
+@font-face {
+    font-family: 'Active';
+    src: url('../fonts/ActiveRegular.OTF') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+
+
+
+/*  */
+/* Roboto */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+
+/* Segoe UI */
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI/SegoeUI-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI/SegoeUI-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI/SegoeUI-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
