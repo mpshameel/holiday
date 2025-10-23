@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Go Explore — Home</title>
     <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/layout.css" />
     <link rel="stylesheet" href="./css/components.css" />
-    <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/typography.css" />
 </head>
 
@@ -106,7 +104,9 @@
             </div>
         </section>
 
-        <div class="divider"></div>
+        <div class="divider">
+            <div class="divider-line"></div>
+        </div>
 
 
 
@@ -140,7 +140,9 @@
             </div>
         </section>
 
-        <div class="divider"></div>
+        <div class="divider">
+            <div class="divider-line"></div>
+        </div>
 
 
         <!-- International -->
@@ -207,7 +209,9 @@
 
         </section>
 
-        <div class="divider"></div>
+        <div class="divider">
+            <div class="divider-line"></div>
+        </div>
 
         <!-- Domestic -->
         <section class="section">
@@ -272,7 +276,9 @@
 
         </section>
 
-        <div class="divider"></div>
+        <div class="divider">
+            <div class="divider-line"></div>
+        </div>
 
         <!-- Where To Go When -->
         <section class="section">
@@ -342,7 +348,9 @@
 
         </section>
 
-        <div class="divider"></div>
+        <div class="divider">
+            <div class="divider-line"></div>
+        </div>
 
         <!-- Our Top Picks -->
         <section class="section">
@@ -403,6 +411,173 @@
         </section>
 
         <div class="space"></div>
+
+        <!-- search popup -->
+        <div id="searchPopup" class="search-dialog">
+            <div class="bottom-search-content">
+                <div class="drag-bar"></div>
+                <div class="search-row">
+                    <div class="icon-btn">
+                        <img src="./assets/icons/backbuttonPng.png" alt="back" />
+                    </div>
+                    <div class="search-popupwrap">
+                        <label class="search-label" for="search-input">Where do you want to go?</label>
+                        <input type="search" placeholder="Enter City, State, Country Or Theme" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="city-scroll">
+                <div class="search-city-body">
+                    <h4 class="section-title">
+                        <img src="./assets/icons/star.svg" alt="star" />
+                        Popular City
+                    </h4>
+                </div>
+
+                <ul class="city-list">
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">Paris</p>
+                                <p class="country-name">France</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/france.svg" alt="France" class="flag" />
+                    </li>
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">New York</p>
+                                <p class="country-name">USA</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/united-states-of-america.svg" alt="France" class="flag" />
+                    </li>
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">London</p>
+                                <p class="country-name">England</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/england.svg" alt="France" class="flag" />
+                    </li>
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">Bangkok</p>
+                                <p class="country-name">Thailand</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/thailand.svg" alt="France" class="flag" />
+                    </li>
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">Hong Kong</p>
+                                <p class="country-name">China</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/china.svg" alt="France" class="flag" />
+                    </li>
+                </ul>
+
+                <div class="search-city-body">
+                    <h4 class="section-title">
+                        <img src="./assets/icons/star.svg" alt="star" />
+                        Popular Country
+                    </h4>
+                </div>
+
+                <ul class="city-list">
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">Paris</p>
+                                <p class="country-name">France</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/france.svg" alt="France" class="flag" />
+                    </li>
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">New York</p>
+                                <p class="country-name">USA</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/united-states-of-america.svg" alt="France" class="flag" />
+                    </li>
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">London</p>
+                                <p class="country-name">England</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/england.svg" alt="France" class="flag" />
+                    </li>
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">Bangkok</p>
+                                <p class="country-name">Thailand</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/thailand.svg" alt="France" class="flag" />
+                    </li>
+                    <li class="city-item">
+                        <div class="left-section">
+                            <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                            <div class="city-info">
+                                <p class="city-name">Hong Kong</p>
+                                <p class="country-name">China</p>
+                            </div>
+                        </div>
+                        <img src="./assets/icons/flags/china.svg" alt="France" class="flag" />
+                    </li>
+                </ul>
+
+                <div class="space"></div>
+            </div>
+        </div>
+
+        <!-- Month Picker Popup -->
+        <div id="monthPopup" class="month-dialog">
+            <div class="month-content">
+                <div class="drag-bar"></div>
+                <h4 class="month-title">Select Month Of Travel</h4>
+                <p class="year">2022</p>
+                <div class="month-grid">
+                    <button>Jan</button>
+                    <button>Feb</button>
+                    <button>Mar</button>
+                    <button>Apr</button>
+                    <button>May</button>
+                    <button>Jun</button>
+                    <button>Jul</button>
+                    <button>Aug</button>
+                    <button>Sep</button>
+                    <button>Oct</button>
+                    <button>Nov</button>
+                    <button>Dec</button>
+                </div>
+                <button class="month-confirm">Anytime</button>
+            </div>
+        </div>
+
+
     </main>
 
     <script src="./js/components.js"></script>

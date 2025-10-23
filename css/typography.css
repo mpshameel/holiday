@@ -51,7 +51,6 @@
     font-display: swap;
 }
 
-
 /* Calibri */
 @font-face {
     font-family: 'Calibri';
@@ -75,38 +74,46 @@
     font-display: swap;
 }
 
-
-
-
-/*  */
 /* Roboto */
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto/Roboto-Regular.woff2') format('woff2');
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto/Roboto-Bold.woff2') format('woff2');
-    font-weight: 700;
-}
-
-/* Segoe UI */
-@font-face {
-    font-family: 'Segoe UI';
-    src: url('../fonts/SegoeUI/SegoeUI-Regular.woff2') format('woff2');
+    src: url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
     font-weight: 400;
 }
 
 @font-face {
-    font-family: 'Segoe UI';
-    src: url('../fonts/SegoeUI/SegoeUI-SemiBold.woff2') format('woff2');
-    font-weight: 600;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-ExtraBold.ttf') format('truetype');
+    font-weight: 400;
+}
+
+/* SegoeUI */
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/SegoeUI/segoeuithibd.ttf') format('truetype');
+    font-weight: 400;
 }
 
 @font-face {
-    font-family: 'Segoe UI';
-    src: url('../fonts/SegoeUI/SegoeUI-Bold.woff2') format('woff2');
-    font-weight: 700;
+    font-family: 'SegoeUI';
+    src: url('../fonts/SegoeUI/segoeuithis.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/SegoeUI/segoeuithisi.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/SegoeUI/segoeuithisz.ttf') format('truetype');
+    font-weight: 400;
 }

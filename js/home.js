@@ -29,3 +29,4 @@ function setupTabs(tabGroupId) {
 // Initialize both tab sets independently
 setupTabs('region-tabs');
 setupTabs('category-tabs');
+

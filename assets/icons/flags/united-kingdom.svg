@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+  <g id="united-kingdom" transform="translate(0 -4)">
+    <rect id="Rectangle_10741" data-name="Rectangle 10741" width="24" height="16" transform="translate(0 4)" fill="#f0f0f0"/>
+    <path id="Path_27161" data-name="Path 27161" d="M13.5,4h-3v6.5H0v3H10.5V20h3V13.5H24v-3H13.5Z" fill="#d80027"/>
+    <g id="Group_26048" data-name="Group 26048">
+      <path id="Path_27162" data-name="Path 27162" d="M18.458,14.782,24,17.861V14.782Z" fill="#0052b4"/>
+      <path id="Path_27163" data-name="Path 27163" d="M14.608,14.782,24,20V18.524l-6.735-3.742Z" fill="#0052b4"/>
+      <path id="Path_27164" data-name="Path 27164" d="M21.5,20l-6.89-3.828V20Z" fill="#0052b4"/>
+    </g>
+    <path id="Path_27165" data-name="Path 27165" d="M14.608,14.782,24,20V18.524l-6.735-3.742Z" fill="#f0f0f0"/>
+    <path id="Path_27166" data-name="Path 27166" d="M14.608,14.782,24,20V18.524l-6.735-3.742Z" fill="#d80027"/>
+    <g id="Group_26049" data-name="Group 26049">
+      <path id="Path_27167" data-name="Path 27167" d="M4.235,14.782,0,17.135V14.782Z" fill="#0052b4"/>
+      <path id="Path_27168" data-name="Path 27168" d="M9.391,15.445V20h-8.2Z" fill="#0052b4"/>
+    </g>
+    <path id="Path_27169" data-name="Path 27169" d="M6.735,14.782,0,18.524V20H0l9.391-5.217Z" fill="#d80027"/>
+    <g id="Group_26050" data-name="Group 26050">
+      <path id="Path_27170" data-name="Path 27170" d="M5.541,9.217,0,6.139V9.217Z" fill="#0052b4"/>
+      <path id="Path_27171" data-name="Path 27171" d="M9.391,9.217,0,4V5.475L6.735,9.217Z" fill="#0052b4"/>
+      <path id="Path_27172" data-name="Path 27172" d="M2.5,4l6.89,3.828V4Z" fill="#0052b4"/>
+    </g>
+    <path id="Path_27173" data-name="Path 27173" d="M9.391,9.217,0,4V5.475L6.735,9.217Z" fill="#f0f0f0"/>
+    <path id="Path_27174" data-name="Path 27174" d="M9.391,9.217,0,4V5.475L6.735,9.217Z" fill="#d80027"/>
+    <g id="Group_26051" data-name="Group 26051">
+      <path id="Path_27175" data-name="Path 27175" d="M19.765,9.217,24,6.865V9.217Z" fill="#0052b4"/>
+      <path id="Path_27176" data-name="Path 27176" d="M14.608,8.554V4h8.2Z" fill="#0052b4"/>
+    </g>
+    <path id="Path_27177" data-name="Path 27177" d="M17.264,9.217,24,5.475V4h0L14.608,9.217Z" fill="#d80027"/>
+  </g>
+</svg>
