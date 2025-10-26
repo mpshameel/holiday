@@ -1431,6 +1431,11 @@ $hero-bg-tall: '../assets/images/deal1.png';
             font-family: $font-primary-poppins;
             font-weight: $fw-semibold;
             font-size: $fs-lg;
+
+            &::placeholder {
+                color: $heading;
+                opacity: 1;
+            }
         }
 
         .search-label {
@@ -1439,7 +1444,35 @@ $hero-bg-tall: '../assets/images/deal1.png';
             font-weight: $fw-semibold;
             color: $badgebg;
         }
+
+
     }
+
+    .custom-display-input {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-family: $font-primary-poppins;
+        cursor: text;
+
+        .month-part {
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $heading;
+        }
+
+        .year-part {
+            font-family: $font-primary-poppins;
+            font-size: $fs-md;
+            font-weight: $fw-regular;
+            color: $heading;
+        }
+    }
+
 
     .search-btn {
         width: 100%;
