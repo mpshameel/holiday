@@ -5,15 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Go Explore — Home</title>
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/components.css" />
-    <link rel="stylesheet" href="./css/typography.css" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <main class="wrap">
         <!-- Hero -->
-        <header class="hero">
+        <header class="hero hero--tall">
             <div class="hero-inner">
                 <button class="icon-btn">
                     <img src="./assets/icons/backbutton.svg" alt="Back" />
@@ -102,12 +100,10 @@
                     </div>
                 </article>
             </div>
+            <div class="divider">
+                <div class="divider-line"></div>
+            </div>
         </section>
-
-        <div class="divider">
-            <div class="divider-line"></div>
-        </div>
-
 
 
         <!-- Experiences -->
@@ -138,11 +134,11 @@
                     <p>Shopping</p>
                 </div>
             </div>
-        </section>
 
-        <div class="divider">
-            <div class="divider-line"></div>
-        </div>
+            <div class="divider">
+                <div class="divider-line"></div>
+            </div>
+        </section>
 
 
         <!-- International -->
@@ -207,11 +203,10 @@
                 </article>
             </div>
 
+            <div class="divider">
+                <div class="divider-line"></div>
+            </div>
         </section>
-
-        <div class="divider">
-            <div class="divider-line"></div>
-        </div>
 
         <!-- Domestic -->
         <section class="section">
@@ -274,11 +269,10 @@
                 </article>
             </div>
 
+            <div class="divider">
+                <div class="divider-line"></div>
+            </div>
         </section>
-
-        <div class="divider">
-            <div class="divider-line"></div>
-        </div>
 
         <!-- Where To Go When -->
         <section class="section">
@@ -346,11 +340,10 @@
                 </article>
             </div>
 
+            <div class="divider">
+                <div class="divider-line"></div>
+            </div>
         </section>
-
-        <div class="divider">
-            <div class="divider-line"></div>
-        </div>
 
         <!-- Our Top Picks -->
         <section class="section">
@@ -407,7 +400,6 @@
                     </div>
                 </article>
             </div>
-
         </section>
 
         <div class="space"></div>
@@ -488,6 +480,7 @@
                         <img src="./assets/icons/flags/china.svg" alt="France" class="flag" />
                     </li>
                 </ul>
+                <div class="divider-line-dotted"></div>
 
                 <div class="search-city-body">
                     <h4 class="section-title">
@@ -554,11 +547,16 @@
         </div>
 
         <!-- Month Picker Popup -->
-        <div id="monthPopup" class="month-dialog">
-            <div class="month-content">
-                <div class="drag-bar"></div>
-                <h4 class="month-title">Select Month Of Travel</h4>
-                <p class="year">2022</p>
+        <div class="month-popup-overlay" id="monthPopup">
+            <div class="month-popup">
+                <h3>Select Month Of Travel</h3>
+                <div class="row">
+                    <img src="./assets/icons/arrowleft.png" alt="Left Image" class="side-image" />
+                    <p class="popup-year">2022</p>
+                    <img src="./assets/icons/arrowright.png" alt="Right Image" class="side-image" />
+                </div>
+
+
                 <div class="month-grid">
                     <button>Jan</button>
                     <button>Feb</button>
@@ -573,15 +571,17 @@
                     <button>Nov</button>
                     <button>Dec</button>
                 </div>
-                <button class="month-confirm">Anytime</button>
+
+                <button class="anytime-btn" onclick="window.location.href='pages/listing_page.html'">Anytime</button>
             </div>
         </div>
+
 
 
     </main>
 
     <script src="./js/components.js"></script>
-    <script src="./js/home.js"></script>
+    <script src="./js/home.js" defer></script>
     <script src="./js/main.js"></script>
 </body>
 

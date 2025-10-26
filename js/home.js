@@ -13,7 +13,6 @@ document.querySelectorAll('.pill').forEach(pill => {
     });
 });
 
-// tab reuse
 function setupTabs(tabGroupId) {
     const group = document.getElementById(tabGroupId);
     const tabs = group.querySelectorAll('.tab');
@@ -26,7 +25,6 @@ function setupTabs(tabGroupId) {
     });
 }
 
-// Initialize both tab sets independently
 setupTabs('region-tabs');
 setupTabs('category-tabs');
 
