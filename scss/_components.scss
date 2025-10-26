@@ -1132,14 +1132,13 @@ $hero-bg-tall: '../assets/images/deal1.png';
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
             padding: 0 12px;
 
             h3 {
                 font-family: $font-primary-poppins;
-                font-size: $fs-lg;
+                font-size: $fs-xl;
                 font-weight: $fw-semibold;
-                color: $white;
+                color: $priceColor;
                 margin: 0;
             }
 
