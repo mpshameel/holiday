@@ -1,95 +1,3 @@
-// document.querySelectorAll('.copy-container').forEach(container => {
-//   container.addEventListener('click', () => {
-//     const text = container.querySelector('.copy-text').innerText.trim();
-//     navigator.clipboard.writeText(text).then(() => {
-//       alert(`Copied promo code: ${text}`);
-//     }).catch(err => {
-//       console.error('Failed to copy text: ', err);
-//     });
-//   });
-// });
-
-// // search popup
-// const searchArea = document.querySelector('.search');
-// const popup = document.getElementById('searchPopup');
-// const backBtn = popup.querySelector('.icon-btn');
-
-// searchArea.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   popup.classList.add('show');
-// });
-
-// document.addEventListener('click', (e) => {
-//   if (popup.classList.contains('show') && !popup.contains(e.target) && !searchArea.contains(e.target)) {
-//     popup.classList.remove('show');
-//   }
-// });
-
-// backBtn.addEventListener('click', () => {
-//   popup.classList.remove('show');
-// });
-
-// // city item navigate
-// const cityItems = document.querySelectorAll('.city-item');
-// const monthPopup = document.getElementById('monthPopup');
-
-// cityItems.forEach(item => {
-//   item.addEventListener('click', () => {
-//     monthPopup.classList.add('show');
-//   });
-// });
-
-// document.addEventListener('click', (e) => {
-//   if (monthPopup.classList.contains('show') && !monthPopup.contains(e.target) && !e.target.closest('.city-item')) {
-//     monthPopup.classList.remove('show');
-//   }
-// });
-
-// // Month pop up
-// const month_popup = document.getElementById("monthPopup");
-// const closeBtn = month_popup.querySelector(".close-popup");
-
-// document.querySelectorAll(".city-item").forEach(item => {
-//   item.addEventListener("click", () => {
-//     month_popup.classList.add("active");
-//   });
-// });
-
-// closeBtn.addEventListener("click", () => {
-//   month_popup.classList.remove("active");
-// });
-
-// month_popup.addEventListener("click", e => {
-//   if (e.target === month_popup) month_popup.classList.remove("active");
-// });
-
-// // modify search
-// document.querySelectorAll('.holiday-card').forEach(card => {
-//   card.addEventListener('click', () => {
-//     document.getElementById('searchDrawer').classList.add('open');
-//   });
-// });
-
-// document.querySelector('.close-btn').addEventListener('click', () => {
-//   document.getElementById('holidayDrawer').classList.remove('open');
-// });
-
-
-// // search popup
-// document.addEventListener("DOMContentLoaded", function () {
-//   const drawer = document.getElementById("searchDrawer");
-//   const closeBtn = document.getElementById("closeDrawer");
-
-//   document.body.addEventListener("click", function (e) {
-//     if (e.target.closest(".holiday-card")) {
-//       drawer.classList.add("active");
-//     }
-//   });
-
-//   closeBtn.addEventListener("click", () => drawer.classList.remove("active"));
-// });
-
-
 (() => {
   document.addEventListener("DOMContentLoaded", () => {
 
@@ -159,7 +67,15 @@
       if (e.target.closest(".holiday-card")) openDrawer();
     });
 
-    searchDrawerCloseBtn?.addEventListener("click", closeDrawer);
+    document.addEventListener("click", (e) => {
+      if (
+        searchDrawer?.classList.contains("active") &&
+        !e.target.closest("#searchDrawer .drawer-content") &&
+        !e.target.closest(".holiday-card")
+      ) {
+        closeDrawer();
+      }
+    });
 
   });
 })();
