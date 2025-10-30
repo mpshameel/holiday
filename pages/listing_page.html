@@ -52,7 +52,7 @@
             </div>
 
 
-            <button class="filter-btn">
+            <button id="openFilter" class="filter-btn">
                 <img src="../assets/icons/filter.svg" alt="filter" />
                 <span>Filter</span>
                 <span class="filter-indicator"></span>
@@ -261,6 +261,224 @@
 
                 <button class="search-btn">SEARCH</button>
                 <div class="drag-bar"></div>
+            </div>
+        </div>
+
+
+
+        <!-- Filter Popup -->
+        <div class="filter-popup" id="filterPopup">
+            <div class="filter-container">
+                <div class="drag-bar"></div>
+                <div class="filter-header">
+                    <h3>Filters</h3>
+                    <button class="reset-btn" id="resetBtn">Reset</button>
+                </div>
+
+                <div class="scroll-div">
+                    <section class="section">
+                        <div class="section-head">
+                            <h3>Flights</h3>
+                        </div>
+
+                        <div class="flight-tabs">
+                            <div class="tabs">
+                                <button class="chip active">With Flight</button>
+                                <button class="chip">Without Flight</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="divider-line"></div>
+
+                    <div class="section">
+                        <div class="section-head">
+                            <h3>Holidays Type</h3>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                <span class="label-text">Customised Holidays</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Group Holidays</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Luxury</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Fixed Departures</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                    <div class="section">
+                        <div class="section-head">
+                            <h3>Budget <span>(Per Person)</span></h3>
+                        </div>
+                        <div class="budget-section">
+                            <div class="budget-values">
+                                <span class="rupee">₹</span><span id="minVal">13000</span>
+                                <span> – </span>
+                                <span class="rupee">₹</span><span id="maxVal">48000+</span>
+                            </div>
+
+
+                            <div class="range-container">
+                                <div class="slider-track"></div>
+                                <input type="range" id="minRange" min="13000" max="48000" value="13000" step="500">
+                                <input type="range" id="maxRange" min="13000" max="48000" value="48000" step="500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                    <div class="section">
+                        <div class="section-head">
+                            <h3>Time Duration</h3>
+                        </div>
+                        <div class="radio-group">
+                            <label class="custom-radio">
+                                <input type="radio" name="duration" checked />
+                                <span class="radio-check"></span>
+                                Upto 3 Nights
+                            </label>
+
+                            <label class="custom-radio">
+                                <input type="radio" name="duration" />
+                                <span class="radio-check"></span>
+                                4 Nights
+                            </label>
+
+                            <label class="custom-radio">
+                                <input type="radio" name="duration" />
+                                <span class="radio-check"></span>
+                                5 Nights+
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                    <div class="section">
+                        <div class="section-head">
+                            <h3>Recommended For</h3>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                <span class="label-text">Family</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Honeymoon</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Family with Kids Friendly</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Coach Tour</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                    <div class="section">
+                        <div class="section-head">
+                            <h3>Country</h3>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                <span class="label-text">Singapore</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Canada</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">United States</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                    <div class="section">
+                        <div class="section-head">
+                            <h3>Cities The Trip Should Include</h3>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                <span class="label-text">New York City</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Washington, D.C.</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Niagara Falls</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Las Vegas</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Los Angeles</span>
+                            </label>
+                            <a href="#" class="show-all">Show all</a>
+
+                        </div>
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                    <button class="show-btn">SHOW 54 TRIPS</button>
+
+                </div>
+
+
             </div>
         </div>
 
