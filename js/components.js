@@ -17,16 +17,24 @@
 
 
     /*** Search Popup ***/
-    const searchArea = document.querySelector(".search");
     const searchPopup = document.getElementById("searchPopup");
     const searchBackBtn = searchPopup?.querySelector(".icon-btn");
 
-    const openSearch = () => searchPopup?.classList.add("show");
-    const closeSearch = () => searchPopup?.classList.remove("show");
+    const openSearch = () => searchPopup?.classList.add("active");
+    const closeSearch = () => searchPopup?.classList.remove("active");
 
-    searchArea?.addEventListener("click", (e) => {
-      e.preventDefault();
-      openSearch();
+    document.body.addEventListener("click", (e) => {
+      if (e.target.closest(".search-wrap")) openSearch();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        searchPopup?.classList.contains("active") &&
+        !e.target.closest("#searchPopup .bottom-search-content") &&
+        !e.target.closest(".search-wrap")
+      ) {
+        closeSearch();
+      }
     });
 
     searchBackBtn?.addEventListener("click", closeSearch);
@@ -44,7 +52,10 @@
     const monthPopup = document.getElementById("monthPopup");
     const monthCloseBtn = monthPopup?.querySelector(".close-popup");
 
-    const openMonthPopup = () => monthPopup?.classList.add("active");
+    const openMonthPopup = () => {
+      searchPopup?.classList.remove("active");
+      monthPopup?.classList.add("active");
+    };
     const closeMonthPopup = () => monthPopup?.classList.remove("active");
 
     document.body.addEventListener("click", (e) => {
