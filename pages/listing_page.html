@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Go Explore — Home</title>
+    <title>Go Explore — List</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -51,13 +51,11 @@
                 </div>
             </div>
 
-
             <button id="openFilter" class="filter-btn">
                 <img src="../assets/icons/filter.svg" alt="filter" />
                 <span>Filter</span>
                 <span class="filter-indicator"></span>
             </button>
-
         </div>
 
         <!-- Trip list -->
@@ -66,7 +64,7 @@
                 <h3>Showing 54 trips</h3>
             </div>
 
-            <div class="holiday-card">
+            <div class="holiday-card" onclick="window.location.href='detail_page.html'">
                 <div class="image-section">
                     <!-- <div class="ribbon">Akbar Choice</div> -->
                     <img src="../assets/images/list1.png" alt="Washington New York Boston" class="main-image" />
@@ -256,8 +254,6 @@
                         <span class="year-part">2022</span>
                     </div>
                 </div>
-
-
 
                 <button class="search-btn">SEARCH</button>
                 <div class="drag-bar"></div>
