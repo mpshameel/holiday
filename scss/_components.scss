@@ -2115,7 +2115,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
 
     .divider-line {
         height: 1px;
-        background-color: $divider;
+        background-color: $skyblueBorder;
         width: 100%;
     }
 
@@ -2256,6 +2256,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
         top: 0;
         z-index: 10;
 
+
         .tab-bar {
             display: flex;
             overflow-x: auto;
@@ -2265,6 +2266,12 @@ $hero-bg-tall: '../assets/images/deal1.png';
             border-top-left-radius: $radius-xlg;
             border-top-right-radius: $radius-xlg;
             box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.08);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             .tab-btn {
                 flex: none;
@@ -2987,8 +2994,10 @@ $hero-bg-tall: '../assets/images/deal1.png';
 .bottom-bar {
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
+    max-width: 430px;
     background: $white;
     box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
     border-top-left-radius: 16px;
@@ -3085,52 +3094,72 @@ $hero-bg-tall: '../assets/images/deal1.png';
 }
 
 /* help button */
-.help-fab {
+.help-fab-box {
     position: fixed;
-    bottom: 120px;
-    right: 24px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: $white;
-    border: 14px solid $borderYellow;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    height: 100%;
+    background: none;
     z-index: 999;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 
-    &.active {
-        border-color: $heading;
+    .help-fab {
+        pointer-events: auto;
+        position: fixed;
+        bottom: 120px;
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        border-radius: $radius-round;
+        background-color: $white;
+        border: 14px solid $borderYellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+        cursor: pointer;
+        transition: all 0.3s ease;
 
-        .help-q {
-            color: $heading;
+
+        &.active {
+            border-color: $heading;
+
+            .help-q {
+                color: $heading;
+            }
+
         }
 
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 2px;
+            width: 10px;
+            height: 10px;
+            background: $white;
+            z-index: 9999;
+            transform: rotate(90deg);
+        }
+
+        .help-q {
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $borderYellow;
+            position: relative;
+        }
     }
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 2px;
-        left: 2px;
-        width: 10px;
-        height: 10px;
-        background: $white;
-        z-index: 9999;
-        transform: rotate(90deg);
-    }
-
-    .help-q {
-        font-family: $font-primary-poppins;
-        font-size: $fs-lg;
-        font-weight: $fw-semibold;
-        color: $borderYellow;
-        position: relative;
-    }
 }
+
 
 /* --- Background overlay --- */
 .overlay {
@@ -3138,7 +3167,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
     inset: 0;
     background: rgba(0, 0, 0, 0.75);
     display: none;
-    z-index: 999;
+    z-index: 99999;
     transition: opacity 0.3s ease;
 }
 
@@ -3148,6 +3177,9 @@ $hero-bg-tall: '../assets/images/deal1.png';
     bottom: -100%;
     left: 0;
     width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 430px;
     background: $white;
     border-radius: $radius-popup $radius-popup 0 0;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
@@ -3302,6 +3334,10 @@ $hero-bg-tall: '../assets/images/deal1.png';
     padding: 140px 35px 0 0;
     z-index: 999;
     transition: opacity 0.3s ease;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 430px;
+    width: 100%;
 
     &.active {
         display: flex;
