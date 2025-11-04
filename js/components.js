@@ -274,15 +274,19 @@
   const guestInfo = document.querySelector('.guest-info');
   const fareSummary = document.querySelector('.fare-summary');
   const overlay = document.querySelector('.overlay');
+  const bottomBar = document.querySelector('.bottom-bar');
+
 
   guestInfo.addEventListener('click', () => {
     fareSummary.classList.add('show');
     overlay.style.display = 'block';
+    bottomBar.style.zIndex = '9999';
   });
 
   overlay.addEventListener('click', () => {
     fareSummary.classList.remove('show');
     overlay.style.display = 'none';
+    bottomBar.style.zIndex = '999';
   });
 
   /*** Fab Button ***/
@@ -302,24 +306,26 @@
   });
 
   /*** Promo Drawer ***/
-  // const offers_link = document.querySelector('.offers-link');
-  // const promoDrawer = document.getElementById('promoDrawer');
+  const offers_link = document.querySelector('.offers-link');
+  const promoDrawer = document.getElementById('promoDrawer');
+  const overlay2 = document.querySelector('.overlay');
 
-  // offers_link.addEventListener('click', () => {
-  //   promoDrawer.classList.add('active');
-  //   overlay.classList.add('active');
-  //   overlay.dataset.activePopup = 'promoDrawer';
-  // });
+  offers_link.addEventListener('click', () => {
+    promoDrawer.classList.add('active');
+    overlay2.style.display = 'block';
+  });
 
-  // overlay.addEventListener('click', () => {
-  //   const activePopupId = overlay.dataset.activePopup;
-  //   if (activePopupId) {
-  //     const activePopup = document.getElementById(activePopupId);
-  //     if (activePopup) activePopup.classList.remove('active');
-  //   }
-  //   overlay.classList.remove('active');
-  //   overlay.removeAttribute('data-active-popup');
-  // });
+  overlay2.addEventListener('click', () => {
+    promoDrawer.classList.remove('active');
+    overlay2.style.display = 'none';
+  });
+
+
+
+
+
+
+
 
 
 })();
@@ -358,4 +364,6 @@ document.addEventListener("DOMContentLoaded", () => {
     icon.classList.remove("fa-angle-down");
     icon.classList.add("fa-angle-up");
   }
+
+
 });
