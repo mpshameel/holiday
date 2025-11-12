@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Explore — Traveller-Details</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <main class="wrap">
+        <div class="traveller-details-page">
+            <div class="appbar-container">
+                <div class="appbar">
+                    <div class="appbar-row">
+                        <button class="icon-btn back-btn">
+                            <img src="../assets/icons/backbutton.svg" alt="Back" />
+                        </button>
+                        <h2>Travellers Details</h2>
+                        <div class="right-icons">
+                            <img src="../assets/icons/traveller.svg" alt="Mail Icon" class="right-img-traveller" />
+                        </div>
+                    </div>
+                </div>
+                <div class="svgbox">
+                    <svg viewBox="0 0 800 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <path d="M 0 0 Q 0 50 100 50 C 700 50 100 50 700 50 C 800 50 800 100 800 100 L 0 100 L 0 0 "
+                            fill="#fff" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <section class="trip-summary">
+            <h3>Washington New York and Boston</h3>
+            <p>31 Aug 2022 Wednesday | 1 Room, 2 Guests | Standard</p>
+        </section>
+
+        <section class="traveller-section">
+            <div class="section-header">
+                <h4>Traveller Details</h4>
+                <img src="../assets/icons/edit.svg" alt="Edit" class="edit-icon" id="editToggleBtn"
+                    onclick="window.location.href='traveller_edit.html'" />
+            </div>
+
+            <!-- View mode -->
+            <div id="travellerView">
+                <div class="traveller-card">
+                    <img src="../assets/icons/traveller_male.svg" alt="traveller" />
+                    <div class="traveller-info">
+                        <p class="name">Ms. Neha Negi</p>
+                        <p class="type">Adult 1</p>
+                    </div>
+                </div>
+
+                <div class="traveller-card">
+                    <img src="../assets/icons/traveller_male.svg" alt="traveller" />
+                    <div class="traveller-info">
+                        <p class="name">Mr. Atul Singh</p>
+                        <p class="type">Adult 2</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <section class="contact-section">
+            <div class="section-header">
+                <h4>Contact Details</h4>
+            </div>
+
+            <div class="contact-content">
+                <div class="form-row">
+                    <div class="modify-input-group country-code">
+                        <label class="search-label" for="code">Country Code</label>
+                        <div class="country-input-row">
+                            <img src="../assets/icons/indianFlag.png" alt="India" class="flag-icon" />
+                            <h2>(+91)</h2>
+                            <img src="../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
+                        </div>
+                    </div>
+
+                    <div class="modify-input-group">
+                        <label class="search-label" for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" placeholder=" " value="9876543210" required />
+                    </div>
+                </div>
+                <div class="modify-input-group">
+                    <label class="search-label" for="email">Email Id</label>
+                    <input type="text" id="destination" placeholder="Dinesh.rampal@kellton.com" />
+                </div>
+            </div>
+        </section>
+
+        <div class="gstin-container">
+            <div class="gstin-left">
+                <img src="../assets/icons/tax.png" alt="Tax Icon" class="gstin-icon" />
+                <div class="gstin-text">
+                    <div class="gstin-title">Use GSTIN for this booking</div>
+                    <div class="gstin-subtitle">Optional</div>
+                </div>
+            </div>
+            <a href="#" class="gstin-add">Add</a>
+        </div>
+
+        <div class="additional-services">
+            <h3>Additional Services</h3>
+
+            <div class="checkbox-group">
+                <label class="custom-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    <span class="label-text">Forex</span>
+                </label>
+
+                <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Travel Insurance</span>
+                </label>
+
+                <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Select all</span>
+                </label>
+
+            </div>
+        </div>
+
+        <!-- Overlay background shade -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- GST Popup -->
+        <div class="gst-popup" id="gstPopup">
+            <div class="gst-container">
+                <div class="filter-top">
+                    <div class="drag-bar"></div>
+                    <div class="filter-header">
+                        <h3>Add GST Details</h3>
+                    </div>
+                </div>
+
+                <div class="modify-input-group">
+                    <input type="text" id="destination" placeholder="GST Number" />
+                </div>
+
+                <div class="modify-input-group">
+                    <input type="text" id="destination" placeholder="GST Holder Name" />
+                </div>
+
+                <div class="checkbox-group">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        <span class="label-text">Save GST Information</span>
+                    </label>
+                </div>
+                <button class="search-btn">SUBMIT</button>
+            </div>
+        </div>
+
+        <!-- Bottom Nav Bar -->
+        <div class="bottom-bar">
+            <div class="left-section">
+                <div class="guest-info">
+                    <p class="guest-count">02 Guests</p>
+                    <div class="price-row">
+                        <span class="price"><span class="rupee">₹</span>3,24,654</span>
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                    <div class="deal-applied">
+                        <img src="../assets/icons/percentage.png" alt="discount" />
+                        <span>Deal Applied</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <button class="continue-btn" onclick="window.location.href='review_booking.html'">CONTINUE</button>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+    <script src="../js/components.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

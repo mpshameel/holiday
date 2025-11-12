@@ -210,25 +210,26 @@
     showSlide(slideIndex);
     startAutoSlide();
 
-    /*** Detail Tabbar ***/
-    const tabs = document.querySelectorAll(".tab-btn");
-    const panes = document.querySelectorAll(".tab-pane");
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        panes.forEach(p => p.classList.remove("active"));
-
-        tab.classList.add("active");
-        document.getElementById(tab.dataset.tab).classList.add("active");
-      });
-    });
-
-    if (tabs.length > 0 && panes.length > 0) {
-      tabs[0].classList.add("active");
-      panes[0].classList.add("active");
-    }
   });
+
+  /*** Detail Tabbar ***/
+  const tabs = document.querySelectorAll(".tab-btn");
+  const panes = document.querySelectorAll(".tab-pane");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      panes.forEach(p => p.classList.remove("active"));
+
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
+
+  if (tabs.length > 0 && panes.length > 0) {
+    tabs[0].classList.add("active");
+    panes[0].classList.add("active");
+  }
 
   /*** Download Popup ***/
   const popup = document.getElementById("downloadPopup");
@@ -319,6 +320,10 @@
     promoDrawer.classList.remove('active');
     overlay2.style.display = 'none';
   });
+
+
+
+
 
 
 

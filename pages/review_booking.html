@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Explore — Traveller-Details</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <main class="wrap">
+        <div class="traveller-details-page">
+            <div class="appbar-container">
+                <div class="appbar">
+                    <div class="appbar-row">
+                        <button class="icon-btn back-btn">
+                            <img src="../assets/icons/backbutton.svg" alt="Back" />
+                        </button>
+                        <h2>Review Booking</h2>
+                    </div>
+                </div>
+                <div class="svgbox">
+                    <svg viewBox="0 0 800 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <path d="M 0 0 Q 0 50 100 50 C 700 50 100 50 700 50 C 800 50 800 100 800 100 L 0 100 L 0 0 "
+                            fill="#fff" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-content">
+            <div class="trip-card">
+                <div class="trip-info-row">
+                    <div class="trip-info-left">
+                        <div class="trip-header">
+                            <h2>Washington New York and Boston</h2>
+                        </div>
+                        <p class="trip-subtitle">6 Nights & 7 Days | 1 Country & 3 Cities</p>
+                    </div>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="location">
+                    <img src="../assets/icons/location.png" alt="location" />
+                    <p>Washington, D.C. (2N) → New York City (3N) → Boston (1N)</p>
+                </div>
+
+                <div class="tags">
+                    <span>Family</span>
+                    <span>Honeymoon</span>
+                    <span>Coach Tour</span>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="trip-summary-card summary-border">
+                    <div class="box-row">
+                        <div class="trip-summary-row top-row">
+                            <div class="trip-summary-col">
+                                <p class="label">From City</p>
+                                <p class="value">Washington, D.C.<br><span>(Land Only)</span></p>
+                            </div>
+                            <div class="vertical-divider-line"></div>
+                            <div class="trip-summary-col right">
+                                <p class="label">Tour Date</p>
+                                <p class="value">31 Aug 2022 Wednesday</p>
+                            </div>
+                        </div>
+                        <div class="divider-line"></div>
+
+                        <div class="trip-summary-row bottom-row">
+                            <div class="trip-summary-col">
+                                <p class="label">Rooms & Guests</p>
+                                <p class="value">1 Room, 2 Guests</p>
+                            </div>
+                            <div class="vertical-divider-line"></div>
+                            <div class="trip-summary-col right">
+                                <p class="label">Price Category</p>
+                                <p class="value">Standard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="review-btn">REVIEW YOUR ITINERARY</button>
+
+            </div>
+        </div>
+
+        <section class="traveller-section traveller-section--rounded">
+            <div class="section-header">
+                <h4>Traveller Details</h4>
+            </div>
+            <div class="divider-line"></div>
+
+            <!-- View mode -->
+            <div id="travellerView">
+                <div class="traveller-card traveller-card--review">
+                    <img src="../assets/icons/traveller_male.svg" alt="traveller" />
+                    <div class="traveller-info">
+                        <p class="name">Ms. Neha Negi</p>
+                        <p class="type">Adult 1</p>
+                    </div>
+                </div>
+
+                <div class="traveller-card traveller-card--review">
+                    <img src="../assets/icons/traveller_male.svg" alt="traveller" />
+                    <div class="traveller-info">
+                        <p class="name">Mr. Atul Singh</p>
+                        <p class="type">Adult 2</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <section class="contact-section contact-section--rounded ">
+            <div class="section-header">
+                <h4>Contact Details</h4>
+            </div>
+
+            <div class="contact-content">
+                <div class="form-row">
+                    <div class="modify-input-group country-code">
+                        <label class="search-label" for="code">Country Code</label>
+                        <div class="country-input-row">
+                            <img src="../assets/icons/indianFlag.png" alt="India" class="flag-icon" />
+                            <h2>(+91)</h2>
+                            <img src="../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
+                        </div>
+                    </div>
+
+                    <div class="modify-input-group">
+                        <label class="search-label" for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" placeholder=" " value="9876543210" required />
+                    </div>
+                </div>
+                <div class="modify-input-group">
+                    <label class="search-label" for="email">Email Id</label>
+                    <input type="text" id="destination" placeholder="Dinesh.rampal@kellton.com" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Nav Bar -->
+        <div class="bottom-bar">
+            <div class="left-section">
+                <div class="guest-info">
+                    <p class="guest-count">02 Guests</p>
+                    <div class="price-row">
+                        <span class="price"><span class="rupee">₹</span>3,24,654</span>
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                    <div class="deal-applied">
+                        <img src="../assets/icons/percentage.png" alt="discount" />
+                        <span>Deal Applied</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <button class="continue-btn" onclick="window.location.href='review_itinerary.html'">CONTINUE</button>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="../js/components.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>
