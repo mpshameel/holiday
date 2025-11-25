@@ -231,45 +231,170 @@
     panes[0].classList.add("active");
   }
 
-  /*** Download Popup ***/
-  const popup = document.getElementById("downloadPopup");
-  const openBtn = document.querySelector(".download-icon");
-  const closeBtn = document.getElementById("closePopup");
+  document.addEventListener("DOMContentLoaded", () => {
 
-  openBtn.addEventListener("click", () => {
-    popup.classList.add("active");
+    /*** Book Appointment Popup ***/
+    const bookPopup = document.getElementById("bookAppointmentPopup");
+    const openBook = document.getElementById("openBookAppointment");
+    const closeBook = document.getElementById("closebookAppointmentPopup");
+
+    if (openBook && bookPopup && closeBook) {
+      openBook.addEventListener("click", () => {
+        bookPopup.classList.add("active");
+      });
+
+      closeBook.addEventListener("click", () => {
+        bookPopup.classList.remove("active");
+      });
+
+      bookPopup.addEventListener("click", (e) => {
+        if (e.target === bookPopup) {
+          bookPopup.classList.remove("active");
+        }
+      });
+    }
+
+    /*** Open Thank You Popup ***/
+    const thankYouPopup = document.getElementById("thankYouPopup");
+    const openThankYouBtn = document.getElementById("openThankYou");
+
+    if (openThankYouBtn && thankYouPopup && bookPopup) {
+      openThankYouBtn.addEventListener("click", () => {
+        bookPopup.classList.remove("active");
+
+        thankYouPopup.classList.add("active");
+      });
+
+      thankYouPopup.addEventListener("click", (e) => {
+        if (e.target === thankYouPopup) {
+          thankYouPopup.classList.remove("active");
+        }
+      });
+    }
+
+    /*** Open Request Submitted Popup ***/
+    const requestPopup = document.getElementById("requestSubmittedPopup");
+    const openRequestBtn = document.getElementById("openRequestBtn");
+
+    if (openRequestBtn && requestPopup && callBackPopup) {
+      openRequestBtn.addEventListener("click", () => {
+        callBackPopup.classList.remove("active");
+
+        requestPopup.classList.add("active");
+      });
+
+      requestPopup.addEventListener("click", (e) => {
+        if (e.target === requestPopup) {
+          requestPopup.classList.remove("active");
+        }
+      });
+    }
+
+    /*** Download Popup ***/
+    const popup = document.getElementById("downloadPopup");
+    const openBtn = document.querySelector(".download-icon");
+    const closeBtn = document.getElementById("closePopup");
+
+    if (openBtn && popup && closeBtn) {
+      openBtn.addEventListener("click", () => {
+        popup.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        popup.classList.remove("active");
+      });
+    }
+
   });
 
-  closeBtn.addEventListener("click", () => {
+
+  /*** Callback Popup ***/
+  const callBackBtn = document.getElementById("callBackBtn");
+  const callBackPopup = document.getElementById("callBackPopup");
+  const closeCallBack = document.getElementById("closeCallbackPopup");
+
+  callBackBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    callBackPopup.classList.add("active");
     popup.classList.remove("active");
   });
 
-  window.addEventListener("click", (e) => {
-    if (e.target === popup) {
-      popup.classList.remove("active");
+  closeCallBack.addEventListener("click", () => {
+    callBackPopup.classList.remove("active");
+  });
+
+  callBackPopup.addEventListener("click", (e) => {
+    if (e.target === callBackPopup) {
+      callBackPopup.classList.remove("active");
     }
   });
 
   /*** Detail Modify Search Drawer ***/
   const detailSearchDrawer = document.getElementById("detailSearchDrawer");
-  const detailSearchDrawerCloseBtn = document.getElementById("closeDrawer");
+  const editIcon = document.querySelector(".edit-icon");
 
-  const openDrawer = () => detailSearchDrawer?.classList.add("active");
-  const closeDrawer = () => detailSearchDrawer?.classList.remove("active");
-
-  document.body.addEventListener("click", (e) => {
-    if (e.target.closest(".edit-icon")) openDrawer();
+  editIcon.addEventListener("click", (e) => {
+    e.stopPropagation();
+    detailSearchDrawer.classList.add("active");
   });
 
-  document.addEventListener("click", (e) => {
-    if (
-      detailSearchDrawer?.classList.contains("active") &&
-      !e.target.closest("#detailSearchDrawer .drawer-content") &&
-      !e.target.closest(".edit-icon")
-    ) {
-      closeDrawer();
+  detailSearchDrawer.querySelector(".drawer-content").addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  detailSearchDrawer.addEventListener("click", (e) => {
+    if (e.target === detailSearchDrawer) {
+      detailSearchDrawer.classList.remove("active");
     }
   });
+
+  /*** Dropdown Price ***/
+  const priceGroup = document.querySelector(".price-group");
+  const priceSelect = priceGroup.querySelector(".price-select");
+  const priceItems = priceGroup.querySelectorAll(".price-item");
+  const priceSelected = priceGroup.querySelector(".price-selected");
+
+  priceSelect.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeAllDropdowns();
+    priceGroup.classList.toggle("open");
+  });
+
+  priceItems.forEach(item => {
+    item.addEventListener("click", () => {
+      priceSelected.textContent = item.textContent;
+      priceGroup.classList.remove("open");
+    });
+  });
+
+
+  /*** Dropdown City ***/
+  const fromCityGroup = document.querySelector(".from-city-group");
+  const destinationInput = fromCityGroup.querySelector("#destination");
+  const cityItems = fromCityGroup.querySelectorAll(".city-item");
+
+  destinationInput.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeAllDropdowns();
+    fromCityGroup.classList.toggle("open");
+  });
+
+  cityItems.forEach(item => {
+    item.addEventListener("click", () => {
+      destinationInput.value = item.textContent;
+      fromCityGroup.classList.remove("open");
+    });
+  });
+
+  function closeAllDropdowns() {
+    priceGroup.classList.remove("open");
+    fromCityGroup.classList.remove("open");
+  }
+
+  document.addEventListener("click", () => {
+    closeAllDropdowns();
+  });
+
 
   /*** Fare Summary ***/
   const guestInfo = document.querySelector('.guest-info');
@@ -322,6 +447,254 @@
   });
 
 
+  /*** Calender Drawer ***/
+  const calenderOpen = document.querySelector(".calender-open");
+  const calenderOverlay = document.querySelector(".calender-overlay");
+
+  calenderOpen.addEventListener("click", (e) => {
+    e.stopPropagation();
+    calenderOverlay.classList.add("active");
+  });
+
+  calenderOverlay.querySelector(".calender-popup").addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  calenderOverlay.addEventListener("click", (e) => {
+    if (e.target === calenderOverlay) {
+      calenderOverlay.classList.remove("active");
+    }
+  });
+
+  /*** Calender ***/
+  const specialDays = {
+    "2025-02-10": "Raksha Ba…",
+    "2025-02-14": "Sri Narayana Guru",
+    "2025-03-05": "Raksha Ba…",
+    "2025-02-05": "Sri Narayana Guru",
+    "2025-02-08": "Raksha Ba…"
+  };
+
+  const monthTags = {
+    "2025-11": "1 Holiday",
+    "2025-02": "3 Holiday",
+    "2025-03": "2 Holiday",
+  };
+
+  const monthsWrapper = document.getElementById("monthsWrapper");
+
+  function getPriceForDate(year, month, day) {
+    return day % 2 === 1 ? 324654 : null;
+  }
+
+  function renderMonth(year, month) {
+    const box = document.createElement("div");
+    box.classList.add("month-box");
+
+    const monthName = new Date(year, month)
+      .toLocaleString('default', { month: 'long' });
+
+    const tag = getMonthTag(year, month);
+
+    box.innerHTML = `
+    <div class="month-title">
+        ${monthName} ${year}
+        ${tag ? `<span class="month-tag">${tag}</span>` : ""}
+    </div>
+
+    <div class="cal-days" id="days-${year}-${month}"></div>
+`;
+
+
+    monthsWrapper.appendChild(box);
+
+    const daysContainer = box.querySelector(".cal-days");
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    for (let i = 0; i < firstDay; i++) {
+      daysContainer.innerHTML += `<div></div>`;
+    }
+
+    for (let d = 1; d <= lastDate; d++) {
+      const dayOfWeek = new Date(year, month, d).getDay();
+      const price = getPriceForDate(year, month, d);
+
+      const isToday =
+        d === new Date().getDate() &&
+        month === new Date().getMonth() &&
+        year === new Date().getFullYear();
+
+      let classes = [];
+
+      if (isToday) classes.push("today");
+      if (dayOfWeek === 0) classes.push("sunday");
+
+
+      const tag = getDayTag(year, month, d);
+
+      if (price) {
+        classes.push("day-with-price");
+        daysContainer.innerHTML += `
+    <div class="${classes.join(" ")}">
+        ${tag ? `<span class="day-tag">${tag}</span>` : ""}
+        ${d}
+        <span class="day-price">
+            <span class="rupee-icon">₹</span>
+            ${price.toLocaleString()}
+        </span>
+    </div>
+  `;
+      } else {
+        classes.push("day-no-price");
+        daysContainer.innerHTML += `
+    <div class="${classes.join(" ")}">
+        ${tag ? `<span class="day-tag">${tag}</span>` : ""}
+        ${d}
+    </div>
+  `;
+      }
+    }
+  }
+
+  function renderYearRange(startYear, endYear) {
+    monthsWrapper.innerHTML = "";
+    for (let y = startYear; y <= endYear; y++) {
+      for (let m = 0; m < 12; m++) {
+        renderMonth(y, m);
+      }
+    }
+  }
+
+  function getDayTag(year, month, day) {
+    const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    return specialDays[key] || null;
+  }
+
+  function getMonthTag(year, month) {
+    const key = `${year}-${String(month + 1).padStart(2, "0")}`;
+    return monthTags[key] || null;
+  }
+
+  renderYearRange(2025, 2025);
+
+
+  /*** Rooms Drawer ***/
+  const roomsOpen = document.querySelector(".rooms-open");
+  const roomsOverlay = document.querySelector(".rooms-overlay");
+
+  roomsOpen.addEventListener("click", (e) => {
+    e.stopPropagation();
+    roomsOverlay.classList.add("active");
+  });
+
+  roomsOverlay.querySelector(".rooms-popup").addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  roomsOverlay.addEventListener("click", (e) => {
+    if (e.target === roomsOverlay) {
+      roomsOverlay.classList.remove("active");
+    }
+  });
+
+
+  /*** Rooms Box ***/
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const roomsContainer = document.getElementById("roomsContainer");
+    const addRoomBtn = document.getElementById("addRoomBtn");
+
+    const handleCounter = (room) => {
+      room.querySelectorAll(".guest-item").forEach(item => {
+        const minus = item.querySelector(".minus");
+        const plus = item.querySelector(".plus");
+        const count = item.querySelector(".count");
+
+        minus.addEventListener("click", () => {
+          let value = parseInt(count.textContent);
+          if (value > 0) count.textContent = value - 1;
+        });
+
+        plus.addEventListener("click", () => {
+          let value = parseInt(count.textContent);
+          count.textContent = value + 1;
+        });
+      });
+    };
+
+    document.querySelectorAll(".room-box").forEach(room => handleCounter(room));
+
+
+    addRoomBtn.addEventListener("click", () => {
+
+      const roomCount = roomsContainer.children.length + 1;
+
+      const roomHTML = `
+        <div class="room-box">
+            <h3 class="room-title">Room ${roomCount}</h3>
+
+            <div class="guest-item">
+                <div class="left">
+                    <p class="label">Adults</p>
+                    <p class="sub">Above 12 Years</p>
+                </div>
+                <div class="counter">
+                    <button class="minus">−</button>
+                    <span class="count">2</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+
+            <div class="guest-item">
+                <div class="left">
+                    <p class="label">Child</p>
+                    <p class="sub">2–12 Years (With bed)</p>
+                </div>
+                <div class="counter">
+                    <button class="minus">−</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+
+            <div class="guest-item">
+                <div class="left">
+                    <p class="label">Child</p>
+                    <p class="sub">2–12 Years (Without bed)</p>
+                </div>
+                <div class="counter">
+                    <button class="minus">−</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+
+            <div class="guest-item">
+                <div class="left">
+                    <p class="label">Infant</p>
+                    <p class="sub">0–23 Months (Without bed)</p>
+                </div>
+                <div class="counter">
+                    <button class="minus">−</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </div>`;
+
+      roomsContainer.insertAdjacentHTML("beforeend", roomHTML);
+
+      const newRoom = roomsContainer.lastElementChild;
+      handleCounter(newRoom);
+    });
+  });
+
+
+
+
+
 
 })();
 
@@ -362,3 +735,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+

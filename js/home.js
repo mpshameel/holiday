@@ -31,7 +31,7 @@ setupTabs('category-tabs');
 
 document.addEventListener('DOMContentLoaded', () => {
     const infoPage = document.querySelector('.tab-container');
-    if (!infoPage) return; // run only on pages that have this
+    if (!infoPage) return;
 
     const tabs = infoPage.querySelectorAll('.tab-btn');
     const scrollContainer = infoPage.querySelector('.tab-content');
@@ -58,5 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
+
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const bankItems = document.querySelectorAll(".bank-item");
+    const creditDrawer = document.getElementById("creditDrawer");
+    const overlayCredit = document.querySelector(".overlay-credit");
+
+    if (bankItems.length > 0 && creditDrawer && overlayCredit) {
+
+        bankItems.forEach(item => {
+            item.addEventListener("click", () => {
+                creditDrawer.classList.add("active");
+                overlayCredit.style.display = "block";
+            });
+        });
+
+        overlayCredit.addEventListener("click", () => {
+            creditDrawer.classList.remove("active");
+            overlayCredit.style.display = "none";
+        });
+    }
+
+
+});
+
 

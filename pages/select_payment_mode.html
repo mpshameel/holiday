@@ -180,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="payment-card">
+            <div class="payment-card" onclick="window.location.href='credit_card_emi.html'">
                 <div class="left">
                     <div class="left-icon">
                         <img src="../assets/icons/creditEmi.png" class="pay-icon">
@@ -233,7 +233,105 @@
 
         </div>
 
+        <!-- Overlay background shade -->
+        <div class="overlay" id="overlay"></div>
 
+        <!-- Fare Summary Drawer -->
+        <div class="fare-summary">
+            <div class="drag-bar"></div>
+            <h3>Fare Summary</h3>
+            <div class="divider-line"></div>
+
+            <div class="fare-summary-detail-content">
+                <div class="summary-item item-package">
+                    <div class="summary-left">
+                        <p class="label">Package Cost</p>
+                        <p class="sub">Room: 1, Guest: 2</p>
+                    </div>
+                    <p class="value"><span class="currency">₹</span>294,470</p>
+                </div>
+
+                <div class="summary-item item-discount">
+                    <p class="label">Discount</p>
+                    <p class="value green"><span class="currency">₹</span>0</p>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="summary-item item-package-cost">
+                    <p class="label">Package Cost After Discount</p>
+                    <p class="value"><span class="currency">₹</span>294,470</p>
+                </div>
+
+                <div class="summary-item item-gst-detailFs">
+                    <p class="label">GST (5%)</p>
+                    <p class="value"><span class="currency">₹</span>14,724</p>
+                </div>
+                <div class="divider-line"></div>
+
+                <div class="summary-item item-total-detailFs">
+                    <p class="label bold">Total Amount</p>
+                    <p class="value bold"><span class="currency">₹</span>309,194</p>
+                </div>
+
+                <div class="summary-item item-tcs-detailFs">
+                    <p class="label">
+                        TCS (5%) <span class="claim">Claimable <img src="../assets/icons/info.png" alt="info"
+                                class="dropdown-icon" /></span>
+                    </p>
+                    <p class="value"><span class="currency">₹</span>15,460</p>
+                </div>
+                <div class="divider-line"></div>
+
+                <div class="summary-item grand detailFs">
+                    <p class="label detailFs">Grand Total</p>
+                    <p class="value detailFs"><span class="currency">₹</span>324,654</p>
+                </div>
+                <div class="divider-line"></div>
+
+                <div class="paytype-box">
+                    <label class="payment-option">
+                        <div class="radio-group">
+                            <label class="custom-radio">
+                                <input type="radio" name="duration" />
+                                <span class="radio-check"></span>
+                            </label>
+                        </div>
+                        <div class="option-content">
+                            <p class="title">Pay Full Payment</p>
+                            <p class="sub">Amount you pay now to reserve</p>
+                        </div>
+                        <p class="value"><span class="currency">₹</span>324,654</p>
+                    </label>
+
+                    <div class="divider-line"></div>
+
+                    <label class="payment-option">
+                        <div class="radio-group">
+                            <label class="custom-radio">
+                                <input type="radio" name="duration" />
+                                <span class="radio-check"></span>
+                            </label>
+                        </div>
+                        <div class="option-content">
+                            <p class="title">Part Payment</p>
+                            <p class="sub">Amount you pay now to reserve</p>
+                        </div>
+                        <p class="value"><span class="currency">₹</span>₹5,000</p>
+                    </label>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="summary-row you-pay">
+                    <div>
+                        <p class="you-pay-title">You Pay</p>
+                        <p class="you-pay-sub">Amount due later</p>
+                    </div>
+                    <p class="value big"><span class="currency">₹</span>324,654</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Bottom Nav Bar -->
         <div class="bottom-bar">
@@ -259,6 +357,7 @@
 
 
     <script src="../js/components.js"></script>
+    <script src="../js/faresummary.js"></script>
     <script src="../js/home.js"></script>
     <script src="../js/main.js"></script>
 
