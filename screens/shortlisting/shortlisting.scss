@@ -1,0 +1,12 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* shortlisting */
+/* shortlisting-content */
+.shortlisting-content {
+    position: relative;
+    margin-top: -30px;
+    padding-top: 10px;
+    z-index: 999;
+}

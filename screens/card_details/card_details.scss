@@ -1,0 +1,184 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* card details page */
+/* credit card row */
+.credit-cards-row {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    img {
+        width: 34px;
+        height: 26px;
+        object-fit: contain;
+        display: block;
+    }
+}
+
+.credit-card-input-box {
+
+    .input-row {
+        display: flex;
+        gap: 16px;
+    }
+
+    .modify-input-group {
+        margin-top: 16px;
+        flex-direction: column;
+        background-color: $skyblue;
+        border: 1px solid $skyblueBorder;
+        align-items: start;
+        border-radius: $radius-lg;
+        padding: 7px 12px;
+
+        &.no-label {
+            padding: 16px;
+
+            input::placeholder {
+                color: $badgebg;
+                opacity: 1;
+            }
+        }
+
+        input {
+            width: 100%;
+            outline: none;
+            border: none;
+            background: transparent;
+            color: $heading;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-md;
+
+            &::placeholder {
+                color: $heading;
+                opacity: 1;
+            }
+        }
+
+        .search-label {
+            font-family: $font-primary-poppins;
+            font-size: $fs-sm;
+            font-weight: $fw-semibold;
+            color: $badgebg;
+
+            span {
+                color: $priceColor;
+            }
+        }
+
+        .type-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .month-part {
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $borderTxt;
+            }
+
+            .dropdown-icon {
+                width: 12px;
+                height: 6px;
+            }
+        }
+    }
+}
+
+.credit-card-savebox {
+    margin-top: 20px;
+}
+
+.input-star-box {
+    position: relative;
+    width: 100%;
+    margin-top: 16px;
+    background-color: $skyblue;
+    border: 1px solid $skyblueBorder;
+    border-radius: $radius-lg;
+    padding: 16px;
+}
+
+input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: $heading;
+    font-family: $font-primary-poppins;
+    font-weight: $fw-semibold;
+    font-size: $fs-md;
+}
+
+.fake-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: $borderTxt;
+    font-family: $font-primary-poppins;
+    font-weight: $fw-semibold;
+    font-size: $fs-md;
+    pointer-events: none;
+
+    span {
+        color: $priceColor;
+    }
+
+    transition: 0.2s ease;
+}
+
+input:not(:placeholder-shown)+.fake-placeholder,
+input:focus+.fake-placeholder {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.95);
+}
+
+
+
+.international-card-section {
+    background: $white;
+    padding: 16px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+    margin: 16px 0;
+
+    .checkbox-row {
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        gap: 12px;
+
+        .label-text {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-regular;
+            font-size: $fs-md;
+            color: $heading;
+            margin: 0;
+
+            .bold {
+                font-weight: $fw-semibold;
+            }
+        }
+    }
+
+    .sub-text {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-regular;
+        font-size: $fs-md;
+        color: $borderTxt;
+        margin-top: 4px;
+        margin-left: 24px;
+        margin-bottom: 0;
+    }
+}
+
+.credit-card-international-box {
+    display: none;
+}

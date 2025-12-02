@@ -1,0 +1,19 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+
+/* wallet page */
+/* wallet content */
+.wallet-content {
+    position: relative;
+    margin-bottom: 120px;
+    margin-top: -30px;
+    padding-top: 10px;
+    z-index: 999;
+}
+
+.wallet-box {
+    background: transparent;
+    padding: 16px;
+}

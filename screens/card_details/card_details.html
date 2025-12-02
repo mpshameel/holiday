@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Explore — Card-Details</title>
+    <link rel="stylesheet" href="../../css/card_details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <main class="wrap">
+        <div class="traveller-details-page">
+            <div class="appbar-container">
+                <div class="appbar">
+                    <div class="appbar-row">
+                        <button class="icon-btn back-btn">
+                            <img src="../../assets/icons/backbutton.svg" alt="Back" />
+                        </button>
+                        <h2>Card Details</h2>
+                    </div>
+                </div>
+                <div class="svgbox">
+                    <svg viewBox="0 0 800 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <path d="M 0 0 Q 0 50 100 50 C 700 50 100 50 700 50 C 800 50 800 100 800 100 L 0 100 L 0 0 "
+                            fill="#fff" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="upi-content">
+            <div class="payment-section">
+                <h3 class="title">Add Credit/Debit card details</h3>
+                <div class="credit-cards-row">
+                    <img src="../../assets/icons/visa.png" alt="Paytm">
+                    <img src="../../assets/icons/masterCardLogo.png" alt="PhonePe">
+                    <img src="../../assets/icons/americanExpressLogo.png" alt="GPay">
+                    <img src="../../assets/icons/ruPayLogo.png" alt="GPay">
+                    <img src="../../assets/icons/dinersClubLogo.png" alt="GPay">
+                </div>
+
+                <div class="credit-card-input-box">
+                    <div class="modify-input-group">
+                        <label class="search-label" for="email">Name on card<span> *</span></label>
+                        <input type="text" id="destination" placeholder="Neha Negi" />
+                    </div>
+
+                    <div class="input-star-box">
+                        <input type="text" placeholder=" " id="cardInput" />
+                        <label for="cardInput" class="fake-placeholder">
+                            Card number <span>*</span>
+                        </label>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="modify-input-group no-label">
+                            <input type="text" id="destination" placeholder="Expiry Date" />
+                        </div>
+
+                        <div class="modify-input-group no-label">
+                            <input type="text" id="number" placeholder="CVV" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="credit-card-savebox">
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="label-text">Save card details</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="convinient-fee-section">
+                <img src="../../assets/icons/infoIcon.png" alt="discount" />
+                <span>Non-refundable Convenience Fee of <span class="rupee"> ₹</span>100 applied</span>
+            </div>
+
+            <div class="international-card-section">
+                <label class="checkbox-row">
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="saveCardCheckbox">
+                            <span class="checkmark"></span>
+                            <span class="label-text">Click on check box if <span class="bold">International
+                                    Card</span></span>
+                        </label>
+                    </div>
+                </label>
+
+                <p class="sub-text">(Card issued outside India)</p>
+
+                <div class="credit-card-international-box" id="internationalBox">
+                    <div class="credit-card-input-box">
+                        <div class="modify-input-group">
+                            <label class="search-label" for="email">First Name<span> *</span></label>
+                            <input type="text" id="destination" placeholder="Neha Negi" />
+                        </div>
+
+                        <div class="modify-input-group no-label">
+                            <input type="text" id="destination" placeholder="Last name*" />
+                        </div>
+
+                        <div class="modify-input-group no-label">
+                            <input type="text" id="destination" placeholder="Address*" />
+                        </div>
+
+                        <div class="input-row">
+                            <div class="modify-input-group no-label">
+                                <input type="text" id="destination" placeholder="City*" />
+                            </div>
+
+                            <div class="modify-input-group no-label">
+                                <input type="text" id="number" placeholder="Pincode*" />
+                            </div>
+                        </div>
+
+                        <div class="modify-input-group no-label">
+                            <div class="type-row">
+                                <span class="month-part">Country*</span>
+                                <img src="../../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Nav Bar -->
+        <div class="bottom-bar">
+            <div class="left-section">
+                <div class="guest-info">
+                    <p class="guest-count">02 Guests</p>
+                    <div class="price-row">
+                        <span class="price"><span class="rupee">₹</span>3,24,654</span>
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                    <div class="deal-applied">
+                        <img src="../../assets/icons/percentage.png" alt="discount" />
+                        <span>Deal Applied</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <button class="continue-btn">CONTINUE</button>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="card_details.js"></script>
+    <script src="../../global/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* review booking page */
+/* review content */
+
+.review-content {
+    position: relative;
+    margin-bottom: 16px;
+    margin-top: -20px;
+    z-index: 999;
+}

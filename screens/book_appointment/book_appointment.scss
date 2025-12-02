@@ -1,0 +1,302 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* book appointment */
+/* map container */
+.map-appbar-container {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    z-index: 5;
+    background: transparent;
+
+    .appbar-row {
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 9999;
+        flex: 1;
+
+        h2 {
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $white;
+            text-align: center;
+            flex: 1;
+        }
+
+        .icon-btn {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            font-size: 16px;
+            background: none;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            .back-btn {
+                display: block;
+                width: 10px;
+                height: 15px;
+                background: transparent;
+                object-fit: contain;
+            }
+
+        }
+
+    }
+
+    .svgbox {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 71px;
+        z-index: 999 !important;
+        background: transparent;
+
+        svg {
+            width: 100%;
+            height: 71px;
+            display: block;
+            z-index: 999;
+
+            path {
+                fill: $white;
+            }
+        }
+
+        &.blue {
+            svg path {
+                fill: $brand !important;
+            }
+        }
+    }
+}
+
+.map-container {
+    background: $white;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -50px;
+    z-index: 1;
+    width: 100%;
+
+    .map-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        filter: brightness(0.8);
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    .booking-card {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $white;
+        width: 90%;
+        // margin: 0 16px;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+
+        .input-box {
+            width: 100%;
+            padding: 12px;
+            box-shadow: 0 6px 5px rgba(0, 0, 0, 0.05);
+            background: $white;
+            display: block;
+            border-radius: $radius-md;
+        }
+
+        h2 {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-md;
+            color: $heading;
+            margin-left: 14px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .location-input {
+            display: flex;
+            background: $white;
+            border: 1px solid $border;
+            border-radius: $radius-xlg;
+            // padding: 8px 12px;
+
+            input {
+                flex-grow: 1;
+                border: none;
+                outline: none;
+                background: transparent;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-md;
+                color: $borderTxt;
+                padding: 15px 16px;
+            }
+
+            button {
+                padding: 10px 12px;
+                background: none;
+
+                .arrow-right-input {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+
+        .location-details {
+            margin: 16px;
+
+
+            .title-row {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .location-icon {
+                width: 11px;
+                height: 14px;
+
+            }
+
+            strong {
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-md;
+                color: $heading;
+            }
+
+            p {
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-base;
+                color: $borderTxt;
+                margin: 0;
+                margin-top: 4px;
+                margin-left: 15px;
+            }
+
+            a {
+                display: inline-block;
+                margin-top: 6px;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-base;
+                color: $link;
+                margin-left: 15px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .call-book {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $skyblue;
+            border-radius: $radius-xlg;
+            margin: 0 16px;
+            margin-bottom: 12px;
+            padding: 14px 12px 7px;
+
+            .left-content {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .title-row {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .icon {
+                display: flex;
+                font-size: 16px;
+                line-height: 1;
+                margin-top: 4px;
+            }
+
+            .call-icon {
+                background: none;
+                color: $link;
+            }
+
+            p {
+                margin: 0;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-base;
+                color: $borderTxt;
+            }
+
+            .call-info {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                margin-left: 20px;
+
+                strong {
+                    font-family: $font-primary-poppins;
+                    font-weight: $fw-semibold;
+                    font-size: $fs-md;
+                    color: $heading;
+                    margin: 0;
+                }
+
+                small {
+                    font-family: $font-primary-poppins;
+                    font-weight: $fw-semibold;
+                    font-size: $fs-md;
+                    color: $borderTxt;
+                    margin: 0;
+                }
+            }
+
+            .callme-btn {
+                padding: 10px 30px;
+                background: linear-gradient(90deg, #6787F3, $link);
+                color: $white;
+                border: none;
+                border-radius: $radius-lg;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-md;
+                color: $white;
+                cursor: pointer;
+                display: block;
+                margin: 0;
+            }
+        }
+
+    }
+}

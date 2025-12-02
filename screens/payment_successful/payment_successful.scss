@@ -1,0 +1,45 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* payment successful page */
+/* buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 80px;
+
+    .btn {
+        padding: 14px 16px;
+        border-radius: $radius-lg;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s ease;
+
+        &.help-btn {
+            background: $white;
+            border: 2px solid $link;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-lg;
+            color: $link;
+
+            &:hover {
+                background: $lightWhite;
+            }
+        }
+
+        &.booking-btn {
+            background: linear-gradient(90deg, #6787F3, $link);
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-lg;
+            color: $white;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}

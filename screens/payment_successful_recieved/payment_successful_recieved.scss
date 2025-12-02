@@ -1,0 +1,64 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* payment successful recieved page */
+/* recieve-payment-card */
+.recieve-payment-card {
+    position: relative;
+    margin: 0 16px;
+    border: none;
+    align-items: center;
+    padding: 20px 30px;
+    z-index: 999;
+    background: $white;
+    border-radius: $radius-paidbox;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+
+
+    h3 {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-bold;
+        font-size: $fs-lg;
+        color: $heading;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .ref-label {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $heading;
+        margin: 0;
+        margin-bottom: 3px;
+    }
+
+    .ref-number {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-lg;
+        color: $link;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .continue-btn {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(90deg, #6787F3, $link);
+        border: none;
+        border-radius: $radius-lg;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-lg;
+        color: $white;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .9;
+        }
+    }
+
+}

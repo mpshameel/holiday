@@ -1,0 +1,93 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* select payment mode */
+/* payment head */
+.ref-box {
+    // display: none;
+    display: flex;
+    background: $lightPeach;
+    padding: 10px 24px 10px 10px;
+    border-radius: $radius-xxlg;
+    position: relative;
+    width: auto;
+    margin: 0 16px;
+    margin-top: -10px;
+    margin-bottom: 36px;
+    z-index: 999;
+
+    .icon-img {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        margin-top: 4px;
+    }
+
+    .ref-content {
+        flex: 1;
+
+        .ref-title {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-lg;
+            color: $heading;
+            margin: 0;
+        }
+
+        .ref-message {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-regular;
+            font-size: $fs-base;
+            color: $heading;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+    }
+}
+
+.payment-head {
+    // background-color: #E36E55;
+    position: relative;
+    margin-bottom: 16px;
+    margin-top: -10px;
+    z-index: 999;
+}
+
+.timer-section {
+    width: 100%;
+
+    .session-timer {
+        padding: 12px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $borderTxt;
+
+        .time {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-md;
+            color: $priceColor;
+        }
+    }
+}
+
+.payment-box {
+    // background-color: #E36E55;
+    padding: 16px;
+    margin-bottom: 120px;
+    box-shadow:
+        0px 6px 12px -6px rgba(0, 0, 0, 0.15),
+        0px -6px 12px -6px rgba(0, 0, 0, 0.10);
+}
+
+.payment-title {
+    font-family: $font-primary-poppins;
+    font-weight: $fw-semibold;
+    font-size: $fs-lg;
+    color: $heading;
+    margin-bottom: 16px;
+}

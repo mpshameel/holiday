@@ -1,0 +1,504 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+
+/* search wrap */
+.search-wrap {
+    margin-top: 16px;
+
+    .search {
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        border: 1px solid $border;
+        border-radius: $radius-lg;
+        padding: 5px 0 5px 16px;
+
+        input {
+            border: none;
+            flex: 1;
+            background: transparent;
+            font-size: $fs-sm;
+            color: $border;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            outline: none;
+        }
+
+        button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+/* deals container */
+.deals-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-right: 16px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card {
+        flex: 0 0 auto;
+        width: 302px;
+        border-radius: $radius-xlg;
+        position: relative;
+        scroll-snap-align: start;
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                display: block;
+                border-top-left-radius: $radius-xlg;
+                border-top-right-radius: $radius-xlg;
+            }
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 16px;
+            width: 110px;
+            background: $badgebg;
+            color: $white;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            font-size: $fs-xs;
+            padding: 2px 4px;
+            border-radius: $radius-xsm;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .overlay-text {
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            color: $white;
+        }
+
+        .title {
+            font-family: $font-proxima-nova;
+            font-weight: $fw-regular;
+            font-size: $fs-lg;
+            color: $heading;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-family: $font-proxima-nova;
+            font-weight: $fw-xbold;
+            font-size: $fs-lg;
+            color: $subtitle;
+            margin: 0;
+        }
+
+        .info {
+            font-family: $font-segoeUI;
+            font-weight: $fw-medium;
+            font-size: $fs-xs;
+            color: $heading;
+            margin: 5px 0 0 0;
+        }
+
+        .price {
+            display: block;
+            font-family: $font-bebas-kai;
+            font-weight: $fw-regular;
+            font-size: $fs-price;
+            color: $priceColor;
+            margin: 0;
+        }
+
+        .promo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px dashed $card;
+            border-radius: $radius-xsm;
+            overflow: hidden;
+            background: $white;
+            height: 22px;
+            margin: 7px 12px;
+
+            .code {
+                font-family: $font-primary-poppins;
+                font-weight: $fw-medium;
+                font-size: $fs-base;
+                color: $codetxt;
+                padding: 3px 6px;
+                flex-shrink: 0;
+            }
+
+            .copy-container {
+                height: 22px;
+                background-color: $link;
+                color: $white;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-medium;
+                font-size: $fs-base;
+                display: flex;
+                padding: 3px 10px;
+                align-items: center;
+                justify-content: center;
+
+                .copy-text {
+                    margin-right: 6px;
+                }
+
+                .copy-icon {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+.divider {
+    padding: 16px 16px 16px 0;
+
+    .divider-line {
+        height: 1px;
+        background-color: $divider;
+        width: 100%;
+    }
+}
+
+/* experience */
+/* experience scroll */
+.experiences {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 8px 0;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .exp-item {
+        flex: 0 0 auto;
+        text-align: center;
+
+        p {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            font-size: $fs-xs;
+            color: $heading;
+            margin: 0;
+        }
+
+        .icon {
+            img {
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto 8px;
+            }
+        }
+    }
+}
+
+/* international container */
+.international-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    background-color: $white;
+    padding-bottom: 4px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .image-containerRounded {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            display: block;
+            border-radius: $radius-xlg;
+            height: 188px;
+            width: 205px;
+        }
+    }
+
+    .cardlabel {
+        background: $white;
+
+        p {
+            display: flex;
+            align-items: center;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-md;
+            overflow: hidden;
+            margin: 12px;
+        }
+    }
+
+    .price-overlay {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 8px 10px;
+        border-radius: $radius-lg;
+
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+        z-index: 2;
+
+        .price-left {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .amount {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-bold;
+            font-size: $fs-md;
+            color: $white;
+        }
+
+        .per {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-regular;
+            font-size: $fs-base;
+            color: $white;
+        }
+
+        .duration {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-xs;
+            color: $white;
+            padding: 4px 10px;
+            border-radius: $radius-md;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    .like-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        width: 36px;
+        height: 36px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+
+        transition: all 0.25s ease;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.08);
+        }
+
+        img {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .ribbon {
+        position: absolute;
+        top: -6px;
+        left: -8px;
+        background: $brand;
+        color: $white;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-medium;
+        font-size: $fs-xs;
+        padding: 0 12px 0 2px;
+        border-top-right-radius: $radius-md;
+        border-bottom-right-radius: $radius-md;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        z-index: 3;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .ribbon-icon {
+            width: 14px;
+            height: 14px;
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
+
+/* month picker */
+/* month-popup-overlay */
+.month-popup-overlay {
+    position: fixed;
+    top: 0;
+    background: $heading;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+
+    &.active {
+        display: flex;
+    }
+
+    .month-popup {
+        width: 350px;
+        background: $white;
+        border-radius: $radius-popup;
+        padding: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+        animation: popupFade 0.25s ease;
+
+        h3 {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-xl;
+            color: $heading;
+            padding-bottom: 16px;
+        }
+
+
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 12px;
+
+            .side-image {
+                width: 18px;
+                height: 18px;
+                object-fit: contain;
+                background: transparent;
+                display: block;
+                margin-bottom: 16px;
+            }
+
+
+
+            .popup-year {
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $heading;
+            }
+        }
+
+        .month-grid {
+            display: grid;
+            gap: 10px 8px;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 12px 28px 20px 28px;
+            border-top: 1px dashed $dividerCity;
+            border-bottom: 1px dashed $dividerCity;
+
+            button {
+                background: transparent;
+                border: none;
+                color: $heading;
+                cursor: pointer;
+                padding: 8px 10px;
+                border-radius: 0;
+                box-shadow: none;
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+
+                &:hover,
+                &.active {
+                    color: $brand;
+                }
+            }
+        }
+
+        .anytime-btn {
+            background: $brand;
+            color: $white;
+            border: none;
+            margin-top: 10px;
+            padding: 8px 10px;
+            border-radius: $radius-md;
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-medium;
+            cursor: pointer;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: $brand;
+            }
+        }
+    }
+}
+
+@keyframes popupFade {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,14 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+
+/* review itinerary page */
+/* review content */
+
+.review-itinerary-content {
+    position: relative;
+    margin-bottom: 120px;
+    margin-top: -30px;
+    z-index: 999;
+}

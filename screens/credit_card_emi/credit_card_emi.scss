@@ -1,0 +1,173 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* credit card emi */
+/* creditcard-emi-content */
+.creditcard-emi-content {
+    // background-color: #E36E55;
+    position: relative;
+    margin-bottom: 120px;
+    margin-top: -30px;
+    padding-top: 10px;
+    z-index: 999;
+}
+
+/* credit table drawer */
+.credit-drawer {
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    background: $white;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+    padding: 12px 16px 20px 16px;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    // height: 70vh;
+    // height: 100%;
+    margin: 0 0;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+        bottom: 0;
+    }
+
+    .drag-bar {
+        width: 90px;
+        height: 3px;
+        background: $dragbar;
+        border-radius: $radius-base;
+        margin: 0 auto 16px auto;
+    }
+
+    h3 {
+        text-align: center;
+        font-family: $font-primary-poppins;
+        font-size: $fs-xl;
+        font-weight: $fw-semibold;
+        color: $heading;
+        margin-bottom: 18px;
+    }
+
+}
+
+.overlay-credit {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    transition: opacity 0.3s ease;
+    z-index: 9998;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+}
+
+.emi-table {
+    border-collapse: collapse;
+    margin: 0;
+    margin-bottom: 20px;
+    border: 1px solid $borderOuter;
+
+    th {
+        padding: 12px 0;
+        text-align: center;
+        font-family: $font-primary-poppins;
+        font-size: $fs-base;
+        font-weight: $fw-semibold;
+        color: $heading;
+    }
+
+    td {
+        padding: 12px 0;
+        text-align: center;
+        font-family: $font-primary-poppins;
+        font-size: $fs-base;
+        font-weight: $fw-regular;
+        color: $heading;
+    }
+
+    thead {
+        background: $lightWhite;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid $borderOuter;
+    }
+
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+        padding: 0 18px;
+
+        .custom-radio {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+
+            input[type='radio'] {
+                display: none;
+            }
+
+            .radio-check {
+                width: 18px;
+                height: 18px;
+                border: 2px solid $borderGrey;
+                border-radius: 50%;
+                position: relative;
+                transition: all 0.2s ease;
+            }
+
+            input[type='radio']:checked+.radio-check {
+                border-color: $brand;
+            }
+
+            input[type='radio']:checked+.radio-check::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 10px;
+                height: 10px;
+                background-color: $brand;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.emi-table tbody td {
+    border-right: 1px solid #eee;
+}
+
+.emi-table tbody td:last-child {
+    border-right: none;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 14px 36px 13px 36px;
+    background: linear-gradient(90deg, #6787F3, $link);
+    border: none;
+    border-radius: $radius-lg;
+    font-family: $font-primary-poppins;
+    font-weight: $fw-semibold;
+    font-size: $fs-lg;
+    color: $white;
+    cursor: pointer;
+}

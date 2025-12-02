@@ -1,0 +1,218 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* important info page */
+.important-info-page {
+    position: relative;
+    width: 100%;
+    background: $brand;
+    overflow: hidden;
+
+    .appbar-container {
+        position: relative;
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+        background: $brand;
+
+        .appbar-row {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9;
+            flex: 1;
+
+            h2 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $white;
+                text-align: center;
+            }
+
+            .icon-btn {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 50;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                font-size: 16px;
+                background: none;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                .back-btn {
+                    display: block;
+                    width: 10px;
+                    height: 15px;
+                    background: transparent;
+                    object-fit: contain;
+                }
+
+            }
+
+        }
+
+        .svgbox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 71px;
+            z-index: 3;
+
+            svg {
+                width: 100%;
+                height: 71px;
+                display: block;
+            }
+        }
+    }
+}
+
+.scrolltab-box {
+    position: relative;
+    margin-top: -30px;
+    margin-bottom: 120px;
+    z-index: 999;
+    position: sticky;
+}
+
+.tab-scroll-content {
+    // height: calc(100vh - 220px);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    height: 100%;
+
+    .day-card {
+        overflow: hidden;
+        border-radius: $radius-xlg;
+        margin-top: 16px;
+        border: 1px solid $skyblueBorder;
+
+        .day-header {
+            background: $skyblue;
+            padding: 14px 12px;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-md;
+            color: $heading;
+            border-bottom: 1px solid $skyblueBorder;
+        }
+
+        .day-body {
+            margin: 12px 36px 12px 12px;
+            position: relative;
+            background: $white;
+
+            .info-card {
+                ul.info-list {
+                    list-style-type: disc;
+                    padding-left: 24px;
+
+                    li {
+                        font-family: $font-primary-poppins;
+                        font-weight: $fw-regular;
+                        font-size: $fs-md;
+                        color: $borderTxt;
+                        margin-bottom: 4px;
+                    }
+
+                    li::marker {
+                        color: $heading;
+                        font-size: $fs-lg;
+                    }
+                }
+
+                .note-section {
+                    margin-top: 10px;
+
+                    .note-title {
+                        font-family: $font-primary-poppins;
+                        font-weight: $fw-semibold;
+                        font-size: $fs-base;
+                        color: $heading;
+                        margin: 0;
+                    }
+
+                    .note-text {
+                        font-family: $font-primary-poppins;
+                        font-weight: $fw-regular;
+                        font-size: $fs-base;
+                        color: $borderTxt;
+                        margin: 0;
+                    }
+                }
+
+                p {
+                    font-family: $font-primary-poppins;
+                    font-weight: $fw-regular;
+                    font-size: $fs-md;
+                    color: $borderTxt;
+                }
+            }
+
+        }
+
+        .payment-table {
+            display: flex;
+            flex-direction: column;
+
+            .payment-row {
+                display: flex;
+                align-items: stretch;
+                border-bottom: 1px solid $skyblueBorder;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .col-left,
+                .col-right {
+                    flex: 1;
+                    padding: 8px 12px;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                    justify-content: flex-start;
+                    font-family: $font-primary-poppins;
+                    font-weight: $fw-regular;
+                    font-size: $fs-base;
+                    color: $borderTxt;
+                }
+
+                .col-left {
+                    border-right: 1px solid $skyblueBorder;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    text-align: left;
+                }
+
+                &.heading {
+
+                    .col-left,
+                    .col-right {
+                        padding-top: 12px;
+                        font-family: $font-primary-poppins;
+                        font-weight: $fw-semibold;
+                        font-size: $fs-base;
+                        color: $heading;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Explore — Detail</title>
+    <link rel="stylesheet" href="../../css/detail_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <main class="wrap">
+        <div class="detail-page">
+            <!-- Carousel Section -->
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="../../assets/images/list1.png" alt="Image 1">
+                    <img src="../../assets/images/international1.png" alt="Image 2">
+                    <img src="../../assets/images/international2.png" alt="Image 3">
+                    <img src="../../assets/images/deal1.png" alt="Image 4">
+                </div>
+
+                <div class="appbar">
+                    <div class="appbar-row">
+                        <button class="icon-btn back-btn">
+                            <img src="../../assets/icons/backbutton.svg" alt="Back" />
+                        </button>
+                        <button class="icon-btn share-btn">
+                            <img src="../../assets/icons/share.svg" alt="Share" />
+                        </button>
+                    </div>
+                </div>
+
+                <div class="svgbox">
+                    <svg viewBox="0 0 800 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <path d="M 0 0 Q 0 50 100 50 C 700 50 100 50 700 50 C 800 50 800 100 800 100 L 0 100 L 0 0 "
+                            fill="#fff" />
+                    </svg>
+                </div>
+
+                <!-- Dots -->
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="trip-card">
+                <div class="trip-info-row">
+                    <div class="trip-info-left">
+                        <div class="trip-header">
+                            <h2>Washington New York and Boston</h2>
+                        </div>
+                        <p class="trip-subtitle">6 Nights & 7 Days | 1 Country & 3 Cities</p>
+                    </div>
+
+                    <div class="download-icon">
+                        <img src="../../assets/icons/download.svg" alt="Map" class="map-icon" />
+                    </div>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="location">
+                    <img src="../../assets/icons/location.png" alt="location" />
+                    <p>Washington, D.C. (2N) → New York City (3N) → Boston (1N)</p>
+                </div>
+
+                <div class="tags">
+                    <span>Family</span>
+                    <span>Honeymoon</span>
+                    <span>Coach Tour</span>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="trip-summary-card link-border">
+                    <div class="box-row">
+                        <div class="trip-summary-row top-row">
+                            <div class="trip-summary-col">
+                                <p class="label">From City</p>
+                                <p class="value">Washington, D.C.<br><span>(Land Only)</span></p>
+                            </div>
+                            <div class="vertical-divider-line"></div>
+                            <div class="trip-summary-col right">
+                                <p class="label">Tour Date</p>
+                                <p class="value">31 Aug 2022 Wednesday</p>
+                            </div>
+                        </div>
+                        <div class="divider-line"></div>
+
+                        <div class="trip-summary-row bottom-row">
+                            <div class="trip-summary-col">
+                                <p class="label">Rooms & Guests</p>
+                                <p class="value">1 Room, 2 Guests</p>
+                            </div>
+                            <div class="vertical-divider-line"></div>
+                            <div class="trip-summary-col right">
+                                <p class="label">Price Category</p>
+                                <p class="value">Standard</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../../assets/icons/edit.svg" alt="Edit" class="edit-icon" />
+                </div>
+            </div>
+
+            <div class="tab-card">
+                <div class="tab-container">
+                    <div class="tab-bar">
+                        <button class="tab-btn active" data-tab="tab1">Overview</button>
+                        <button class="tab-btn" data-tab="tab2">Itinerary</button>
+                        <button class="tab-btn" data-tab="tab3">Accommodation</button>
+                    </div>
+                </div>
+
+                <div class="tab-content">
+                    <div class="overview-container tab-pane" id="tab1">
+                        <div class="day-card">
+                            <div class="day-header">Day <span>1</span></div>
+                            <div class="day-body">
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">MORNING</p>
+                                        <p class="description">Arrival and transfer to the hotel. Check in</p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">NOON</p>
+                                        <p class="description">Evening transfer to Georgetown</p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">EVENING</p>
+                                        <p class="description">Overnight stay</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-card">
+                            <div class="day-header">Day <span>2</span></div>
+                            <div class="day-body">
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">MORNING</p>
+                                        <p class="description">Tour of Washington D.C.</p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">NOON TO EVENING</p>
+                                        <p class="description">Boat trip on the River Potomac. After the trip, we return
+                                            to
+                                            the hotel. Optional tour of Washington by Night (optional)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-card">
+                            <div class="day-header">Day <span>3</span></div>
+                            <div class="day-body">
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">MORNING</p>
+                                        <p class="description">Washington - Lancaster (see the typical Amish farms)
+                                            Technical stop at Kitchen Kettle Village.</p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">NOON</p>
+                                        <p class="description">Departure for Philadelphia. (stop is the Art Museum and
+                                            chance to see this beautiful museum, ) pay a visit to the Independence
+                                            National
+                                            Historical Park Free time to observe the famous “Liberty Bell”. Departure
+                                            for
+                                            New York.</p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">EVENING</p>
+                                        <p class="description">Arrival at New York. Overnight stay</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-card">
+                            <div class="day-header">Day <span>4</span></div>
+                            <div class="day-body">
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">MORNING</p>
+                                        <p class="description">Sightseeing tour of New York</p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">NOON</p>
+                                        <p class="description">Option of taking a boat trip around Manhattan (Optional)
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">EVENING</p>
+                                        <p class="description">Return transfer to hotel (for those travellers who want
+                                            to
+                                            return there). Transfer to Times Square in Manhattan, Return to the hotel.
+                                            Overnight stay</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-card">
+                            <div class="day-header">Day <span>5</span></div>
+                            <div class="day-body">
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">MORNING</p>
+                                        <p class="description">Free day. Travellers who wish to do so can go on an
+                                            optional
+                                            Contrasts of New York Tour, Day at Leisure Overnight stay</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-card">
+                            <div class="day-header">Day <span>6</span></div>
+                            <div class="day-body">
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">MORNING</p>
+                                        <p class="description">New York - Boston</p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">NOON</p>
+                                        <p class="description">Arrive Boston Comprehensive tour of Boston</p>
+                                    </div>
+                                </div>
+
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">EVENING</p>
+                                        <p class="description">Free time (2 hours) at Quincy Market. Departure for the
+                                            hotel. Overnight stay</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-card">
+                            <div class="day-header">Day <span>7</span></div>
+                            <div class="day-body">
+                                <div class="itinerary-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="itinerary-text">
+                                        <p class="time-label">MORNING</p>
+                                        <p class="description">After breakfast, end of our services.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="itinerary-container tab-pane" id="tab2">
+                        <div class="day-image-card">
+                            <div class="day-image-container">
+                                <img src="../../assets/images/deal1.png" alt="Washington, D.C." />
+                                <div class="day-overlay">
+                                    <div class="day-title">Day <span>1 - </span>Washington, D.C.</div>
+                                </div>
+                            </div>
+                            <div class="day-description">
+                                <p>
+                                    Arrival and transfer to the hotel. In the afternoon, we include an evening transfer
+                                    to Georgetown, the city’s busiest district full of bars and restaurants.
+                                    Accommodation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="day-image-card">
+                            <div class="day-image-container">
+                                <img src="../../assets/images/deal2.png" alt="Washington, D.C." />
+                                <div class="day-overlay">
+                                    <div class="day-title">Day <span>2 - </span>Washington, D.C.</div>
+                                </div>
+                            </div>
+                            <div class="day-description">
+                                <p>
+                                    After breakfast we take a tour of the city. First, we take a walk around the
+                                    Pentagon and then pay a visit to Arlington Cemetery, the JFK Memorial and the Iwo
+                                    Jima Memorial. We then stop at the Lincoln, Korea and Vietnam Memorials and a stop
+                                    at the White House to take a photo. Then we take a stroll around the Capitol. In the
+                                    afternoon, we go on a boat trip on the River Potomac to see some of the main
+                                    landmarks of the city. After the trip, we return to the hotel. In the evening, we
+                                    take an optional tour of Washington by night and then return to our accommodation.
+                                    Note: due to the weather conditions, the Potomac River boat does not operate from
+                                    October to March.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="day-image-card">
+                            <div class="day-image-container">
+                                <img src="../../assets/images/international1.png" alt="Washington, D.C." />
+                                <div class="day-overlay">
+                                    <div class="day-title">Day <span>3 - </span>New York City</div>
+                                </div>
+                            </div>
+                            <div class="day-description">
+                                <p>
+                                    Breakfast and departure from Washington for LANCASTER, where we will see the typical
+                                    farms of the Amish and their 18th-century lifestyle. We will then go on to
+                                    PHILADELPHIA. Arrival and stop for a walk in the famous National Independence Park
+                                    with the famous Liberty Bell, then free time for a coffee before going on to NEW
+                                    YORK. Arrival in the evening.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="day-image-card">
+                            <div class="day-image-container">
+                                <img src="../../assets/images/international2.png" alt="Washington, D.C." />
+                                <div class="day-overlay">
+                                    <div class="day-title">Day <span>4 - </span>New York City</div>
+                                </div>
+                            </div>
+                            <div class="day-description">
+                                <p>
+                                    After breakfast, a panoramic tour of the city seeing higher, middle and lower
+                                    Manhattan. We will visit Wall Street, Rockefeller Center, St Patrick’s Cathedral,
+                                    Central Park, Columbus Circle, the AOL/ Time Warner Building, the famous Village,
+                                    Little Italy and Battery Park (with the Statue of Liberty). There will be an
+                                    optional boat trip around Manhattan. In the evening, we include a transfer to Times
+                                    Square, the real heart of the city, with Broadway’s musicals and its spectacular
+                                    lights.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="day-image-card">
+                            <div class="day-image-container">
+                                <img src="../../assets/images/domestic1.png" alt="Washington, D.C." />
+                                <div class="day-overlay">
+                                    <div class="day-title">Day <span>5 - </span>New York City</div>
+                                </div>
+                            </div>
+                            <div class="day-description">
+                                <p>
+                                    After breakfast, free day in the Big Apple with an optional contrasts tour to see
+                                    the main attractions of each of New York’s great districts: Bronx, Harlem, Queens,
+                                    Brooklyn. Afternoon free.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="day-image-card">
+                            <div class="day-image-container">
+                                <img src="../../assets/images/domestic2.png" alt="Washington, D.C." />
+                                <div class="day-overlay">
+                                    <div class="day-title">Day <span>6 - </span>Boston</div>
+                                </div>
+                            </div>
+                            <div class="day-description">
+                                <p>
+                                    After breakfast, we leave for BOSTON, Massachusetts. Arrival at midday and panoramic
+                                    tour of the city which was key in the Independence of the United States. We will
+                                    visit Beacon Hill, Harvard University, the gardens of Boston Common, Trinity Church
+                                    and we will end up at Quincy Market, a busy area by the docks, full of shops and
+                                    restaurants, where we will have free time before going back to the hotel and our
+                                    accommodation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="day-image-card">
+                            <div class="day-image-container">
+                                <img src="../../assets/images/list1.png" alt="Washington, D.C." />
+                                <div class="day-overlay">
+                                    <div class="day-title">Day <span>7 - </span>Boston</div>
+                                </div>
+                            </div>
+                            <div class="day-description">
+                                <p>
+                                    After breakfast, end of our services.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accomodation-container tab-pane" id="tab3">
+                        <div class="accomodation-card">
+                            <div class="hotel-header" onclick="toggleHotelCard(this)">
+                                <div class="hotel-title">
+                                    <span class="hotel-type">Standard :</span>
+                                    <div class="hotel-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+
+                            <div class="hotel-content-container">
+                                <div class="hotel-content">
+                                    <div class="hotel-image">
+                                        <img src="../../assets/images/domestic1.png" alt="Hotel" />
+                                        <p class="hotel-name">WASHINGTON - METRO POINTS HOTEL WAS OR SIMILAR</p>
+                                    </div>
+                                </div>
+
+                                <div class="hotel-content">
+                                    <div class="hotel-image">
+                                        <img src="../../assets/images/domestic2.png" alt="Hotel" />
+                                        <p class="hotel-name">WASHINGTON - METRO POINTS HOTEL WAS OR SIMILAR</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accomodation-card">
+                            <div class="hotel-header" onclick="toggleHotelCard(this)">
+                                <div class="hotel-title">
+                                    <span class="hotel-type">Deluxe :</span>
+                                    <div class="hotel-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+
+                            <div class="hotel-content-container">
+                                <div class="hotel-content">
+                                    <div class="hotel-image">
+                                        <img src="../../assets/images/deal1.png" alt="Hotel" />
+                                        <p class="hotel-name">WASHINGTON - METRO POINTS HOTEL WAS OR SIMILAR</p>
+                                    </div>
+                                </div>
+
+                                <div class="hotel-content">
+                                    <div class="hotel-image">
+                                        <img src="../../assets/images/deal2.png" alt="Hotel" />
+                                        <p class="hotel-name">WASHINGTON - METRO POINTS HOTEL WAS OR SIMILAR</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="important-info">
+                <h2 class="section-title">Important Information</h2>
+                <div class="info-card">
+                    <div class="info-item"
+                        onclick="window.location.href='../important_information/important_information.html'">
+                        <span>Inclusions</span>
+                        <img src="../../assets/icons/arrow-right.png" alt=">" class="arrow-icon" />
+                    </div>
+                    <div class="info-item"
+                        onclick="window.location.href='../important_information/important_information.html'">
+                        <span>Exclusions</span>
+                        <img src="../../assets/icons/arrow-right.png" alt=">" class="arrow-icon" />
+                    </div>
+                    <div class="info-item"
+                        onclick="window.location.href='../important_information/important_information.html'">
+                        <span>Cancellation Policy</span>
+                        <img src="../../assets/icons/arrow-right.png" alt=">" class="arrow-icon" />
+                    </div>
+                    <div class="info-item"
+                        onclick="window.location.href='../important_information/important_information.html'">
+                        <span>Payment Policy</span>
+                        <img src="../../assets/icons/arrow-right.png" alt=">" class="arrow-icon" />
+                    </div>
+                    <div class="info-item"
+                        onclick="window.location.href='../important_information/important_information.html'">
+                        <span>Terms and Conditions</span>
+                        <img src="../../assets/icons/arrow-right.png" alt=">" class="arrow-icon" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="promo-section">
+                <h2 class="promo-title">Promo Code</h2>
+
+                <div class="promo-box">
+                    <div class="promo-input-row">
+                        <div class="promo-input">
+                            <label for="promo">Enter Promo Code</label>
+                            <input type="text" id="promo" value="ATHDC" required />
+                            <img src="../../assets/icons/remove.png" alt="Clear" class="clear-icon" />
+                        </div>
+
+                        <a href="#" class="offers-link">3+ Offers</a>
+                    </div>
+
+                    <div class="promo-saved">
+                        <i class="fa-solid fa-check check-icon"></i>
+                        <span>You saved <strong>₹6,590</strong> with this offer</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="help-box">
+                <h3>Help & Support</h3>
+                <div class="divider-line"></div>
+                <div class="support-item">
+                    <div class="icon call-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="support-text">
+                        <p class="label">Call Us on</p>
+                        <p class="value">+91 8108659695</p>
+                    </div>
+                </div>
+                <div class="support-item">
+                    <div class="icon time-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="support-text">
+                        <p class="label">Timing</p>
+                        <p class="value">10am to 7pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay background shade -->
+            <div class="overlay" id="overlay"></div>
+        </div>
+
+        <!-- Help Button -->
+        <div class="help-fab-box">
+            <div class="help-fab">
+                <span class="help-q">?</span>
+            </div>
+        </div>
+
+        <!-- Bottom Nav Bar -->
+        <div class="bottom-bar">
+            <div class="left-section">
+                <div class="guest-info">
+                    <p class="guest-count">02 Guests</p>
+                    <div class="price-row">
+                        <span class="price"><span class="rupee">₹</span>3,24,654</span>
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                    <div class="deal-applied">
+                        <img src="../../assets/icons/percentage.png" alt="discount" />
+                        <span>Deal Applied</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <button class="continue-btn"
+                    onclick="window.location.href='../traveller_details/traveller_details.html'">CONTINUE</button>
+            </div>
+        </div>
+
+        <!-- Fare Summary Drawer -->
+        <div class="fare-summary">
+            <div class="drag-bar"></div>
+            <h3>Fare Summary</h3>
+            <div class="divider-line"></div>
+            <div class="summary-item item-package">
+                <div class="summary-left">
+                    <p class="label">Package Cost</p>
+                    <p class="sub">Room: 1, Guest: 2</p>
+                </div>
+                <p class="value"><span class="currency">₹</span>294,470</p>
+            </div>
+
+            <div class="summary-item item-gst">
+                <p class="label">GST (5%)</p>
+                <p class="value"><span class="currency">₹</span>14,724</p>
+            </div>
+            <div class="divider-line"></div>
+
+            <div class="summary-item item-total">
+                <p class="label">Total Amount</p>
+                <p class="value"><span class="currency">₹</span>309,194</p>
+            </div>
+
+            <div class="summary-item item-tcs">
+                <p class="label">
+                    TCS (5%) <span class="claim">Claimable <img src="../../assets/icons/info.png" alt="info"
+                            class="dropdown-icon" /></span>
+                </p>
+                <p class="value"><span class="currency">₹</span>15,460</p>
+            </div>
+            <div class="divider-line"></div>
+
+            <div class="summary-item grand">
+                <p class="label">Grand Total</p>
+                <p class="value"><span class="currency">₹</span>324,654</p>
+            </div>
+        </div>
+
+        <!-- Contact Overlay -->
+        <div class="contact-overlay">
+            <div class="contact-popup">
+                <div class="action-item" onclick="window.location.href='../book_appointment/book_appointment.html'">
+                    <span>Book appointment</span>
+                    <div class="icon calender"><i class="fa-regular fa-calendar-days"></i></div>
+                </div>
+
+                <div class="action-item">
+                    <span>WhatsApp chat</span>
+                    <div class="icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+                </div>
+
+                <div class="action-item" id="callBackBtn">
+                    <span>Get a call back</span>
+                    <div class="icon phone"><i class="fa-solid fa-phone"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PromoCode Popup -->
+        <div class="promo-drawer" id="promoDrawer">
+            <div class="drag-bar"></div>
+            <h3>Promo Code</h3>
+
+            <div class="promo-input">
+                <input type="text" placeholder="Promo Code" />
+                <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="promo-list">
+                <div class="promo-card">
+                    <div class="promo-top">
+                        <div class="promo-left">
+                            <img src="../../assets/icons/percentage.png" alt="bank" />
+                            <div>
+                                <p class="promo-desc">Applicable on HDFC Bank Credit/Debit Cards,</p>
+                                <p class="promo-off">Flat Off <span>₹200</span></p>
+                            </div>
+                        </div>
+                        <div class="promo-right">
+                            <label for="promo">Coupon Code</label>
+                            <input type="text" id="promo" value="ATHDC" required />
+                        </div>
+
+                    </div>
+                    <div class="divider-line"></div>
+
+                    <div class="bottom-row">
+                        <a href="#" class="terms">Terms & Conditions</a>
+                        <button class="apply-btn">Apply</button>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-top">
+                        <div class="promo-left">
+                            <img src="../../assets/icons/percentage.png" alt="bank" />
+                            <div>
+                                <p class="promo-desc">Applicable on HDFC Bank Credit/Debit Cards,</p>
+                                <p class="promo-off">Flat Off <span>₹200</span></p>
+                            </div>
+                        </div>
+                        <div class="promo-right">
+                            <label for="promo">Coupon Code</label>
+                            <input type="text" id="promo" value="ATHDC" required />
+                        </div>
+
+                    </div>
+                    <div class="divider-line"></div>
+
+                    <div class="bottom-row">
+                        <a href="#" class="terms">Terms & Conditions</a>
+                        <button class="apply-btn">Apply</button>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-top">
+                        <div class="promo-left">
+                            <img src="../../assets/icons/percentage.png" alt="bank" />
+                            <div>
+                                <p class="promo-desc">Applicable on HDFC Bank Credit/Debit Cards,</p>
+                                <p class="promo-off">Flat Off <span>₹200</span></p>
+                            </div>
+                        </div>
+                        <div class="promo-right">
+                            <label for="promo">Coupon Code</label>
+                            <input type="text" id="promo" value="ATHDC" required />
+                        </div>
+
+                    </div>
+                    <div class="divider-line"></div>
+
+                    <div class="bottom-row">
+                        <a href="#" class="terms">Terms & Conditions</a>
+                        <button class="apply-btn">Apply</button>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-top">
+                        <div class="promo-left">
+                            <img src="../../assets/icons/percentage.png" alt="bank" />
+                            <div>
+                                <p class="promo-desc">Applicable on HDFC Bank Credit/Debit Cards,</p>
+                                <p class="promo-off">Flat Off <span>₹200</span></p>
+                            </div>
+                        </div>
+                        <div class="promo-right">
+                            <label for="promo">Coupon Code</label>
+                            <input type="text" id="promo" value="ATHDC" required />
+                        </div>
+
+                    </div>
+                    <div class="divider-line"></div>
+
+                    <div class="bottom-row">
+                        <a href="#" class="terms">Terms & Conditions</a>
+                        <button class="apply-btn">Apply</button>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-top">
+                        <div class="promo-left">
+                            <img src="../../assets/icons/percentage.png" alt="bank" />
+                            <div>
+                                <p class="promo-desc">Applicable on HDFC Bank Credit/Debit Cards,</p>
+                                <p class="promo-off">Flat Off <span>₹200</span></p>
+                            </div>
+                        </div>
+                        <div class="promo-right">
+                            <label for="promo">Coupon Code</label>
+                            <input type="text" id="promo" value="ATHDC" required />
+                        </div>
+
+                    </div>
+                    <div class="divider-line"></div>
+
+                    <div class="bottom-row">
+                        <a href="#" class="terms">Terms & Conditions</a>
+                        <button class="apply-btn">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Calender Overlay -->
+        <div class="calender-overlay">
+            <div class="calender-popup">
+                <div class="drag-bar"></div>
+                <h3>Starting On</h3>
+
+                <div class="cal-date" id="currentDate">31 Aug <span>Fri, 2022</span></div>
+
+                <div class="divider-line"></div>
+
+                <div class="cal-weekdays">
+                    <div class="selected">Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+
+                <div class="cal-days-wrapper" id="monthsWrapper">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- search popup -->
+        <div id="searchPopup" class="search-dialog">
+            <div class="bottom-search-content">
+                <div class="search-top">
+                    <div class="drag-bar"></div>
+                    <div class="search-row">
+                        <div class="icon-btn">
+                            <img src="./assets/icons/backbuttonPng.png" alt="back" />
+                        </div>
+                        <div class="search-popupwrap">
+                            <label class="search-label" for="search-input">Where do you want to go?</label>
+                            <input type="search" placeholder="Enter City, State, Country Or Theme" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="city-scroll">
+                    <div class="search-city-body">
+                        <h4 class="section-title">
+                            <img src="./assets/icons/star.svg" alt="star" />
+                            Popular City
+                        </h4>
+                    </div>
+
+                    <ul class="city-list">
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Paris</p>
+                                    <p class="country-name">France</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/france.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">New York</p>
+                                    <p class="country-name">USA</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/united-states-of-america.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">London</p>
+                                    <p class="country-name">England</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/england.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Bangkok</p>
+                                    <p class="country-name">Thailand</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/thailand.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Hong Kong</p>
+                                    <p class="country-name">China</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/china.svg" alt="France" class="flag" />
+                        </li>
+                    </ul>
+                    <div class="divider-line-dotted"></div>
+
+                    <div class="search-city-body">
+                        <h4 class="section-title">
+                            <img src="./assets/icons/star.svg" alt="star" />
+                            Popular Country
+                        </h4>
+                    </div>
+
+                    <ul class="city-list">
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Paris</p>
+                                    <p class="country-name">France</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/france.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">New York</p>
+                                    <p class="country-name">USA</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/united-states-of-america.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">London</p>
+                                    <p class="country-name">England</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/england.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Bangkok</p>
+                                    <p class="country-name">Thailand</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/thailand.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Hong Kong</p>
+                                    <p class="country-name">China</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/china.svg" alt="France" class="flag" />
+                        </li>
+                    </ul>
+
+                    <div class="search-city-body">
+                        <h4 class="section-title">
+                            <img src="./assets/icons/star.svg" alt="star" />
+                            Popular Country
+                        </h4>
+                    </div>
+
+                    <ul class="city-list">
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Paris</p>
+                                    <p class="country-name">France</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/france.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">New York</p>
+                                    <p class="country-name">USA</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/united-states-of-america.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">London</p>
+                                    <p class="country-name">England</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/england.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Bangkok</p>
+                                    <p class="country-name">Thailand</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/thailand.svg" alt="France" class="flag" />
+                        </li>
+                        <li class="city-item">
+                            <div class="left-section">
+                                <img src="./assets/icons/location.svg" alt="Location" class="location-icon" />
+                                <div class="city-info">
+                                    <p class="city-name">Hong Kong</p>
+                                    <p class="country-name">China</p>
+                                </div>
+                            </div>
+                            <img src="./assets/icons/flags/china.svg" alt="France" class="flag" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Popup -->
+        <div id="downloadPopup" class="download-popup-overlay">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h2>Download Package</h2>
+                    <span id="closePopup" class="close-btn">&times;</span>
+                </div>
+
+                <form class="download-form">
+                    <div class="modify-input-group">
+                        <div class="left-column">
+                            <label class="search-label" for="name">Name</label>
+                            <input type="text" id="destination" placeholder="Dinesh Kumar" />
+                        </div>
+                    </div>
+
+                    <div class="modify-input-group">
+                        <div class="left-column">
+                            <label class="search-label" for="email">Email Id</label>
+                            <input type="text" id="destination" placeholder="Dinesh.rampal@kellton.com" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="modify-input-group country-code">
+                            <div class="left-column">
+                                <label class="search-label" for="code">Country Code</label>
+                                <div class="country-input-row">
+                                    <img src="../../assets/icons/indianFlag.png" alt="India" class="flag-icon" />
+                                    <h2>(+91)</h2>
+                                    <img src="../../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modify-input-group">
+                            <div class="left-column">
+                                <label class="search-label" for="mobile">Mobile Number</label>
+                                <input type="tel" id="mobile" placeholder=" " value="9876543210" required />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="divider-line"></div>
+                <button class="search-btn">SUBMIT</button>
+            </div>
+        </div>
+
+        <!-- Modify search drawer -->
+        <div id="detailSearchDrawer" class="modify-search">
+            <div class="drawer-content">
+
+                <h3 class="drawer-title">Modify Search</h3>
+
+                <div class="modify-input-group from-city-group">
+                    <label class="search-label" for="from">From CIty</label>
+                    <input type="text" id="destination" placeholder="New York" readonly />
+
+                    <div class="from-city-dropdown">
+                        <div class="city-item">New York</div>
+                    </div>
+                </div>
+
+                <div class="modify-input-group calender-open">
+                    <label class="search-label" for="month">Starting on</label>
+                    <div class="custom-display-input" id="monthDisplay">
+                        <span class="month-part">31 Aug</span>
+                        <span class="year-part">Wed, 2022</span>
+                    </div>
+                </div>
+
+                <div class="modify-input-group rooms-open">
+                    <label class="search-label" for="month">Starting on</label>
+                    <div class="custom-display-input" id="monthDisplay">
+                        <span class="month-part">1</span>
+                        <span class="submonth-part">Room</span>
+                        <span class="month-part">2</span>
+                        <span class="submonth-part">Guests</span>
+                    </div>
+                </div>
+
+                <div class="modify-input-group price-group">
+                    <label class="search-label" for="from">Price Category</label>
+                    <div class="type-row price-select">
+                        <span class="month-part price-selected">Standard</span>
+                        <img src="../../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
+                    </div>
+
+                    <div class="price-dropdown">
+                        <div class="price-item">Standard</div>
+                        <div class="price-item">Deluxe</div>
+                    </div>
+                </div>
+
+                <button class="search-btn">SEARCH</button>
+                <div class="drag-bar"></div>
+            </div>
+        </div>
+
+        <!-- Callback Popup -->
+        <div id="callBackPopup" class="download-popup-overlay">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h2>Our expert will get in touch with you shortly</h2>
+                    <span id="closeCallbackPopup" class="close-btn">&times;</span>
+                </div>
+                <h4>Washington New York and Boston</h4>
+                <div class="divider-line"></div>
+
+                <form class="download-form">
+                    <div class="modify-input-group">
+                        <div class="left-column">
+                            <label class="search-label" for="name">Name</label>
+                            <input type="text" id="destination" placeholder="Dinesh Kumar" />
+                        </div>
+                    </div>
+
+                    <div class="modify-input-group">
+                        <div class="left-column">
+                            <label class="search-label" for="email">Email Id</label>
+                            <input type="text" id="destination" placeholder="Dinesh.rampal@kellton.com" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="modify-input-group country-code">
+                            <div class="left-column">
+                                <label class="search-label" for="code">Country Code</label>
+                                <div class="country-input-row">
+                                    <img src="../../assets/icons/indianFlag.png" alt="India" class="flag-icon" />
+                                    <h2>(+91)</h2>
+                                    <img src="../../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modify-input-group">
+                            <div class="left-column">
+                                <label class="search-label" for="mobile">Mobile Number</label>
+                                <input type="tel" id="mobile" placeholder=" " value="9876543210" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modify-input-group">
+                        <div class="left-column">
+                            <label class="search-label" for="name">Departure City</label>
+                            <input type="text" id="destination" placeholder="New Delhi" />
+                        </div>
+                    </div>
+
+                    <div class="modify-input-group calender-open">
+                        <div class="left-column">
+                            <label class="search-label" for="month">Travel Date</label>
+                            <div class="custom-display-input" id="monthDisplay">
+                                <span class="month-part">31 Aug</span>
+                                <span class="year-part">Wed, 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="popup-checkbox-box">
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            <span class="label-text popup">I authorize Akbartravels.com to contact me and have read
+                                the
+                                Terms and
+                                Conditions</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="label-text popup">I agree to receive updates & offers from
+                                Akbartravels.com</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="number-box">
+                    <div class="icon call-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="support-text">
+                        <p class="number">+918657986515</p>
+                        <p class="time">(10am - 8pm)</p>
+                    </div>
+                </div>
+
+                <button class="callme-btn" id="openRequestBtn">CALL ME</button>
+            </div>
+        </div>
+
+        <!-- Request Submitted -->
+        <div id="requestSubmittedPopup" class="thankyou-popup">
+            <div class="thankyou-popup-content">
+                <div class="popup-header">
+                    <span id="closeThankYou" class="close-btn">&times;</span>
+                </div>
+                <div class="success-icon">
+                    <img src="../../assets/icons/success_tick.gif" alt="Back" />
+                </div>
+
+                <h2>Request Submitted!</h2>
+
+                <div class="request-box">REQUEST ID : 553138</div>
+
+                <p class="msg">
+                    Our expert will get in touch with you shortly. You can also get in touch with us on the below
+                    contact details.
+                </p>
+
+                <div class="divider-line"></div>
+                <div class="support-item">
+                    <div class="icon call-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="support-text">
+                        <p class="label">Call Us on</p>
+                        <p class="value">+91 8108659695</p>
+                    </div>
+                </div>
+                <div class="divider-line"></div>
+                <div class="support-item">
+                    <div class="icon time-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="support-text">
+                        <p class="label">Timing</p>
+                        <p class="value">10am to 7pm</p>
+                    </div>
+                </div>
+                <div class="divider-line"></div>
+
+                <button class="search-btn"
+                    onclick="window.location.href='../shortlisting/shortlisting.html'">DONE</button>
+            </div>
+        </div>
+
+        <!-- Rooms Overlay -->
+        <div class="rooms-overlay">
+            <div class="rooms-popup">
+                <div class="drag-bar"></div>
+                <h3>Rooms & Guests</h3>
+                <div class="divider-line"></div>
+
+                <div id="roomsContainer">
+                    <div class="room-box">
+                        <h3 class="room-title">Room 1</h3>
+
+                        <div class="guest-item">
+                            <div class="left">
+                                <p class="label">Adults</p>
+                                <p class="sub">Above 12 Years</p>
+                            </div>
+                            <div class="counter">
+                                <button class="minus"><img src="../../assets/icons/minus.svg" alt="Image 1"></button>
+                                <span class="count">2</span>
+                                <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
+                            </div>
+                        </div>
+
+                        <div class="guest-item">
+                            <div class="left">
+                                <p class="label">Child</p>
+                                <p class="sub">2–12 Years (With bed)</p>
+                            </div>
+                            <div class="counter">
+                                <button class="minus"><img src="../../assets/icons/minus.svg" alt="Image 1"></button>
+                                <span class="count">2</span>
+                                <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
+                            </div>
+                        </div>
+
+                        <div class="guest-item">
+                            <div class="left">
+                                <p class="label">Child</p>
+                                <p class="sub">2–12 Years (Without bed)</p>
+                            </div>
+                            <div class="counter">
+                                <button class="minus"><img src="../../assets/icons/minus.svg" alt="Image 1"></button>
+                                <span class="count">0</span>
+                                <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
+                            </div>
+                        </div>
+
+                        <div class="guest-item">
+                            <div class="left">
+                                <p class="label">Infant</p>
+                                <p class="sub">0–23 Months (Without bed)</p>
+                            </div>
+                            <div class="counter">
+                                <button class="minus"><img src="../../assets/icons/minus.svg" alt="Image 1"></button>
+                                <span class="count">0</span>
+                                <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider-line"></div>
+                </div>
+                <p id="addRoomBtn" class="add-room-btn">+ Add Another Room</p>
+                <div class="bottom-bar-button">
+                    <button class="continue-btn">DONE</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="detail_page.js"></script>
+    <script src="../../global/js/main.js"></script>
+
+</body>
+
+</html>
