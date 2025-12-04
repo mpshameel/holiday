@@ -3,11 +3,577 @@
 @use "../../global/scss/typography";
 
 /* review booking page */
-/* review content */
+.review-booking-page {
+    position: relative;
+    width: 100%;
+    background: $brand;
+    overflow: hidden;
 
+    .appbar-container {
+        position: relative;
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+        background: $brand;
+
+        .appbar-row {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9;
+            flex: 1;
+
+            h2 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $white;
+                text-align: center;
+                flex: 1;
+            }
+
+            .icon-btn {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 50;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                font-size: 16px;
+                background: none;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                .back-btn {
+                    display: block;
+                    width: 10px;
+                    height: 15px;
+                    background: transparent;
+                    object-fit: contain;
+                }
+
+            }
+
+
+        }
+
+        .svgbox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 71px;
+            z-index: 3;
+
+            svg {
+                width: 100%;
+                height: 71px;
+                display: block;
+            }
+        }
+    }
+}
+
+/* review content */
 .review-content {
     position: relative;
     margin-bottom: 16px;
     margin-top: -20px;
     z-index: 999;
+}
+
+.trip-card {
+    position: relative;
+    margin: 0 16px;
+    border: none;
+    align-items: center;
+    padding: 12px 12px 12px 12px;
+    z-index: 999;
+    background: $white;
+    border-radius: $radius-xlg;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+
+    .trip-info-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $white;
+        margin-bottom: 12px;
+
+        .trip-info-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .trip-header {
+                display: flex;
+                align-items: center;
+
+                h2 {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-lg;
+                    font-weight: $fw-semibold;
+                    color: $detailHeading;
+                }
+            }
+
+            .trip-subtitle {
+                font-family: $font-primary-poppins;
+                font-size: $fs-base;
+                font-weight: $fw-medium;
+                color: $borderTxt;
+                margin: 4px 0 0 0;
+            }
+        }
+    }
+
+    .divider-line {
+        height: 1px;
+        background-color: $skyblueBorder;
+        width: 100%;
+    }
+
+    .location {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        color: $heading;
+        width: 100%;
+        padding: 8px 0;
+
+        img {
+            width: 11px;
+            height: 14px;
+            object-fit: contain;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        p {
+            font-family: $font-primary-poppins;
+            font-size: $fs-base;
+            font-weight: $fw-semibold;
+            line-height: 1.4;
+            margin: 0;
+            color: $heading;
+            white-space: normal;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            flex: 1;
+        }
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 16px;
+
+
+        span {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            color: $badgebg;
+            font-size: $fs-base;
+            padding: 5px 8px 4px 8px;
+            border-radius: $radius-xxlg;
+            border: 1px solid $dividerCity;
+        }
+    }
+
+    .trip-summary-card {
+        margin-top: 8px;
+        position: relative;
+        background: $white;
+        border: 1.5px solid $link;
+        border-radius: $radius-xxlg;
+        padding: 12px 16px 21px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 45px;
+
+        &.summary-border {
+            border-color: $summaryBorder;
+        }
+
+        .trip-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            &.top-row {
+                padding-bottom: 8.5px;
+            }
+
+            &.bottom-row {
+                padding-top: 16.5px;
+            }
+
+            .trip-summary-col {
+                flex: 1;
+                gap: 2px;
+
+                &.right {
+                    text-align: right;
+                    position: relative;
+                }
+
+                .label {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-sm;
+                    font-weight: $fw-medium;
+                    color: $borderTxt;
+                    margin: 0;
+                }
+
+                .value {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-base;
+                    font-weight: $fw-semibold;
+                    color: $heading;
+                    margin: 0;
+
+                }
+            }
+
+            .vertical-divider-line {
+                width: 1px;
+                background: $dividerCity;
+                align-self: stretch;
+            }
+
+        }
+
+
+    }
+}
+
+/* traveller section */
+.traveller-section:last-of-type {
+    margin-bottom: 100px;
+}
+
+.traveller-section {
+    background-color: $white;
+    padding: 16px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+    margin-bottom: 16px;
+
+    &.traveller-section--rounded {
+        padding: 12px 0;
+        margin: 16px;
+        border-radius: 16px;
+    }
+
+    .divider-line {
+        margin: 12px 16px 0 16px;
+        height: 0;
+        border-bottom: 1px dashed $dividerCity;
+    }
+
+
+    .section-header {
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $heading;
+        }
+
+        h5 {
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-size: $fs-md;
+            font-weight: $fw-semibold;
+            color: $link;
+        }
+
+        span {
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $borderTxt;
+        }
+
+        .edit-icon {
+            width: 17px;
+            height: 17px;
+            object-fit: contain;
+        }
+    }
+
+    .traveller-card {
+        background: $borderInner;
+        display: flex;
+        align-items: center;
+        padding: 16px 12px;
+        margin: 16px 16px 0 16px;
+        border-radius: $radius-md;
+        border: 1px solid $borderOuter;
+
+        &.traveller-card--review {
+            margin: 8px 16px;
+            border-radius: 16px;
+        }
+
+        img {
+            width: 26px;
+            height: 28px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .traveller-info {
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+
+            .name {
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $heading;
+                margin: 0;
+            }
+
+            .type {
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $borderTxt;
+                margin: 0;
+            }
+        }
+    }
+
+}
+
+/* contact section */
+.contact-section {
+    background-color: $white;
+    padding: 16px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+    margin-bottom: 16px;
+
+    &.contact-section--rounded {
+        padding: 14px 0;
+        margin: 16px;
+        border-radius: 16px;
+        margin-bottom: 120px;
+    }
+
+    .section-header {
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $heading;
+        }
+    }
+
+    .contact-content {
+        padding: 0 16px 4px 16px;
+
+        .form-row {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            align-items: flex-start;
+
+        }
+
+        .modify-input-group {
+            margin-top: 12px;
+            flex-direction: column;
+            background-color: $skyblue;
+            border: 1px solid $skyblueBorder;
+            align-items: start;
+            border-radius: $radius-lg;
+            padding: 7px 12px;
+
+            input {
+                width: 100%;
+                outline: none;
+                border: none;
+                background: transparent;
+                color: $heading;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-md;
+
+                &::placeholder {
+                    color: $heading;
+                    opacity: 1;
+                }
+            }
+
+            .search-label {
+                font-family: $font-primary-poppins;
+                font-size: $fs-sm;
+                font-weight: $fw-semibold;
+                color: $badgebg;
+            }
+        }
+
+    }
+
+    .country-code {
+        flex-shrink: 0;
+        width: auto;
+        min-width: 100px;
+
+        .country-input-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .flag-icon {
+                width: 22px;
+                height: 16px;
+            }
+
+            h2 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $heading;
+                margin: 0 12px 0 8px;
+                flex: 1;
+            }
+
+            .dropdown-icon {
+                width: 12px;
+                height: 12px;
+                margin-bottom: 0px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+/* bottombar */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    background: $white;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 7px 16px 13px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    margin: 0 0;
+
+    .left-section {
+        .guest-info {
+            display: flex;
+            flex-direction: column;
+
+            .guest-count {
+                font-family: $font-roboto;
+                font-size: $fs-md;
+                font-weight: $fw-regular;
+                color: $borderTxt;
+                margin: 0;
+            }
+
+            .price-row {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin: 0;
+
+                .price {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-xl;
+                    font-weight: $fw-semibold;
+                    color: $link;
+                    margin: 0;
+                }
+
+                .rupee {
+                    font-family: $font-roboto;
+                    font-size: $fs-xl;
+                    font-weight: $fw-bold;
+                    color: $link;
+                    margin: 0;
+                }
+
+                i {
+                    border-radius: $radius-round;
+                    background: $skyblueBorder;
+                    color: $link;
+                    font-size: $fs-md;
+                    padding: 7px 7px;
+                    width: 8;
+                    height: 4;
+                    margin: 0;
+                }
+            }
+
+            .deal-applied {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background: $filterGreenBG;
+                font-family: $font-primary-poppins;
+                font-size: $fs-xs;
+                font-weight: $fw-semibold;
+                color: $filterGreen;
+                padding: 3px 8px 2px 6px;
+                border-radius: $radius-popup;
+                width: fit-content;
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .right-section {
+        .continue-btn {
+            width: 100%;
+            padding: 14px 36px 13px 36px;
+            background: linear-gradient(90deg, #6787F3, $link);
+            border: none;
+            border-radius: $radius-lg;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-lg;
+            color: $white;
+            cursor: pointer;
+        }
+    }
 }

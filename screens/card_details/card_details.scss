@@ -3,6 +3,107 @@
 @use "../../global/scss/typography";
 
 /* card details page */
+.card-details-page {
+    position: relative;
+    width: 100%;
+    background: $brand;
+    overflow: hidden;
+
+    .appbar-container {
+        position: relative;
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+        background: $brand;
+
+        .appbar-row {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9;
+            flex: 1;
+
+            h2 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $white;
+                text-align: center;
+                flex: 1;
+            }
+
+            .icon-btn {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 50;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                font-size: 16px;
+                background: none;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                .back-btn {
+                    display: block;
+                    width: 10px;
+                    height: 15px;
+                    background: transparent;
+                    object-fit: contain;
+                }
+
+            }
+        }
+
+        .svgbox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 71px;
+            z-index: 3;
+
+            svg {
+                width: 100%;
+                height: 71px;
+                display: block;
+            }
+        }
+    }
+}
+
+.card-details-content {
+    position: relative;
+    margin-bottom: 120px;
+    margin-top: -30px;
+    padding-top: 10px;
+    z-index: 999;
+}
+
+.payment-section {
+    background: $white;
+    padding: 16px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+    margin: 16px 0;
+
+    .title {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-lg;
+        color: $heading;
+    }
+}
+
+
+
 /* credit card row */
 .credit-cards-row {
     margin-top: 16px;
@@ -140,7 +241,31 @@ input:focus+.fake-placeholder {
     transform: translateY(-50%) scale(0.95);
 }
 
+/* convinient fee section */
+.convinient-fee-section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $link;
+    font-family: $font-primary-poppins;
+    font-weight: $fw-semibold;
+    font-size: $fs-sm;
+    padding: 0px 16px;
+    width: fit-content;
 
+    img {
+        width: 14px;
+        height: 14px;
+        object-fit: contain;
+    }
+
+    .rupee {
+        font-family: $font-roboto;
+        font-weight: $fw-semibold;
+        font-size: $fs-sm;
+        color: $link;
+    }
+}
 
 .international-card-section {
     background: $white;
@@ -179,6 +304,205 @@ input:focus+.fake-placeholder {
     }
 }
 
+/* checkbox group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 16px;
+
+    .custom-checkbox {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $heading;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid $borderGrey;
+            border-radius: $radius-xsm;
+            background-color: $white;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        input:checked~.checkmark {
+            background-color: $brand;
+            border-color: $brand;
+            box-shadow: 0 2px 6px rgba(227, 110, 85, 0.4);
+        }
+
+        .checkmark::after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        input:checked~.checkmark::after {
+            display: block;
+            left: 6px;
+            width: 5px;
+            height: 10px;
+            border: solid $white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .custom-checkbox:hover .checkmark {
+            border-color: $brand;
+        }
+
+        .label-text {
+            position: relative;
+            top: 1px;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            font-size: $fs-md;
+            color: $heading;
+            margin: 0;
+        }
+
+        .bold {
+            font-weight: $fw-semibold;
+        }
+
+        .popup {
+            width: 90%;
+            font-weight: $fw-regular;
+            font-size: $fs-base;
+            color: $borderTxt;
+            margin-top: 10px;
+        }
+    }
+
+    .show-all {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-base;
+        color: $showAllLink;
+    }
+
+}
+
 .credit-card-international-box {
     display: none;
+}
+
+/* bottombar */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    background: $white;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 7px 16px 13px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    margin: 0 0;
+
+    .left-section {
+        .guest-info {
+            display: flex;
+            flex-direction: column;
+
+            .guest-count {
+                font-family: $font-roboto;
+                font-size: $fs-md;
+                font-weight: $fw-regular;
+                color: $borderTxt;
+                margin: 0;
+            }
+
+            .price-row {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin: 0;
+
+                .price {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-xl;
+                    font-weight: $fw-semibold;
+                    color: $link;
+                    margin: 0;
+                }
+
+                .rupee {
+                    font-family: $font-roboto;
+                    font-size: $fs-xl;
+                    font-weight: $fw-bold;
+                    color: $link;
+                    margin: 0;
+                }
+
+                i {
+                    border-radius: $radius-round;
+                    background: $skyblueBorder;
+                    color: $link;
+                    font-size: $fs-md;
+                    padding: 7px 7px;
+                    width: 8;
+                    height: 4;
+                    margin: 0;
+                }
+            }
+
+            .deal-applied {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background: $filterGreenBG;
+                font-family: $font-primary-poppins;
+                font-size: $fs-xs;
+                font-weight: $fw-semibold;
+                color: $filterGreen;
+                padding: 3px 8px 2px 6px;
+                border-radius: $radius-popup;
+                width: fit-content;
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .right-section {
+        .continue-btn {
+            width: 100%;
+            padding: 14px 36px 13px 36px;
+            background: linear-gradient(90deg, #6787F3, $link);
+            border: none;
+            border-radius: $radius-lg;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-lg;
+            color: $white;
+            cursor: pointer;
+        }
+    }
 }

@@ -3,6 +3,67 @@
 @use "../../global/scss/typography";
 
 /* payment successful recieved page */
+.payment-successful-recieved-background {
+    font-family: $font-primary-poppins;
+    background: $white;
+    padding-bottom: 100px;
+
+    .success-header {
+        background: $filterGreen;
+        color: $white;
+        padding: 60px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 220px;
+
+        h2 {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-xl;
+            color: $white;
+            margin: 0 0 2px;
+        }
+
+        p {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-regular;
+            font-size: $fs-lg;
+            color: $white;
+            margin: 0;
+
+        }
+
+        .rupee {
+            font-family: $font-roboto;
+            font-weight: $fw-bold;
+            font-size: $fs-priceLow;
+            color: $white;
+        }
+
+        .amount {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-priceLow;
+            color: $white;
+        }
+
+        .success-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+/* payment successful recieved content */
+.payment-successful-recieved-content {
+    position: relative;
+    margin-bottom: 16px;
+    margin-top: -70px;
+    z-index: 999;
+}
+
 /* recieve-payment-card */
 .recieve-payment-card {
     position: relative;

@@ -3,7 +3,334 @@
 @use "../../global/scss/typography";
 
 /* traveller details page */
+.traveller-details-page {
+    position: relative;
+    width: 100%;
+    background: $brand;
+    overflow: hidden;
 
+    .appbar-container {
+        position: relative;
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+        background: $brand;
+
+        .appbar-row {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9;
+            flex: 1;
+
+            h2 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $white;
+                text-align: center;
+                flex: 1;
+            }
+
+            .icon-btn {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 50;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                font-size: 16px;
+                background: none;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                .back-btn {
+                    display: block;
+                    width: 10px;
+                    height: 15px;
+                    background: transparent;
+                    object-fit: contain;
+                }
+
+            }
+
+            .right-icons {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                right: 16px;
+                position: relative;
+
+                .right-img-traveller {
+                    width: 22px;
+                    height: 22px;
+                    object-fit: contain;
+                }
+
+                .rightLink {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-md;
+                    font-weight: $fw-regular;
+                    color: $white;
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+        .svgbox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 71px;
+            z-index: 3;
+
+            svg {
+                width: 100%;
+                height: 71px;
+                display: block;
+            }
+        }
+    }
+}
+
+/* trip summary */
+.trip-summary {
+    padding: 0 16px;
+    position: relative;
+    margin-top: -10px;
+    z-index: 999;
+    position: sticky;
+
+    h3 {
+        font-family: $font-primary-poppins;
+        font-size: $fs-md;
+        font-weight: $fw-semibold;
+        color: $heading;
+    }
+
+    p {
+        font-family: $font-primary-poppins;
+        font-size: $fs-sm;
+        font-weight: $fw-regular;
+        color: $borderTxt;
+        margin-top: 2px;
+    }
+}
+
+/* traveller section */
+.traveller-section:last-of-type {
+    margin-bottom: 100px;
+}
+
+.traveller-section {
+    background-color: $white;
+    padding: 16px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+    margin-bottom: 16px;
+
+    .divider-line {
+        margin: 12px 16px 0 16px;
+        height: 0;
+        border-bottom: 1px dashed $dividerCity;
+    }
+
+
+    .section-header {
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $heading;
+        }
+
+        h5 {
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-size: $fs-md;
+            font-weight: $fw-semibold;
+            color: $link;
+        }
+
+        span {
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $borderTxt;
+        }
+
+        .edit-icon {
+            width: 17px;
+            height: 17px;
+            object-fit: contain;
+        }
+    }
+
+    .traveller-card {
+        background: $borderInner;
+        display: flex;
+        align-items: center;
+        padding: 16px 12px;
+        margin: 16px 16px 0 16px;
+        border-radius: $radius-md;
+        border: 1px solid $borderOuter;
+
+        &.traveller-card--review {
+            margin: 8px 16px;
+            border-radius: 16px;
+        }
+
+        img {
+            width: 26px;
+            height: 28px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .traveller-info {
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+
+            .name {
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $heading;
+                margin: 0;
+            }
+
+            .type {
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $borderTxt;
+                margin: 0;
+            }
+        }
+    }
+}
+
+/* contact section */
+.contact-section {
+    background-color: $white;
+    padding: 16px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+    margin-bottom: 16px;
+
+    .section-header {
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $heading;
+        }
+    }
+
+    .contact-content {
+        padding: 0 16px 4px 16px;
+
+        .form-row {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            align-items: flex-start;
+
+        }
+
+        .modify-input-group {
+            margin-top: 12px;
+            flex-direction: column;
+            background-color: $skyblue;
+            border: 1px solid $skyblueBorder;
+            align-items: start;
+            border-radius: $radius-lg;
+            padding: 7px 12px;
+
+            input {
+                width: 100%;
+                outline: none;
+                border: none;
+                background: transparent;
+                color: $heading;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-md;
+
+                &::placeholder {
+                    color: $heading;
+                    opacity: 1;
+                }
+            }
+
+            .search-label {
+                font-family: $font-primary-poppins;
+                font-size: $fs-sm;
+                font-weight: $fw-semibold;
+                color: $badgebg;
+            }
+        }
+
+    }
+
+    .country-code {
+        flex-shrink: 0;
+        width: auto;
+        min-width: 100px;
+
+        .country-input-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .flag-icon {
+                width: 22px;
+                height: 16px;
+            }
+
+            h2 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $heading;
+                margin: 0 12px 0 8px;
+                flex: 1;
+            }
+
+            .dropdown-icon {
+                width: 12px;
+                height: 12px;
+                margin-bottom: 0px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+/* gstin container */
 .gstin-container {
     background-color: $white;
     padding: 16px 16px;
@@ -52,6 +379,7 @@
     }
 }
 
+/* additional services */
 .additional-services {
     background-color: $white;
     padding: 16px 16px;
@@ -350,4 +678,124 @@
         cursor: pointer;
     }
 
+}
+
+/* --- Background overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+}
+
+/* bottombar */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    background: $white;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 7px 16px 13px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    margin: 0 0;
+
+    .left-section {
+        .guest-info {
+            display: flex;
+            flex-direction: column;
+
+            .guest-count {
+                font-family: $font-roboto;
+                font-size: $fs-md;
+                font-weight: $fw-regular;
+                color: $borderTxt;
+                margin: 0;
+            }
+
+            .price-row {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin: 0;
+
+                .price {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-xl;
+                    font-weight: $fw-semibold;
+                    color: $link;
+                    margin: 0;
+                }
+
+                .rupee {
+                    font-family: $font-roboto;
+                    font-size: $fs-xl;
+                    font-weight: $fw-bold;
+                    color: $link;
+                    margin: 0;
+                }
+
+                i {
+                    border-radius: $radius-round;
+                    background: $skyblueBorder;
+                    color: $link;
+                    font-size: $fs-md;
+                    padding: 7px 7px;
+                    width: 8;
+                    height: 4;
+                    margin: 0;
+                }
+            }
+
+            .deal-applied {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background: $filterGreenBG;
+                font-family: $font-primary-poppins;
+                font-size: $fs-xs;
+                font-weight: $fw-semibold;
+                color: $filterGreen;
+                padding: 3px 8px 2px 6px;
+                border-radius: $radius-popup;
+                width: fit-content;
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .right-section {
+        .continue-btn {
+            width: 100%;
+            padding: 14px 36px 13px 36px;
+            background: linear-gradient(90deg, #6787F3, $link);
+            border: none;
+            border-radius: $radius-lg;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-lg;
+            color: $white;
+            cursor: pointer;
+        }
+    }
 }

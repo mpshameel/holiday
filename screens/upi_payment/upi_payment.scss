@@ -4,8 +4,122 @@
 
 
 /* upi payment */
-/* pay using apps */
+.upi-payment-page {
+    position: relative;
+    width: 100%;
+    background: $brand;
+    overflow: hidden;
 
+    .appbar-container {
+        position: relative;
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+        background: $brand;
+
+        .appbar-row {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9;
+            flex: 1;
+
+            h2 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $white;
+                text-align: center;
+                flex: 1;
+            }
+
+            .icon-btn {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 50;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                font-size: 16px;
+                background: none;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                .back-btn {
+                    display: block;
+                    width: 10px;
+                    height: 15px;
+                    background: transparent;
+                    object-fit: contain;
+                }
+
+            }
+        }
+
+        .svgbox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 71px;
+            z-index: 3;
+
+            svg {
+                width: 100%;
+                height: 71px;
+                display: block;
+            }
+        }
+    }
+}
+
+/* upi content */
+.upi-content {
+    position: relative;
+    margin-bottom: 120px;
+    margin-top: -30px;
+    padding-top: 10px;
+    z-index: 999;
+}
+
+/* payment section */
+.payment-section {
+    background: $white;
+    padding: 16px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+    margin: 16px 0;
+
+    .title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .title {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-lg;
+        color: $heading;
+    }
+
+    .subtitle {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $borderTxt;
+        margin-top: 4px;
+    }
+}
+
+/* app card */
 .app-card {
     background: $borderInner;
     border: 1px solid $borderOuter;
@@ -46,6 +160,56 @@
     }
 }
 
+/* radio group */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 16px;
+
+    .custom-radio {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $heading;
+        position: relative;
+
+        input[type='radio'] {
+            display: none;
+        }
+
+        .radio-check {
+            width: 22px;
+            height: 22px;
+            border: 2px solid $borderGrey;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        input[type='radio']:checked+.radio-check {
+            border-color: $brand;
+        }
+
+        input[type='radio']:checked+.radio-check::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: $brand;
+            border-radius: 50%;
+        }
+    }
+}
+
+/* upi header */
 .upi-header {
     display: flex;
     gap: 8px;
@@ -58,6 +222,7 @@
     }
 }
 
+/* input box */
 .input-box {
     position: relative;
     display: flex;
@@ -85,6 +250,110 @@
 
         &::placeholder {
             color: $borderTxt;
+        }
+    }
+}
+
+/* bottombar */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    background: $white;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 7px 16px 13px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    margin: 0 0;
+
+    .left-section {
+        .guest-info {
+            display: flex;
+            flex-direction: column;
+
+            .guest-count {
+                font-family: $font-roboto;
+                font-size: $fs-md;
+                font-weight: $fw-regular;
+                color: $borderTxt;
+                margin: 0;
+            }
+
+            .price-row {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin: 0;
+
+                .price {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-xl;
+                    font-weight: $fw-semibold;
+                    color: $link;
+                    margin: 0;
+                }
+
+                .rupee {
+                    font-family: $font-roboto;
+                    font-size: $fs-xl;
+                    font-weight: $fw-bold;
+                    color: $link;
+                    margin: 0;
+                }
+
+                i {
+                    border-radius: $radius-round;
+                    background: $skyblueBorder;
+                    color: $link;
+                    font-size: $fs-md;
+                    padding: 7px 7px;
+                    width: 8;
+                    height: 4;
+                    margin: 0;
+                }
+            }
+
+            .deal-applied {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background: $filterGreenBG;
+                font-family: $font-primary-poppins;
+                font-size: $fs-xs;
+                font-weight: $fw-semibold;
+                color: $filterGreen;
+                padding: 3px 8px 2px 6px;
+                border-radius: $radius-popup;
+                width: fit-content;
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .right-section {
+        .continue-btn {
+            width: 100%;
+            padding: 14px 36px 13px 36px;
+            background: linear-gradient(90deg, #6787F3, $link);
+            border: none;
+            border-radius: $radius-lg;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-lg;
+            color: $white;
+            cursor: pointer;
         }
     }
 }

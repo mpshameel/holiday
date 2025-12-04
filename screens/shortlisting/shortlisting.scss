@@ -3,10 +3,415 @@
 @use "../../global/scss/typography";
 
 /* shortlisting */
+.shortlisting-page {
+    position: relative;
+    width: 100%;
+    background: $brand;
+    overflow: hidden;
+
+    .appbar-container {
+        position: relative;
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+        background: $brand;
+
+        .appbar-row {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9;
+            flex: 1;
+
+            h2 {
+                margin-left: 70px;
+                flex: 1;
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $white;
+                text-align: center;
+            }
+
+            .icon-btn {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 50;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                font-size: 16px;
+                background: none;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                .back-btn {
+                    display: block;
+                    width: 10px;
+                    height: 15px;
+                    background: transparent;
+                    object-fit: contain;
+                }
+
+            }
+
+            .right-icons {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                right: 16px;
+                position: relative;
+
+                .right-img-traveller {
+                    width: 22px;
+                    height: 22px;
+                    object-fit: contain;
+                }
+
+                .rightLink {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-md;
+                    font-weight: $fw-regular;
+                    color: $white;
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+        .svgbox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 71px;
+            z-index: 3;
+
+            svg {
+                width: 100%;
+                height: 71px;
+                display: block;
+            }
+        }
+    }
+}
+
 /* shortlisting-content */
 .shortlisting-content {
     position: relative;
     margin-top: -30px;
     padding-top: 10px;
     z-index: 999;
+}
+
+/* section headings */
+.section {
+    margin: 0 0 0px 16px;
+
+    &--short {
+        margin: 0 16px 0px 16px;
+    }
+
+    &:not(:has(.tabs)) {
+        .international-row {
+            padding-top: 12px;
+        }
+    }
+}
+
+/* holiday card */
+.holiday-card {
+    background-color: $white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: $radius-lg;
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .image-section {
+        // background-color: #004aad;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        .like-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            transition: background 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 1);
+                transform: scale(1.05);
+            }
+        }
+
+        .main-image {
+            width: 100%;
+            height: 340px;
+            display: block;
+            object-fit: cover;
+            border-top-right-radius: $radius-lg;
+        }
+
+        .title-section {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 12px;
+
+            h3 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-xl;
+                font-weight: $fw-semibold;
+                color: $white;
+                margin: 0;
+            }
+
+            .duration {
+                width: 80px;
+                align-items: center;
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $white;
+                text-align: right;
+            }
+        }
+
+        // .ribbon {
+        //     position: absolute;
+        //     top: 10px;
+        //     left: -5px;
+        //     background: #004aad;
+        //     color: #fff;
+        //     padding: 4px 10px;
+        //     font-size: 12px;
+        //     font-weight: 600;
+        //     border-top-right-radius: 6px;
+        //     border-bottom-right-radius: 6px;
+        // }
+    }
+
+    .content {
+        padding: 12px 12px;
+        width: 100%;
+
+        .location {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            color: $heading;
+            width: 100%;
+
+            img {
+                width: 14px;
+                height: 14px;
+                object-fit: contain;
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+
+            p {
+                font-family: $font-primary-poppins;
+                font-size: $fs-base;
+                font-weight: $fw-semibold;
+                line-height: 1.4;
+                margin: 0;
+                color: $heading;
+                white-space: normal;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                flex: 1;
+            }
+        }
+
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            padding: 8px 0 12px 0;
+
+
+            span {
+                font-family: $font-primary-poppins;
+                font-weight: $fw-medium;
+                color: $badgebg;
+                font-size: $fs-base;
+                padding: 5px 8px 4px 8px;
+                border-radius: $radius-xxlg;
+                border: 1px solid $dividerCity;
+            }
+        }
+
+        .divider-line {
+            height: 1px;
+            background-color: $dividerCity;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .features-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            padding: 17px 0 14px 0;
+
+
+            .features {
+                display: flex;
+                align-items: center;
+                gap: 0px;
+                padding-bottom: 16px;
+
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10px;
+                    position: relative;
+
+                    img {
+                        width: 22px;
+                        height: 20px;
+                    }
+
+                    &:not(:last-child)::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 1px;
+                        height: 100%;
+                        background-color: $border;
+                    }
+                }
+            }
+
+            .price-section {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .old-price {
+                    text-decoration: line-through;
+                    font-family: $font-roboto;
+                    font-weight: $fw-regular;
+                    color: $heading;
+                    font-size: $fs-base;
+                    margin-bottom: 2px;
+                }
+
+                .new-price {
+                    font-family: $font-primary-poppins;
+                    font-weight: $fw-semibold;
+                    color: $brand;
+                    font-size: $fs-lg;
+                }
+
+                span {
+                    font-family: $font-roboto;
+                    font-weight: $fw-regular;
+                    color: $codetxt;
+                    font-size: $fs-base;
+                }
+            }
+        }
+
+        .offer {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background-color: $card;
+            border-radius: $radius-base;
+
+            img {
+                width: 12px;
+                height: 12px;
+                object-fit: contain;
+            }
+
+            p {
+                margin: 0;
+                line-height: 1.2;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-regular;
+                color: $codetxt;
+                font-size: $fs-sm;
+
+                .bold-text {
+                    font-weight: $fw-semibold;
+                }
+            }
+        }
+    }
+}
+
+/* offerbox card */
+.offerbox {
+    display: flex;
+    gap: 7px;
+    padding: 10px;
+    background: linear-gradient(to right, #102749, #E36E55);
+    border-radius: $radius-xxlg;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 24px;
+
+    img {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    .offer-texts {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+
+        .title {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            color: $white;
+            font-size: $fs-md;
+        }
+
+        .subtitle {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-regular;
+            color: $white;
+            font-size: $fs-xs;
+            margin: 0;
+        }
+    }
 }

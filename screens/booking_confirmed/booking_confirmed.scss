@@ -1,3 +1,365 @@
 @use "../../global/scss/variables" as *;
 @use "../../global/scss/base";
 @use "../../global/scss/typography";
+
+/* booking confirmed page */
+.booking-confirmed-background {
+    font-family: $font-primary-poppins;
+    background: $white;
+    padding-bottom: 100px;
+
+    .success-header {
+        background: $filterGreen;
+        color: $white;
+        padding: 60px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 220px;
+
+        h2 {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-xl;
+            color: $white;
+            margin: 0 0 2px;
+        }
+
+        p {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-regular;
+            font-size: $fs-lg;
+            color: $white;
+            margin: 0;
+
+        }
+
+        .rupee {
+            font-family: $font-roboto;
+            font-weight: $fw-bold;
+            font-size: $fs-priceLow;
+            color: $white;
+        }
+
+        .amount {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-priceLow;
+            color: $white;
+        }
+
+        .success-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+/* booking confirmed content */
+.booking-confirmed-content {
+    position: relative;
+    margin-bottom: 16px;
+    margin-top: -70px;
+    z-index: 999;
+}
+
+/* trip card */
+.trip-card {
+    position: relative;
+    margin: 0 16px;
+    border: none;
+    align-items: center;
+    padding: 12px 12px 12px 12px;
+    z-index: 999;
+    background: $white;
+    border-radius: $radius-xlg;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+
+    .trip-info-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $white;
+        margin-bottom: 12px;
+
+        .trip-info-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .trip-header {
+                display: flex;
+                align-items: center;
+
+                h2 {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-lg;
+                    font-weight: $fw-semibold;
+                    color: $detailHeading;
+                }
+            }
+
+            .trip-subtitle {
+                font-family: $font-primary-poppins;
+                font-size: $fs-base;
+                font-weight: $fw-medium;
+                color: $borderTxt;
+                margin: 4px 0 0 0;
+            }
+        }
+    }
+
+    .divider-line {
+        height: 1px;
+        background-color: $skyblueBorder;
+        width: 100%;
+    }
+
+    .location {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        color: $heading;
+        width: 100%;
+        padding: 8px 0;
+
+        img {
+            width: 11px;
+            height: 14px;
+            object-fit: contain;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        p {
+            font-family: $font-primary-poppins;
+            font-size: $fs-base;
+            font-weight: $fw-semibold;
+            line-height: 1.4;
+            margin: 0;
+            color: $heading;
+            white-space: normal;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            flex: 1;
+        }
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 16px;
+
+
+        span {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            color: $badgebg;
+            font-size: $fs-base;
+            padding: 5px 8px 4px 8px;
+            border-radius: $radius-xxlg;
+            border: 1px solid $dividerCity;
+        }
+    }
+
+    .trip-summary-card {
+        margin-top: 8px;
+        position: relative;
+        background: $white;
+        border: 1.5px solid $link;
+        border-radius: $radius-xxlg;
+        padding: 12px 16px 21px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 45px;
+
+        .box-row {
+            flex: 1;
+        }
+
+        &.summary-border {
+            border-color: $summaryBorder;
+        }
+
+        .trip-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            &.top-row {
+                padding-bottom: 8.5px;
+            }
+
+            &.bottom-row {
+                padding-top: 16.5px;
+            }
+
+            .trip-summary-col {
+                flex: 1;
+                gap: 2px;
+
+                &.right {
+                    text-align: right;
+                    position: relative;
+                }
+
+                .label {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-sm;
+                    font-weight: $fw-medium;
+                    color: $borderTxt;
+                    margin: 0;
+                }
+
+                .value {
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-base;
+                    font-weight: $fw-semibold;
+                    color: $heading;
+                    margin: 0;
+
+                }
+            }
+
+            .vertical-divider-line {
+                width: 1px;
+                background: $dividerCity;
+                align-self: stretch;
+            }
+
+        }
+
+    }
+}
+
+/* paid box */
+.paid-box {
+    overflow: hidden;
+    margin: 0 16px;
+
+
+    .paid-top-box {
+        background: linear-gradient(to bottom,
+                #e3f3ec 0%, // top color
+                #e3f3ec 50%, // top half
+                #daf1e8 50%, // bottom half
+                #daf1e8 100% // bottom half
+            );
+        padding: 12px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 44px;
+
+
+        .paid-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .label {
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-md;
+                color: $filterGreen;
+            }
+
+            .amount {
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-xl;
+                color: $filterGreen;
+            }
+
+            .rupee {
+                font-family: $font-roboto;
+                font-weight: $fw-bold;
+                font-size: $fs-xl;
+                color: $filterGreen;
+            }
+        }
+    }
+
+    .paid-bottom-box {
+        background-color: $paidBoxInner;
+        border-bottom-right-radius: $radius-paidbox;
+        border-bottom-left-radius: $radius-paidbox;
+        padding: 17px 0;
+        text-align: center;
+
+        p {
+            margin-top: 5px;
+            margin: 0;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-base;
+            color: $heading;
+        }
+    }
+}
+
+.small-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.small-btn {
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border: 1px solid $borderOuter;
+    border-radius: $radius-lg;
+    background: $lightWhite;
+    cursor: pointer;
+    font-family: $font-primary-poppins;
+    font-weight: $fw-semibold;
+    font-size: $fs-base;
+    color: $heading;
+
+    img {
+        width: 20px;
+        height: 24px;
+        object-fit: contain;
+    }
+}
+
+/* bottombar button */
+.bottom-bar-button {
+    position: fixed;
+    bottom: 0;
+    background: $white;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 15px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    margin: 0 0;
+
+    .continue-btn {
+        width: 100%;
+        padding: 14px auto 13px auto;
+        background: linear-gradient(90deg, #6787F3, $link);
+        border: none;
+        height: 50px;
+        border-radius: $radius-lg;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-lg;
+        color: $white;
+        cursor: pointer;
+    }
+}
