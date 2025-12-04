@@ -234,6 +234,21 @@
     }
 }
 
+/* review btn */
+.review-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 9px auto;
+    background: $white;
+    border: 1px solid $reviewBorder;
+    border-radius: $radius-lg;
+    font-family: $font-primary-poppins;
+    font-weight: $fw-semibold;
+    font-size: $fs-lg;
+    color: $link;
+    cursor: pointer;
+}
+
 /* paid box */
 .paid-box {
     overflow: hidden;

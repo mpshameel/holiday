@@ -643,6 +643,89 @@
     }
 }
 
+/* select payment mode */
+.paytype-box {
+    padding: 24px 0;
+}
+
+.payment-option {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 12px 0;
+    cursor: pointer;
+
+    .option-content {
+        margin-left: 8px;
+        margin-top: -4px;
+        flex: 1;
+
+        .title {
+            font-family: $font-primary-poppins;
+            font-size: $fs-md;
+            font-weight: $fw-semibold;
+            color: $heading;
+            margin: 0;
+        }
+
+        .sub {
+            font-family: $font-primary-poppins;
+            font-size: $fs-base;
+            font-weight: $fw-regular;
+            color: $borderTxt;
+            margin: 0;
+        }
+    }
+
+    .value {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $heading;
+        margin: 0;
+
+        .currency {
+            font-family: $font-roboto;
+            font-size: $fs-md;
+            font-weight: $fw-medium;
+            color: $heading;
+            margin: 0;
+        }
+    }
+}
+
+.you-pay {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px 0;
+
+    .you-pay-title {
+        font-family: $font-primary-poppins;
+        font-size: $fs-xxl;
+        font-weight: $fw-semibold;
+        color: $heading;
+        margin: 0;
+    }
+
+    .you-pay-sub {
+        font-family: $font-primary-poppins;
+        font-size: $fs-base;
+        font-weight: $fw-regular;
+        color: $borderTxt;
+        margin: 0;
+    }
+
+    .big {
+        font-family: $font-primary-poppins;
+        font-size: $fs-xxl;
+        font-weight: $fw-semibold;
+        color: $heading;
+        margin: 0;
+    }
+}
+
 /* bottombar */
 .bottom-bar {
     position: fixed;

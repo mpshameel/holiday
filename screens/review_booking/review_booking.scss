@@ -257,6 +257,21 @@
     }
 }
 
+/* review btn */
+.review-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 9px auto;
+    background: $white;
+    border: 1px solid $reviewBorder;
+    border-radius: $radius-lg;
+    font-family: $font-primary-poppins;
+    font-weight: $fw-semibold;
+    font-size: $fs-lg;
+    color: $link;
+    cursor: pointer;
+}
+
 /* traveller section */
 .traveller-section:last-of-type {
     margin-bottom: 100px;
