@@ -1,0 +1,344 @@
+@use "../../global/scss/variables" as *;
+@use "../../global/scss/base";
+@use "../../global/scss/typography";
+
+/* holiday deals page */
+.holiday-deals-page {
+    position: relative;
+    width: 100%;
+    background: $brand;
+    overflow: hidden;
+
+    .appbar-container {
+        position: relative;
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+        background: $brand;
+
+        .appbar-row {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9;
+            flex: 1;
+
+            h2 {
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $white;
+                text-align: center;
+                flex: 1;
+            }
+
+            .icon-btn {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 50;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                font-size: 16px;
+                background: none;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                .back-btn {
+                    display: block;
+                    width: 10px;
+                    height: 15px;
+                    background: transparent;
+                    object-fit: contain;
+                }
+
+            }
+
+
+        }
+
+        .svgbox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 71px;
+            z-index: 3;
+
+            svg {
+                width: 100%;
+                height: 71px;
+                display: block;
+            }
+        }
+    }
+}
+
+/* viewall content */
+.view-all-content {
+    position: relative;
+    margin: -25px 16px 16px 16px;
+    z-index: 999;
+}
+
+/* dropdown */
+/* price-group */
+.modify-input-group {
+    margin-top: 16px;
+    flex: 1;
+    flex-direction: column;
+    background-color: $skyblue;
+    border: 1px solid $skyblueBorder;
+    align-items: start;
+    border-radius: $radius-lg;
+    padding: 6px 12px 6px 12px;
+
+    input {
+        width: 100%;
+        outline: none;
+        border: none;
+        background: transparent;
+        color: $heading;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-lg;
+
+        &::placeholder {
+            color: $heading;
+            opacity: 1;
+        }
+    }
+
+    .search-label {
+        font-family: $font-primary-poppins;
+        font-size: $fs-sm;
+        font-weight: $fw-medium;
+        color: $badgebg;
+    }
+
+    .type-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .month-part {
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
+            color: $heading;
+        }
+
+        .dropdown-icon {
+            width: 14px;
+            height: 8px;
+            margin-right: 4px;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+
+.price-group {
+    position: relative;
+
+    .price-select {
+        cursor: pointer;
+    }
+
+    .price-dropdown {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        background: $white;
+        border: 1px solid $travellerEditOuter;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        display: none;
+        overflow: hidden;
+        z-index: 50;
+        margin: 0;
+    }
+
+    .price-item {
+        padding: 12px 20px;
+        font-family: $font-primary-poppins;
+        font-size: $fs-md;
+        font-weight: $fw-semibold;
+        color: $heading;
+        border-bottom: 1px solid $skyblueBorder;
+        background: $white;
+        cursor: pointer;
+        word-break: break-word;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background: $skyblue;
+        }
+    }
+
+    &.open .price-dropdown {
+        display: block;
+    }
+}
+
+/* card */
+.card {
+    margin: 20px 16px;
+    padding-bottom: 2px;
+    flex: 0 0 auto;
+    border-radius: $radius-xlg;
+    position: relative;
+    scroll-snap-align: start;
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            display: block;
+            border-top-left-radius: $radius-xlg;
+            border-top-right-radius: $radius-xlg;
+        }
+    }
+
+    .badge {
+        position: absolute;
+        top: 10px;
+        left: 16px;
+        width: 110px;
+        background: $badgebg;
+        color: $white;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-medium;
+        font-size: $fs-xs;
+        padding: 2px 4px;
+        border-radius: $radius-xsm;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .overlay-text {
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+        color: $white;
+    }
+
+    .title {
+        font-family: $font-proxima-nova;
+        font-weight: $fw-regular;
+        font-size: $fs-lg;
+        color: $heading;
+        margin: 0;
+    }
+
+    .subtitle {
+        font-family: $font-proxima-nova;
+        font-weight: $fw-xbold;
+        font-size: $fs-lg;
+        color: $subtitle;
+        margin: 0;
+    }
+
+    .info {
+        font-family: $font-segoeUI;
+        font-weight: $fw-medium;
+        font-size: $fs-xs;
+        color: $heading;
+        margin: 5px 0 0 0;
+    }
+
+    .price {
+        display: block;
+        font-family: $font-bebas-kai;
+        font-weight: $fw-regular;
+        font-size: $fs-price;
+        color: $priceColor;
+        margin: 0;
+    }
+
+    .promo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px dashed $card;
+        border-radius: $radius-xsm;
+        overflow: hidden;
+        background: $white;
+        height: 22px;
+        margin: 7px 12px;
+
+        .code {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            font-size: $fs-base;
+            color: $codetxt;
+            padding: 3px 6px;
+            flex-shrink: 0;
+        }
+
+        .copy-container {
+            height: 22px;
+            background-color: $link;
+            color: $white;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            font-size: $fs-base;
+            display: flex;
+            padding: 3px 10px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+
+            .copy-text {
+                margin-right: 6px;
+            }
+
+            .copy-icon {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+
+    &:not(:has(> .promo)) {
+        margin-bottom: 50px;
+    }
+
+
+    .copy-tooltip {
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background-color: $link;
+        color: $white;
+        padding: 5px 10px;
+        border-radius: $radius-xsm;
+        font-size: $fs-base;
+        white-space: nowrap;
+        z-index: 20;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .copy-tooltip.visible {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}

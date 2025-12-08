@@ -39,16 +39,56 @@ if (openTcsBtn && tcspopup && closeTcsBtn) {
 
 
 /*** Promo Drawer ***/
-const offers_link = document.querySelector('.offers-link');
-const promoDrawer = document.getElementById('promoDrawer');
-const overlay2 = document.querySelector('.overlay');
+document.addEventListener('DOMContentLoaded', () => {
 
-offers_link.addEventListener('click', () => {
-    promoDrawer.classList.add('active');
-    overlay2.style.display = 'block';
-});
+    const offers_link = document.querySelector('.offers-link');
+    const promoDrawer = document.getElementById('promoDrawer');
+    const overlay2 = document.querySelector('.overlay');
 
-overlay2.addEventListener('click', () => {
-    promoDrawer.classList.remove('active');
-    overlay2.style.display = 'none';
+    const couponAppliedPopup = document.getElementById('couponAppliedPopup');
+    const applyButtons = promoDrawer.querySelectorAll('.apply-btn');
+    if (offers_link && promoDrawer && overlay2) {
+        offers_link.addEventListener('click', () => {
+            promoDrawer.classList.add('active');
+            overlay2.style.display = 'block';
+        });
+
+        overlay2.addEventListener('click', () => {
+            promoDrawer.classList.remove('active');
+            overlay2.style.display = 'none';
+        });
+    }
+
+    const showSuccessPopup = (couponCode) => {
+        promoDrawer.classList.remove('active');
+        overlay2.style.display = 'none';
+
+        couponAppliedPopup.classList.add('active');
+
+        console.log(`Coupon applied: ${couponCode}`);
+
+        setTimeout(() => {
+            couponAppliedPopup.classList.remove('active');
+            console.log("Success popup closed.");
+        }, 3000);
+    };
+
+    applyButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            let appliedCode = 'N/A';
+
+            const promoCard = e.target.closest('.promo-card');
+            if (promoCard) {
+                const couponInput = promoCard.querySelector('.promo-right input[type="text"]');
+                appliedCode = couponInput ? couponInput.value : 'N/A';
+            } else {
+                const mainInput = promoDrawer.querySelector('.promo-input input[type="text"]');
+                appliedCode = mainInput ? mainInput.value : 'N/A';
+            }
+
+            showSuccessPopup(appliedCode);
+        });
+    });
 });
