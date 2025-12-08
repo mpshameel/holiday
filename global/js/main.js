@@ -1,33 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
     // /*** Tabs and pills ***/
-    document.querySelectorAll('.chip').forEach(chip => {
-        chip.addEventListener('click', () => {
-            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-            chip.classList.add('active');
-        });
-    });
+    function setupChipTabs(tabId) {
+        const group = document.getElementById(tabId);
+        if (!group) return;
 
-    document.querySelectorAll('.pill').forEach(pill => {
-        pill.addEventListener('click', () => {
-            document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-            pill.classList.add('active');
-        });
-    });
+        const chips = group.querySelectorAll(".chip");
 
-    function setupTabs(tabGroupId) {
-        const group = document.getElementById(tabGroupId);
-        const tabs = group.querySelectorAll('.tab');
+        chips.forEach(chip => {
+            chip.addEventListener("click", () => {
+                chips.forEach(c => c.classList.remove("active"));
+                chip.classList.add("active");
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
+                console.log(tabId + " selected:", chip.dataset.value);
             });
         });
     }
 
-    setupTabs('region-tabs');
-    setupTabs('category-tabs');
+    // your groups
+    setupChipTabs("dealTabs");
+    setupChipTabs("internationalTabs");
+    setupChipTabs("domesticTabs");
+    setupChipTabs("wheretogoTabs");
+    setupChipTabs("flightTabs");
 });
 
 /*** Detail Tabbar ***/

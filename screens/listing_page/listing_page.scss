@@ -84,6 +84,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
     }
 
     .appbar-row {
+        pointer-events: auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -134,16 +135,40 @@ $hero-bg-tall: '../assets/images/deal1.png';
             }
 
             .liked-wrapper {
+                width: 36px;
+                height: 36px;
                 position: relative;
-                display: inline-block;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                border-radius: $radius-round;
+                z-index: 5;
+                background-color: rgba(255, 255, 255, 0.4);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                transition: all 0.3s ease;
 
-                .right-img-liked {
-                    width: 36px;
-                    height: 36px;
-                    object-fit: contain;
+                .heart-icon-liked,
+                .heart-icon-unliked {
+                    position: absolute;
+                    width: 18px;
+                    height: 18px;
+                    transition: opacity 0.2s ease;
+                }
+
+                .heart-icon-liked {
+                    opacity: 0;
+                }
+
+                .heart-icon-unliked {
+                    opacity: 1;
                 }
 
                 .badge {
+                    opacity: 0;
+                    visibility: hidden;
                     position: absolute;
                     top: -4px;
                     right: -4px;
@@ -159,6 +184,22 @@ $hero-bg-tall: '../assets/images/deal1.png';
                     align-items: center;
                     justify-content: center;
                 }
+
+                &.active-likes {
+                    .heart-icon-liked {
+                        opacity: 1; // SHOW liked heart
+                    }
+
+                    .heart-icon-unliked {
+                        opacity: 0; // HIDE unliked heart
+                    }
+
+                    .badge {
+                        opacity: 1; // SHOW badge
+                        visibility: visible;
+                    }
+                }
+
             }
         }
     }
@@ -175,7 +216,6 @@ $hero-bg-tall: '../assets/images/deal1.png';
     justify-content: space-between;
     padding: 9px 2px 9px 5px;
     gap: 12px;
-    cursor: pointer;
 
     transform: translateY(-30%);
     z-index: 10;
@@ -196,12 +236,15 @@ $hero-bg-tall: '../assets/images/deal1.png';
             display: inline-flex;
             justify-content: space-between;
             width: 100%;
-            cursor: pointer;
             margin: 0 0;
             padding: 0 0;
 
 
             .filter-tab {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                cursor: pointer;
                 background: transparent;
                 border: none;
                 border-radius: 0;
@@ -209,6 +252,32 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 font-size: $fs-base;
                 font-weight: $fw-semibold;
                 color: $heading;
+                transition: color 0.2s ease;
+
+                &.active {
+                    color: $priceColor;
+                }
+
+                .sort-arrow {
+                    width: 12px;
+                    height: 12px;
+                    object-fit: contain;
+                    transition: transform 0.2s ease;
+                    opacity: 0;
+
+                }
+
+                &.active .sort-arrow {
+                    opacity: 1;
+                }
+
+                &[data-direction="up"] .sort-arrow {
+                    transform: rotate(180deg);
+                }
+
+                &[data-direction="down"] .sort-arrow {
+                    transform: rotate(0deg);
+                }
             }
 
             button {
@@ -299,6 +368,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
             font-size: $fs-xs;
             color: $heading;
             margin: 0;
+            margin-bottom: 10px;
         }
     }
 }
@@ -307,15 +377,66 @@ $hero-bg-tall: '../assets/images/deal1.png';
 .holiday-card {
     background-color: $white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: visible;
     transition: transform 0.3s ease;
     cursor: pointer;
     border-radius: $radius-lg;
-    padding-bottom: 14px;
     margin-bottom: 24px;
+    position: relative;
 
     &:hover {
         transform: translateY(-5px);
+    }
+
+    $cut-depth: 10px;
+    $height: 30px;
+
+    .akbar-choice-badge {
+        position: absolute;
+        top: -10px;
+        left: -5px;
+        z-index: 10;
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            border-width: 10px 0 0 5px;
+            border-style: solid;
+            border-color: $brand transparent transparent transparent;
+        }
+
+        .badge-content-wrapper {
+            display: flex;
+            align-items: center;
+            padding: 2px 20px 1px 10px;
+            background-color: #004aad;
+            color: $white;
+
+            clip-path: polygon(0% 0%,
+                100% 0%,
+                calc(100% - #{$cut-depth}) 50%,
+                100% 100%,
+                0% 100%);
+
+            h4 {
+                font-family: $font-primary-poppins;
+                font-weight: $fw-regular;
+                font-size: $fs-xs;
+                color: $white;
+                margin: 0;
+            }
+
+
+            img {
+                margin-right: 6px;
+                width: 15px;
+                height: 15px;
+            }
+        }
+
     }
 
     .image-section {
@@ -324,26 +445,51 @@ $hero-bg-tall: '../assets/images/deal1.png';
         width: 100%;
         overflow: hidden;
 
-        .like-btn {
+        .card-like-btn {
             position: absolute;
             top: 12px;
             right: 12px;
-            background-color: rgba(255, 255, 255, 0.85);
-            border: none;
-            border-radius: 50%;
             width: 36px;
             height: 36px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-            transition: background 0.3s ease, transform 0.2s ease;
+            border-radius: $radius-round;
+            z-index: 5;
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+            padding: 5px;
 
-            &:hover {
-                background-color: rgba(255, 255, 255, 1);
-                transform: scale(1.05);
+            .heart-icon-liked,
+            .heart-icon-unliked {
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                transition: opacity 0.2s ease;
             }
+
+            .heart-icon-liked {
+                opacity: 0;
+            }
+
+            .heart-icon-unliked {
+                opacity: 1;
+            }
+
+            &.liked {
+                .heart-icon-liked {
+                    opacity: 1;
+                }
+
+                .heart-icon-unliked {
+                    opacity: 0;
+                }
+
+            }
+
         }
 
         .main-image {
@@ -397,7 +543,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
     }
 
     .content {
-        padding: 12px 12px;
+        padding: 12px 12px 14px 12px;
         width: 100%;
 
         .location {
@@ -460,8 +606,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
             justify-content: space-between;
             align-items: flex-end;
             width: 100%;
-            padding: 17px 0 14px 0;
-
+            margin-bottom: 14px;
 
             .features {
                 display: flex;
@@ -493,10 +638,10 @@ $hero-bg-tall: '../assets/images/deal1.png';
             }
 
             .price-section {
-                margin-top: 10px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
+                line-height: 1.2;
 
                 .old-price {
                     text-decoration: line-through;
@@ -504,7 +649,8 @@ $hero-bg-tall: '../assets/images/deal1.png';
                     font-weight: $fw-regular;
                     color: $heading;
                     font-size: $fs-base;
-                    margin-bottom: 2px;
+                    margin: 0;
+                    margin-bottom: 1px;
                 }
 
                 .new-price {
@@ -512,6 +658,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
                     font-weight: $fw-semibold;
                     color: $brand;
                     font-size: $fs-lg;
+                    margin: 0;
                 }
 
                 span {
@@ -519,11 +666,13 @@ $hero-bg-tall: '../assets/images/deal1.png';
                     font-weight: $fw-regular;
                     color: $codetxt;
                     font-size: $fs-base;
+                    margin: 0;
                 }
             }
         }
 
         .offer {
+            margin: 0;
             display: flex;
             align-items: center;
             gap: 4px;
@@ -729,6 +878,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 background: $white;
                 margin: 0 !important;
                 padding: 12px 0 4px 0 !important;
+                gap: 8px;
 
                 .chip {
                     margin: 0 !important;
@@ -980,6 +1130,40 @@ $hero-bg-tall: '../assets/images/deal1.png';
     }
 }
 
+/* bottombar button */
+.bottom-bar-button {
+    position: fixed;
+    bottom: 0;
+    background: $white;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 15px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    margin: 0 0;
+
+    .continue-btn {
+        width: 100%;
+        padding: 14px auto 13px auto;
+        background: linear-gradient(90deg, #6787F3, $link);
+        border: none;
+        height: 50px;
+        border-radius: $radius-lg;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-lg;
+        color: $white;
+        cursor: pointer;
+    }
+}
+
 /* modify search */
 .modify-search {
     position: fixed;
@@ -1141,5 +1325,122 @@ $hero-bg-tall: '../assets/images/deal1.png';
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+
+
+/* month picker */
+/* month-popup-overlay */
+.month-popup-overlay {
+    position: fixed;
+    top: 0;
+    background: $heading;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+
+    &.active {
+        display: flex;
+    }
+
+    .month-popup {
+        width: 350px;
+        background: $white;
+        border-radius: $radius-popup;
+        padding: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+        animation: popupFade 0.25s ease;
+
+        h3 {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-xl;
+            color: $heading;
+            padding-bottom: 16px;
+        }
+
+
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 12px;
+
+            .side-image {
+                width: 18px;
+                height: 18px;
+                object-fit: contain;
+                background: transparent;
+                display: block;
+                margin-bottom: 16px;
+            }
+
+
+
+            .popup-year {
+                font-family: $font-primary-poppins;
+                font-size: $fs-lg;
+                font-weight: $fw-semibold;
+                color: $heading;
+            }
+        }
+
+        .month-grid {
+            display: grid;
+            gap: 10px 8px;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 12px 28px 20px 28px;
+            border-top: 1px dashed $dividerCity;
+            border-bottom: 1px dashed $dividerCity;
+
+            button {
+                background: transparent;
+                border: none;
+                color: $heading;
+                cursor: pointer;
+                padding: 8px 10px;
+                border-radius: 0;
+                box-shadow: none;
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+
+                &:hover,
+                &.active {
+                    color: $brand;
+                }
+            }
+        }
+
+        .anytime-btn {
+            background: $brand;
+            color: $white;
+            border: none;
+            margin-top: 10px;
+            padding: 8px 10px;
+            border-radius: $radius-md;
+            font-family: $font-primary-poppins;
+            font-size: $fs-lg;
+            font-weight: $fw-medium;
+            cursor: pointer;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: $brand;
+            }
+        }
     }
 }

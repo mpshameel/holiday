@@ -309,6 +309,8 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 padding: 3px 10px;
                 align-items: center;
                 justify-content: center;
+                position: relative;
+                cursor: pointer;
 
                 .copy-text {
                     margin-right: 6px;
@@ -319,6 +321,27 @@ $hero-bg-tall: '../assets/images/deal1.png';
                     height: 14px;
                 }
             }
+        }
+
+        .copy-tooltip {
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background-color: $link;
+            color: $white;
+            padding: 5px 10px;
+            border-radius: $radius-xsm;
+            font-size: $fs-base;
+            white-space: nowrap;
+            z-index: 20;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .copy-tooltip.visible {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
         }
     }
 

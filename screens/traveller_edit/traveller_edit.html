@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Go Explore — Add-Traveller</title>
     <link rel="stylesheet" href="../../css/traveller_edit.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -39,9 +40,12 @@
         </section>
 
         <section class="traveller-section">
+            <div class="room-header">
+                <h3>Room 1</h3>
+                <span class="dash"></span>
+            </div>
             <div class="section-header">
                 <h4>Adult 1 <span>(12+ yrs)</span></h4>
-                <h5>+ Saved Travellers <span>-</span></h5>
             </div>
 
             <!-- Edit mode -->
@@ -79,7 +83,55 @@
                     </div>
                 </div>
 
+                <div class="modify-input-group dob-calender">
+                    <div class="left-column">
+                        <label class="search-label" for="from">Date of Birth</label>
+                        <input type="text" id="destination" placeholder="10 Jun 1996" readonly />
+                    </div>
+                    <img src="../../assets/icons/calender.svg" alt="calendar" class="calender-icon" />
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h4>Adult 2 <span>(12+ yrs)</span></h4>
+            </div>
+
+            <!-- Edit mode -->
+            <div class="traveller-edit-card">
+                <div class="traveller-gender-box">
+                    <div class="traveller-gender">
+                        <img src="../../assets/icons/traveller_male.svg" alt="traveller" />
+                        <p class="gender">Mr.</p>
+                    </div>
+                    <div class="traveller-gender">
+                        <img src="../../assets/icons/ms.svg" alt="traveller" />
+                        <p class="gender">Mrs.</p>
+                    </div>
+                    <div class="traveller-gender">
+                        <img src="../../assets/icons/traveller_male.svg" alt="traveller" />
+                        <p class="gender">Ms.</p>
+                    </div>
+                    <div class="traveller-gender">
+                        <img src="../../assets/icons/ms.svg" alt="traveller" />
+                        <p class="gender">Mx.</p>
+                    </div>
+                </div>
+
                 <div class="modify-input-group">
+                    <div class="left-column">
+                        <label class="search-label" for="from">First Name</label>
+                        <input type="text" id="destination" placeholder="Neha" />
+                    </div>
+                </div>
+
+                <div class="modify-input-group">
+                    <div class="left-column">
+                        <label class="search-label" for="from">Last Name</label>
+                        <input type="text" id="destination" placeholder="Negi" />
+                    </div>
+                </div>
+
+                <div class="modify-input-group dob-calender">
                     <div class="left-column">
                         <label class="search-label" for="from">Date of Birth</label>
                         <input type="text" id="destination" placeholder="10 Jun 1996" />
@@ -90,9 +142,12 @@
         </section>
 
         <section class="traveller-section">
+            <div class="room-header">
+                <h3>Room 2</h3>
+                <span class="dash"></span>
+            </div>
             <div class="section-header">
                 <h4>Adult 1 <span>(12+ yrs)</span></h4>
-                <h5>+ Saved Travellers <span>-</span></h5>
             </div>
 
             <!-- Edit mode -->
@@ -130,7 +185,7 @@
                     </div>
                 </div>
 
-                <div class="modify-input-group">
+                <div class="modify-input-group dob-calender">
                     <div class="left-column">
                         <label class="search-label" for="from">Date of Birth</label>
                         <input type="text" id="destination" placeholder="10 Jun 1996" />
@@ -140,6 +195,33 @@
             </div>
         </section>
 
+        <!-- Overlay background shade -->
+        <div class="overlay overlay-dob-popup"></div>
+
+        <!-- DOB Wheel Picker (bottom sheet) -->
+        <div class="dob-popup" id="dobPopup">
+            <div class="drag-bar"></div>
+            <h3>Select Date of Birth</h3>
+
+            <div class="wheel-wrapper">
+                <div class="wheel swiper-container" id="monthWheel">
+                    <div class="swiper-wrapper"></div>
+                </div>
+                <div class="wheel swiper-container" id="dayWheel">
+                    <div class="swiper-wrapper"></div>
+                </div>
+                <div class="wheel swiper-container" id="yearWheel">
+                    <div class="swiper-wrapper"></div>
+                </div>
+                <div class="highlight"></div>
+            </div>
+
+            <button class="dob-submit">Select</button>
+        </div>
+
+
+
+
         <!-- Bottom Nav Bar -->
         <div class="bottom-bar-button">
             <button class="continue-btn" id="doneBtn">Done</button>
@@ -148,6 +230,7 @@
     </main>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="traveller_edit.js"></script>
     <script src="../../global/js/main.js"></script>
 

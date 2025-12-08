@@ -79,6 +79,12 @@ if (openBtn && popup && closeBtn) {
     closeBtn.addEventListener("click", () => {
         popup.classList.remove("active");
     });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === popup) {
+            popup.classList.remove("active");
+        }
+    });
 }
 
 /*** Fare Summary ***/
@@ -99,6 +105,27 @@ overlay.addEventListener('click', () => {
     overlay.style.display = 'none';
     bottomBar.style.zIndex = '999';
 });
+
+/*** TCS Popup ***/
+const tcspopup = document.getElementById("tcspopup");
+const openTcsBtn = document.querySelector(".open-tcs-btn");
+const closeTcsBtn = document.getElementById("closeTcsPopup");
+
+if (openTcsBtn && tcspopup && closeTcsBtn) {
+    openTcsBtn.addEventListener("click", () => {
+        tcspopup.classList.add("active");
+    });
+
+    closeTcsBtn.addEventListener("click", () => {
+        tcspopup.classList.remove("active");
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === tcspopup) {
+            tcspopup.classList.remove("active");
+        }
+    });
+}
 
 /*** Fab Button ***/
 const helpFab = document.querySelector('.help-fab');
@@ -392,92 +419,117 @@ roomsOverlay.addEventListener("click", (e) => {
 
 
 /*** Rooms Box ***/
-document.addEventListener("DOMContentLoaded", () => {
+addRoomBtn.addEventListener("click", () => {
+    selectedRoomsContainer.style.display = "block";
 
-    const roomsContainer = document.getElementById("roomsContainer");
-    const addRoomBtn = document.getElementById("addRoomBtn");
+    const currentRoom = roomsContainer.querySelector(".room-box");
+    if (currentRoom) {
+        const roomTitle = currentRoom.querySelector(".room-title").textContent;
+        const adults = currentRoom.querySelectorAll(".guest-item")[0].querySelector(".count").textContent;
+        const childrenWithBed = currentRoom.querySelectorAll(".guest-item")[1].querySelector(".count").textContent;
+        const childrenWithoutBed = currentRoom.querySelectorAll(".guest-item")[2].querySelector(".count").textContent;
+        const infants = currentRoom.querySelectorAll(".guest-item")[3].querySelector(".count").textContent;
 
-    const handleCounter = (room) => {
-        room.querySelectorAll(".guest-item").forEach(item => {
-            const minus = item.querySelector(".minus");
-            const plus = item.querySelector(".plus");
-            const count = item.querySelector(".count");
-
-            minus.addEventListener("click", () => {
-                let value = parseInt(count.textContent);
-                if (value > 0) count.textContent = value - 1;
-            });
-
-            plus.addEventListener("click", () => {
-                let value = parseInt(count.textContent);
-                count.textContent = value + 1;
-            });
-        });
-    };
-
-    document.querySelectorAll(".room-box").forEach(room => handleCounter(room));
-
-
-    addRoomBtn.addEventListener("click", () => {
-
-        const roomCount = roomsContainer.children.length + 1;
-
-        const roomHTML = `
-        <div class="room-box">
-            <h3 class="room-title">Room ${roomCount}</h3>
-
-            <div class="guest-item">
-                <div class="left">
-                    <p class="label">Adults</p>
-                    <p class="sub">Above 12 Years</p>
+        const selectedRoomHTML = `
+        <div class="selected-room-box">
+            <div class="room-row">
+                <div class="room-info">
+                    <h3 class="room-title">${roomTitle}</h3>
+                    <div class="room-details">
+                        <span class="num">${adults}</span> <span class="label">Adults</span>,
+                        <span class="num">${childrenWithBed}</span> <span class="label">Children</span>,
+                        <span class="num">${infants}</span> <span class="label">Infants</span>
+                    </div>
                 </div>
-                <div class="counter">
-                    <button class="minus">−</button>
-                    <span class="count">2</span>
-                    <button class="plus">+</button>
-                </div>
+                <img src="../../assets/icons/delete.png" alt="Delete" class="delete-icon" />
             </div>
+        </div>
+        `;
 
-            <div class="guest-item">
-                <div class="left">
-                    <p class="label">Child</p>
-                    <p class="sub">2–12 Years (With bed)</p>
-                </div>
-                <div class="counter">
-                    <button class="minus">−</button>
-                    <span class="count">0</span>
-                    <button class="plus">+</button>
-                </div>
+        selectedRoomsContainer.insertAdjacentHTML("beforeend", selectedRoomHTML);
+        currentRoom.remove();
+    }
+
+    // Count only selected-room-box to determine next room number
+    const nextRoomNumber = selectedRoomsContainer.querySelectorAll(".selected-room-box").length + 1;
+
+    const newRoomHTML = `
+    <div class="room-box">
+        <h3 class="room-title">Room ${nextRoomNumber}</h3>
+
+        <div class="guest-item">
+            <div class="left">
+                <p class="label">Adults</p>
+                <p class="sub">Above 12 Years</p>
             </div>
-
-            <div class="guest-item">
-                <div class="left">
-                    <p class="label">Child</p>
-                    <p class="sub">2–12 Years (Without bed)</p>
-                </div>
-                <div class="counter">
-                    <button class="minus">−</button>
-                    <span class="count">0</span>
-                    <button class="plus">+</button>
-                </div>
+            <div class="counter">
+                <button class="minus">−</button>
+                <span class="count">2</span>
+                <button class="plus">+</button>
             </div>
+        </div>
 
-            <div class="guest-item">
-                <div class="left">
-                    <p class="label">Infant</p>
-                    <p class="sub">0–23 Months (Without bed)</p>
-                </div>
-                <div class="counter">
-                    <button class="minus">−</button>
-                    <span class="count">0</span>
-                    <button class="plus">+</button>
-                </div>
+        <div class="guest-item">
+            <div class="left">
+                <p class="label">Child</p>
+                <p class="sub">2–12 Years (With bed)</p>
             </div>
-        </div>`;
+            <div class="counter">
+                <button class="minus">−</button>
+                <span class="count">0</span>
+                <button class="plus">+</button>
+            </div>
+        </div>
 
-        roomsContainer.insertAdjacentHTML("beforeend", roomHTML);
+        <div class="guest-item">
+            <div class="left">
+                <p class="label">Child</p>
+                <p class="sub">2–12 Years (Without bed)</p>
+            </div>
+            <div class="counter">
+                <button class="minus">−</button>
+                <span class="count">0</span>
+                <button class="plus">+</button>
+            </div>
+        </div>
 
-        const newRoom = roomsContainer.lastElementChild;
-        handleCounter(newRoom);
+        <div class="guest-item">
+            <div class="left">
+                <p class="label">Infant</p>
+                <p class="sub">0–23 Months (Without bed)</p>
+            </div>
+            <div class="counter">
+                <button class="minus">−</button>
+                <span class="count">0</span>
+                <button class="plus">+</button>
+            </div>
+        </div>
+    </div>`;
+
+    roomsContainer.insertAdjacentHTML("beforeend", newRoomHTML);
+    handleCounter(roomsContainer.lastElementChild);
+});
+
+// Function to renumber rooms
+const renumberRooms = () => {
+    const selectedRooms = selectedRoomsContainer.querySelectorAll(".selected-room-box");
+    selectedRooms.forEach((room, index) => {
+        room.querySelector(".room-title").textContent = `Room ${index + 1}`;
     });
+
+    const editableRooms = roomsContainer.querySelectorAll(".room-box");
+    editableRooms.forEach((room, index) => {
+        room.querySelector(".room-title").textContent = `Room ${selectedRooms.length + index + 1}`;
+    });
+};
+
+// Delete room from selectedRoomsContainer
+selectedRoomsContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-icon")) {
+        const roomBox = e.target.closest(".selected-room-box");
+        if (roomBox) {
+            roomBox.remove();
+            renumberRooms();
+        }
+    }
 });

@@ -21,12 +21,16 @@
                         <div class="appbar-text-column">
                             <p class="city-name">New York City</p>
                             <p class="date-name">Anytime</p>
-                            </label>
                         </div>
                         <div class="right-icons">
                             <img src="../../assets/icons/edit.png" alt="Mail Icon" class="right-img-edit" />
-                            <div class="liked-wrapper">
-                                <img src="../../assets/icons/liked.png" alt="Liked Icon" class="right-img-liked" />
+                            <div class="liked-wrapper" id="appBarLikedWrapper">
+                                <img src="../../assets/icons/likedHeart.png" alt="Liked Icon"
+                                    class="heart-icon-liked" />
+
+                                <img src="../../assets/icons/unlikedHeart.png" alt="Unliked Icon"
+                                    class="heart-icon-unliked" />
+
                                 <span class="badge">4</span>
                             </div>
                         </div>
@@ -45,9 +49,20 @@
         <div class="filter-section">
             <div class="filter-tabs-container">
                 <div class="filter-tabs">
-                    <button class="filter-tab active">Recommended</button>
-                    <button class="filter-tab">Duration</button>
-                    <button class="filter-tab price">Price <span>↓</span></button>
+                    <button class="filter-tab active" data-direction="down" data-sort-key="recommended">
+                        Recommended
+                        <img src="../../assets/icons/price_arrow.png" alt="sort arrow" class="sort-arrow" />
+                    </button>
+
+                    <button class="filter-tab" data-direction="down" data-sort-key="duration">
+                        Duration
+                        <img src="../../assets/icons/price_arrow.png" alt="sort arrow" class="sort-arrow" />
+                    </button>
+
+                    <button class="filter-tab" data-direction="down" data-sort-key="price">
+                        Price
+                        <img src="../../assets/icons/price_arrow.png" alt="sort arrow" class="sort-arrow" />
+                    </button>
                 </div>
             </div>
 
@@ -65,13 +80,20 @@
             </div>
 
             <div class="holiday-card" onclick="window.location.href='../detail_page/detail_page.html'">
+                <div class="akbar-choice-badge">
+                    <div class="badge-content-wrapper">
+                        <img src="../../assets/icons/akbarTravelCredit.png" alt="" class="icon" />
+                        <h4>Akbar Choice</h4>
+                    </div>
+                </div>
                 <div class="image-section">
                     <!-- <div class="ribbon">Akbar Choice</div> -->
                     <img src="../../assets/images/ourtoppick1.png" alt="Washington New York Boston"
                         class="main-image" />
-                    <button class="like-btn">
-                        <img src="../../assets/icons/favourite.svg" alt="Like" />
-                    </button>
+                    <div class="card-like-btn" data-liked="false">
+                        <img src="../../assets/icons/likedHeart.png" alt="Liked Icon" class="heart-icon-liked" />
+                        <img src="../../assets/icons/unlikedHeart.png" alt="Unliked Icon" class="heart-icon-unliked" />
+                    </div>
                     <div class="title-section">
                         <h3>Washington New York and Boston</h3>
                         <span class="duration">6N & 7D</span>
@@ -122,9 +144,14 @@
                 <div class="image-section">
                     <!-- <div class="ribbon">Akbar Choice</div> -->
                     <img src="../../assets/images/wheretogo1.png" alt="Washington New York Boston" class="main-image" />
-                    <button class="like-btn">
-                        <img src="../../assets/icons/favourite.svg" alt="Like" />
-                    </button>
+                    <div class="card-like-btn" data-liked="false">
+                        <img src="../../assets/icons/likedHeart.png" alt="Liked Icon" class="heart-icon-liked" />
+                        <img src="../../assets/icons/unlikedHeart.png" alt="Unliked Icon" class="heart-icon-unliked" />
+                    </div>
+                    <div class="card-like-btn" data-liked="false">
+                        <img src="../../assets/icons/likedHeart.png" alt="Liked Icon" class="heart-icon-liked" />
+                        <img src="../../assets/icons/unlikedHeart.png" alt="Unliked Icon" class="heart-icon-unliked" />
+                    </div>
                     <div class="title-section">
                         <h3>Washington New York and Boston</h3>
                         <span class="duration">6N & 7D</span>
@@ -185,9 +212,10 @@
                     <!-- <div class="ribbon">Akbar Choice</div> -->
                     <img src="../../assets/images/international2.png" alt="Washington New York Boston"
                         class="main-image" />
-                    <button class="like-btn">
-                        <img src="../../assets/icons/favourite.svg" alt="Like" />
-                    </button>
+                    <div class="card-like-btn" data-liked="false">
+                        <img src="../../assets/icons/likedHeart.png" alt="Liked Icon" class="heart-icon-liked" />
+                        <img src="../../assets/icons/unlikedHeart.png" alt="Unliked Icon" class="heart-icon-unliked" />
+                    </div>
                     <div class="title-section">
                         <h3>Washington New York and Boston</h3>
                         <span class="duration">6N & 7D</span>
@@ -248,7 +276,7 @@
                     <input type="text" id="destination" placeholder="New York" />
                 </div>
 
-                <div class="modify-input-group">
+                <div class="modify-input-group updateMonth">
                     <label class="search-label" for="month">Month of Travel</label>
                     <div class="custom-display-input" id="monthDisplay">
                         <span class="month-part">Aug</span>
@@ -279,9 +307,9 @@
                         </div>
 
                         <div class="flight-tabs">
-                            <div class="tabs">
-                                <button class="chip active">With Flight</button>
-                                <button class="chip">Without Flight</button>
+                            <div class="tabs" id="flightTabs">
+                                <button class="chip active" data-value="With Flight">With Flight</button>
+                                <button class="chip" data-value="Without Flight">Without Flight</button>
                             </div>
                         </div>
                     </section>
@@ -292,27 +320,27 @@
                         <div class="section-head">
                             <h3>Holidays Type</h3>
                         </div>
-                        <div class="checkbox-group">
+                        <div class="checkbox-group" data-group="Holidays Type">
                             <label class="custom-checkbox">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" checked data-value="Customised Holidays">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Customised Holidays</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Group Holidays">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Group Holidays</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Luxury">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Luxury</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Fixed Departures">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Fixed Departures</span>
                             </label>
@@ -349,19 +377,19 @@
                         </div>
                         <div class="radio-group">
                             <label class="custom-radio">
-                                <input type="radio" name="duration" checked />
+                                <input type="radio" name="duration" value="Upto 3 Nights" checked />
                                 <span class="radio-check"></span>
                                 Upto 3 Nights
                             </label>
 
                             <label class="custom-radio">
-                                <input type="radio" name="duration" />
+                                <input type="radio" name="duration" value="4 Nights" />
                                 <span class="radio-check"></span>
                                 4 Nights
                             </label>
 
                             <label class="custom-radio">
-                                <input type="radio" name="duration" />
+                                <input type="radio" name="duration" value="5 Nights+" />
                                 <span class="radio-check"></span>
                                 5 Nights+
                             </label>
@@ -374,27 +402,27 @@
                         <div class="section-head">
                             <h3>Recommended For</h3>
                         </div>
-                        <div class="checkbox-group">
+                        <div class="checkbox-group" data-group="Recommended For">
                             <label class="custom-checkbox">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" data-value="Family" checked>
                                 <span class="checkmark"></span>
                                 <span class="label-text">Family</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Honeymoon">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Honeymoon</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Family with Kids Friendly">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Family with Kids Friendly</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Coach Tour">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Coach Tour</span>
                             </label>
@@ -407,21 +435,21 @@
                         <div class="section-head">
                             <h3>Country</h3>
                         </div>
-                        <div class="checkbox-group">
+                        <div class="checkbox-group" data-group="Country">
                             <label class="custom-checkbox">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" data-value="Singapore" checked>
                                 <span class="checkmark"></span>
                                 <span class="label-text">Singapore</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Canada">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Canada</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="United States">
                                 <span class="checkmark"></span>
                                 <span class="label-text">United States</span>
                             </label>
@@ -434,33 +462,33 @@
                         <div class="section-head">
                             <h3>Cities The Trip Should Include</h3>
                         </div>
-                        <div class="checkbox-group">
+                        <div class="checkbox-group" data-group="Cities The Trip Should Include">
                             <label class="custom-checkbox">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" data-value="New York City" checked>
                                 <span class="checkmark"></span>
                                 <span class="label-text">New York City</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Washington, D.C.">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Washington, D.C.</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Niagara Falls">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Niagara Falls</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Las Vegas">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Las Vegas</span>
                             </label>
 
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" data-value="Los Angeles">
                                 <span class="checkmark"></span>
                                 <span class="label-text">Los Angeles</span>
                             </label>
@@ -476,6 +504,38 @@
                 </div>
 
 
+            </div>
+        </div>
+
+        <!-- Month Picker Popup -->
+        <div class="month-popup-overlay" id="monthPopup">
+            <div class="month-popup">
+                <h3>Select Month Of Travel</h3>
+                <div class="row">
+                    <img src="../../assets/icons/arrowleft.png" alt="Left Image" class="side-image" />
+                    <p class="popup-year">2022</p>
+                    <img src="../../assets/icons/arrowright.png" alt="Right Image" class="side-image" />
+                </div>
+
+
+                <div class="month-grid">
+                    <button>Jan</button>
+                    <button>Feb</button>
+                    <button>Mar</button>
+                    <button>Apr</button>
+                    <button>May</button>
+                    <button>Jun</button>
+                    <button>Jul</button>
+                    <button>Aug</button>
+                    <button>Sep</button>
+                    <button>Oct</button>
+                    <button>Nov</button>
+                    <button>Dec</button>
+                </div>
+
+                <button class="anytime-btn" onclick="window.location.href='../listing_page/listing_page.html'">
+                    Anytime
+                </button>
             </div>
         </div>
 

@@ -628,7 +628,7 @@
             <div class="summary-item item-tcs">
                 <p class="label">
                     TCS (5%) <span class="claim">Claimable <img src="../../assets/icons/info.png" alt="info"
-                            class="dropdown-icon" /></span>
+                            class="open-tcs-btn" /></span>
                 </p>
                 <p class="value"><span class="currency">₹</span>15,460</p>
             </div>
@@ -637,6 +637,22 @@
             <div class="summary-item grand">
                 <p class="label">Grand Total</p>
                 <p class="value"><span class="currency">₹</span>324,654</p>
+            </div>
+        </div>
+
+        <!-- TCS Popup -->
+        <div id="tcspopup" class="tcs-popup-overlay">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h2>TCS Info</h2>
+                    <span id="closeTcsPopup" class="close-btn">&times;</span>
+                </div>
+
+                <p>TCS Amount collected shall reflect in Form 26AS of the person of which PAN is provided which can be
+                    claimed while filling their Income tax return.</p>
+                <p>Without submission of PAN card 10 of TCS will be applicable</p>
+                <div class="divider-line"></div>
+                <button class="search-btn">Ok</button>
             </div>
         </div>
 
@@ -1068,60 +1084,70 @@
                 <h3>Rooms & Guests</h3>
                 <div class="divider-line"></div>
 
-                <div id="roomsContainer">
-                    <div class="room-box">
-                        <h3 class="room-title">Room 1</h3>
-
-                        <div class="guest-item">
-                            <div class="left">
-                                <p class="label">Adults</p>
-                                <p class="sub">Above 12 Years</p>
-                            </div>
-                            <div class="counter">
-                                <button class="minus"><img src="../../assets/icons/minus.svg" alt="Image 1"></button>
-                                <span class="count">2</span>
-                                <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
-                            </div>
-                        </div>
-
-                        <div class="guest-item">
-                            <div class="left">
-                                <p class="label">Child</p>
-                                <p class="sub">2–12 Years (With bed)</p>
-                            </div>
-                            <div class="counter">
-                                <button class="minus"><img src="../../assets/icons/minus.svg" alt="Image 1"></button>
-                                <span class="count">2</span>
-                                <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
-                            </div>
-                        </div>
-
-                        <div class="guest-item">
-                            <div class="left">
-                                <p class="label">Child</p>
-                                <p class="sub">2–12 Years (Without bed)</p>
-                            </div>
-                            <div class="counter">
-                                <button class="minus"><img src="../../assets/icons/minus.svg" alt="Image 1"></button>
-                                <span class="count">0</span>
-                                <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
-                            </div>
-                        </div>
-
-                        <div class="guest-item">
-                            <div class="left">
-                                <p class="label">Infant</p>
-                                <p class="sub">0–23 Months (Without bed)</p>
-                            </div>
-                            <div class="counter">
-                                <button class="minus"><img src="../../assets/icons/minus.svg" alt="Image 1"></button>
-                                <span class="count">0</span>
-                                <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
-                            </div>
-                        </div>
+                <div id="roomsScrollWrapper">
+                    <div id="selectedRoomsContainer">
                     </div>
-                    <div class="divider-line"></div>
+
+                    <div id="roomsContainer">
+                        <div class="room-box">
+                            <h3 class="room-title">Room 1</h3>
+
+                            <div class="guest-item">
+                                <div class="left">
+                                    <p class="label">Adults</p>
+                                    <p class="sub">Above 12 Years</p>
+                                </div>
+                                <div class="counter">
+                                    <button class="minus"><img src="../../assets/icons/minus.svg"
+                                            alt="Image 1"></button>
+                                    <span class="count">2</span>
+                                    <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
+                                </div>
+                            </div>
+
+                            <div class="guest-item">
+                                <div class="left">
+                                    <p class="label">Child</p>
+                                    <p class="sub">2–12 Years (With bed)</p>
+                                </div>
+                                <div class="counter">
+                                    <button class="minus"><img src="../../assets/icons/minus.svg"
+                                            alt="Image 1"></button>
+                                    <span class="count">2</span>
+                                    <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
+                                </div>
+                            </div>
+
+                            <div class="guest-item">
+                                <div class="left">
+                                    <p class="label">Child</p>
+                                    <p class="sub">2–12 Years (Without bed)</p>
+                                </div>
+                                <div class="counter">
+                                    <button class="minus"><img src="../../assets/icons/minus.svg"
+                                            alt="Image 1"></button>
+                                    <span class="count">0</span>
+                                    <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
+                                </div>
+                            </div>
+
+                            <div class="guest-item">
+                                <div class="left">
+                                    <p class="label">Infant</p>
+                                    <p class="sub">0–23 Months (Without bed)</p>
+                                </div>
+                                <div class="counter">
+                                    <button class="minus"><img src="../../assets/icons/minus.svg"
+                                            alt="Image 1"></button>
+                                    <span class="count">0</span>
+                                    <button class="plus"><img src="../../assets/icons/plus.svg" alt="Image 1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider-line"></div>
+                    </div>
                 </div>
+
                 <p id="addRoomBtn" class="add-room-btn">+ Add Another Room</p>
                 <div class="bottom-bar-button">
                     <button class="continue-btn">DONE</button>

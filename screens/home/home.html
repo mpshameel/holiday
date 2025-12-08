@@ -46,13 +46,19 @@
                 <a href="#" class="view-all">View All</a>
             </div>
 
-            <div class="tabs">
-                <button class="chip active"><img src="../../assets/icons/flame.svg" alt="Hot" class="chip-icon" />
-                    Hot</button>
-                <button class="chip"><img src="../../assets/icons/statue-of-liberty.svg" alt="Hot" class="chip-icon" />
-                    International</button>
-                <button class="chip"><img src="../../assets/icons/india-gate.png" alt="Hot" class="chip-icon" />
-                    Domestic</button>
+            <div class="tabs" id="dealTabs">
+                <button class="chip active" data-value="{{tab_1_value}}">
+                    <img src="../../assets/icons/flame.svg" class="chip-icon" />
+                    Hot
+                </button>
+                <button class="chip" data-value="{{tab_2_value}}">
+                    <img src="../../assets/icons/statue-of-liberty.svg" class="chip-icon" />
+                    International
+                </button>
+                <button class="chip" data-value="{{tab_3_value}}">
+                    <img src="../../assets/icons/india-gate.png" class="chip-icon" />
+                    Domestic
+                </button>
             </div>
 
             <div class="deals-row">
@@ -147,16 +153,16 @@
                 <h3>International</h3>
             </div>
 
-            <div class="tabs">
-                <button class="chip active">
+            <div class="tabs" id="internationalTabs">
+                <button class="chip active" data-value="island">
                     Island</button>
-                <button class="chip">
+                <button class="chip" data-value="asia">
                     Asia</button>
-                <button class="chip">
+                <button class="chip" data-value="africa">
                     Africa</button>
-                <button class="chip">
+                <button class="chip" data-value="australia">
                     Australia</button>
-                <button class="chip">
+                <button class="chip" data-value="europe">
                     Europe</button>
             </div>
 
@@ -214,16 +220,16 @@
                 <h3>Domestic</h3>
             </div>
 
-            <div class="tabs">
-                <button class="chip active">
+            <div class="tabs" id="domesticTabs">
+                <button class="chip active" data-value="central">
                     Central</button>
-                <button class="chip">
+                <button class="chip" data-value="east">
                     East</button>
-                <button class="chip">
+                <button class="chip" data-value="north">
                     North</button>
-                <button class="chip">
+                <button class="chip" data-value="south">
                     South</button>
-                <button class="chip">
+                <button class="chip" data-value="west">
                     West</button>
             </div>
 
@@ -281,20 +287,20 @@
                 <h4>The Best Time To Travel…</h4>
             </div>
 
-            <div class="tabs">
-                <button class="chip active">
+            <div class="tabs" id="wheretogoTabs">
+                <button class="chip active" data-value="jan">
                     Jan</button>
-                <button class="chip">
+                <button class="chip" data-value="feb">
                     Feb</button>
-                <button class="chip">
+                <button class="chip" data-value="mar">
                     Mar</button>
-                <button class="chip">
+                <button class="chip" data-value="apr">
                     Apr</button>
-                <button class="chip">
+                <button class="chip" data-value="may">
                     May</button>
-                <button class="chip">
+                <button class="chip" data-value="jun">
                     Jun</button>
-                <button class="chip">
+                <button class="chip" data-value="july">
                     July</button>
             </div>
 

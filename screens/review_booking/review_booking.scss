@@ -489,6 +489,580 @@
     }
 }
 
+
+/* --- Background overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+}
+
+/* fare summary */
+.fare-summary {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    max-height: 70vh;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    background: $white;
+    border-radius: $radius-popup $radius-popup 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    padding: 12px 16px 30px 16px;
+    z-index: 999;
+    transition: bottom 0.35s ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+    .fare-summary-detail-content {
+        overflow-y: auto;
+        flex-grow: 1;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .drag-bar {
+        width: 90px;
+        height: 3px;
+        background: $dragbar;
+        border-radius: $radius-base;
+        margin: 0 auto 16px auto;
+    }
+
+    h3 {
+        text-align: center;
+        font-family: $font-primary-poppins;
+        font-size: $fs-xl;
+        font-weight: $fw-semibold;
+        color: $heading;
+        margin-bottom: 16px;
+    }
+
+    .divider-line {
+        height: 0;
+        border-bottom: 1px dashed $dividerCity;
+        width: 100%;
+    }
+
+    .summary-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .summary-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .label {
+            font-family: $font-primary-poppins;
+            font-size: $fs-md;
+            font-weight: $fw-semibold;
+            color: $heading;
+            margin: 0;
+
+            &.bold {
+                font-weight: $fw-bold;
+            }
+        }
+
+        .sub {
+            font-family: $font-primary-poppins;
+            font-size: $fs-md;
+            font-weight: $fw-regular;
+            color: $borderTxt;
+            margin: 0;
+            margin-top: 2px;
+        }
+
+        .value {
+            font-family: $font-primary-poppins;
+            font-size: $fs-md;
+            font-weight: $fw-semibold;
+            color: $heading;
+            margin: 0;
+            text-align: right;
+
+            .currency {
+                font-family: $font-roboto;
+                font-size: $fs-md;
+                font-weight: $fw-medium;
+                color: $heading;
+                margin: 0;
+            }
+
+            &.bold {
+                font-weight: $fw-bold;
+
+                .currency {
+                    font-weight: $fw-semibold;
+                }
+            }
+
+            &.green {
+                color: $filterGreen;
+
+                .currency {
+                    color: $filterGreen;
+                }
+            }
+        }
+
+        .claim {
+            font-family: $font-primary-poppins;
+            font-size: $fs-base;
+            font-weight: $fw-semibold;
+            color: $borderTxt;
+            margin-left: 4px;
+            gap: 9px;
+
+            img {
+                height: 16px;
+                width: 16px;
+                margin-left: 9px;
+            }
+        }
+    }
+
+    .item-package {
+        margin-top: 15px;
+    }
+
+    .item-gst {
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+
+    .item-total {
+        margin-top: 10px;
+    }
+
+    .item-tcs {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .grand {
+        margin-top: 16px;
+
+        &.detailFs {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+
+        .label {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-xxl;
+            color: $heading;
+
+            &.detailFs {
+                font-size: $fs-md;
+                font-weight: $fw-bold;
+            }
+
+        }
+
+        .value {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-semibold;
+            font-size: $fs-xxl;
+            color: $heading;
+
+            .currency {
+                font-family: $font-roboto;
+                font-size: $fs-xxl;
+                font-weight: $fw-medium;
+                color: $heading;
+                margin: 0;
+            }
+
+            &.detailFs {
+                font-size: $fs-md;
+                font-weight: $fw-bold;
+
+                .currency {
+                    font-size: $fs-md;
+                    font-weight: $fw-semibold
+                }
+            }
+        }
+    }
+
+    .item-discount {
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    .item-package-cost {
+        margin-top: 12px;
+    }
+
+    .item-gst-detailFs {
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    .item-total-detailFs {
+        margin-top: 12px;
+    }
+
+    .item-tcs-detailFs {
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    &.show {
+        bottom: 80px;
+    }
+}
+
+/* select payment mode */
+.paytype-box {
+    padding: 24px 0;
+}
+
+.payment-option {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 12px 0;
+    cursor: pointer;
+
+    .option-content {
+        margin-left: 8px;
+        margin-top: -4px;
+        flex: 1;
+
+        .title {
+            font-family: $font-primary-poppins;
+            font-size: $fs-md;
+            font-weight: $fw-semibold;
+            color: $heading;
+            margin: 0;
+        }
+
+        .sub {
+            font-family: $font-primary-poppins;
+            font-size: $fs-base;
+            font-weight: $fw-regular;
+            color: $borderTxt;
+            margin: 0;
+        }
+    }
+
+    .value {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $heading;
+        margin: 0;
+
+        .currency {
+            font-family: $font-roboto;
+            font-size: $fs-md;
+            font-weight: $fw-medium;
+            color: $heading;
+            margin: 0;
+        }
+    }
+}
+
+.you-pay {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px 0;
+
+    .you-pay-title {
+        font-family: $font-primary-poppins;
+        font-size: $fs-xxl;
+        font-weight: $fw-semibold;
+        color: $heading;
+        margin: 0;
+    }
+
+    .you-pay-sub {
+        font-family: $font-primary-poppins;
+        font-size: $fs-base;
+        font-weight: $fw-regular;
+        color: $borderTxt;
+        margin: 0;
+    }
+
+    .currency {
+        font-family: $font-roboto;
+        font-size: $fs-xxl;
+        font-weight: $fw-medium;
+        color: $heading;
+        margin: 0;
+    }
+
+    .big {
+        font-family: $font-primary-poppins;
+        font-size: $fs-xxl;
+        font-weight: $fw-semibold;
+        color: $heading;
+        margin: 0;
+    }
+}
+
+
+/* radio group */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 16px;
+
+    .custom-radio {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $heading;
+        position: relative;
+
+        input[type='radio'] {
+            display: none;
+        }
+
+        .radio-check {
+            width: 22px;
+            height: 22px;
+            border: 2px solid $borderGrey;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        input[type='radio']:checked+.radio-check {
+            border-color: $brand;
+        }
+
+        input[type='radio']:checked+.radio-check::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: $brand;
+            border-radius: 50%;
+        }
+    }
+}
+
+/* checkbox group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 16px;
+
+    .custom-checkbox {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $heading;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid $borderGrey;
+            border-radius: $radius-xsm;
+            background-color: $white;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        input:checked~.checkmark {
+            background-color: $brand;
+            border-color: $brand;
+            box-shadow: 0 2px 6px rgba(227, 110, 85, 0.4);
+        }
+
+        .checkmark::after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        input:checked~.checkmark::after {
+            display: block;
+            left: 6px;
+            width: 5px;
+            height: 10px;
+            border: solid $white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .custom-checkbox:hover .checkmark {
+            border-color: $brand;
+        }
+
+        .label-text {
+            position: relative;
+            top: 1px;
+            font-family: $font-primary-poppins;
+            font-weight: $fw-medium;
+            font-size: $fs-md;
+            color: $heading;
+            margin: 0;
+        }
+
+        .bold {
+            font-weight: $fw-semibold;
+        }
+
+        .popup {
+            width: 90%;
+            font-weight: $fw-regular;
+            font-size: $fs-base;
+            color: $borderTxt;
+            margin-top: 10px;
+        }
+    }
+
+    .show-all {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-base;
+        color: $showAllLink;
+    }
+
+}
+
+/* tcs popup */
+.tcs-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+
+
+    &.active {
+        display: flex;
+    }
+
+    .popup-content {
+        margin: 0 16px;
+        background: $white;
+        border-radius: $radius-xlg;
+        padding: 16px 12px 0 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        animation: slideIn 0.3s ease forwards;
+        max-height: 90vh;
+        overflow-y: auto;
+
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            margin-bottom: 16px;
+            position: relative;
+
+            h2 {
+                width: 90%;
+                font-family: $font-primary-poppins;
+                font-weight: $fw-semibold;
+                font-size: $fs-lg;
+                color: $heading;
+                margin: 0;
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-right: 4px;
+                line-height: 1;
+                font-size: $fs-price;
+                cursor: pointer;
+                color: $borderTxt;
+            }
+        }
+    }
+
+    p {
+        font-family: $font-primary-poppins;
+        font-size: $fs-base;
+        font-weight: $fw-regular;
+        color: $heading;
+    }
+
+    .divider-line {
+        margin: 0;
+        height: 1px;
+        background-color: $skyblueBorder;
+        width: 100%;
+    }
+
+    .search-btn {
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(90deg, #6787F3, $link);
+        color: $white;
+        border: none;
+        border-radius: $radius-lg;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        color: $white;
+        font-size: $fs-md;
+        cursor: pointer;
+        margin: 24px 0;
+    }
+}
+
 /* bottombar */
 .bottom-bar {
     position: fixed;
