@@ -979,11 +979,24 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 }
             }
 
+            .extra-item {
+                display: none;
+            }
+
+            &.expanded {
+                .extra-item {
+                    display: flex;
+                }
+            }
+
+
             .show-all {
                 font-family: $font-primary-poppins;
                 font-weight: $fw-semibold;
                 font-size: $fs-base;
                 color: $showAllLink;
+                display: inline-block;
+                cursor: pointer;
             }
 
         }

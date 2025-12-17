@@ -112,7 +112,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
 
 /* section headings */
 .section {
-    margin: 0 0 0px 16px;
+    margin: 0;
 
     &:not(:has(.tabs)) {
         .international-row {
@@ -395,6 +395,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
 }
 
 /* international container */
+
 .international-row {
     display: flex;
     overflow-x: auto;
@@ -403,9 +404,20 @@ $hero-bg-tall: '../assets/images/deal1.png';
     scrollbar-width: none;
     background-color: $white;
     padding-bottom: 4px;
+    padding-left: 16px;
 
     &::-webkit-scrollbar {
         display: none;
+    }
+
+    .card {
+        padding-left: 5px;
+        flex: 0 0 auto;
+        width: 302px;
+        border-radius: $radius-xlg;
+        position: relative;
+        overflow: visible;
+        scroll-snap-align: start;
     }
 
     .image-containerRounded {
@@ -874,4 +886,56 @@ $hero-bg-tall: '../assets/images/deal1.png';
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* akbar choice badge */
+$cut-depth: 10px;
+$height: 30px;
+
+.akbar-choice-badge {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    z-index: 10;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border-width: 10px 0 0 5px;
+        border-style: solid;
+        border-color: $brand transparent transparent transparent;
+    }
+
+    .badge-content-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 2px 20px 1px 10px;
+        background-color: #004aad;
+        color: $white;
+
+        clip-path: polygon(0% 0%,
+            100% 0%,
+            calc(100% - #{$cut-depth}) 50%,
+            100% 100%,
+            0% 100%);
+
+        h4 {
+            font-family: $font-primary-poppins;
+            font-weight: $fw-regular;
+            font-size: $fs-xxs;
+            color: $white;
+            margin: 0;
+        }
+
+
+        img {
+            margin-right: 6px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+
 }

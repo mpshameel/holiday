@@ -252,3 +252,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+/*** View All ***/
+document.querySelectorAll('.checkbox-group .show-all').forEach(link => {
+
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const group = link.closest('.checkbox-group');
+        const isExpanded = group.classList.toggle('expanded');
+
+        link.textContent = isExpanded ? 'Show less' : 'Show all';
+    });
+});
