@@ -39,407 +39,1089 @@
         </header>
 
 
-        <!-- Deals -->
-        <section class="section">
-            <div class="section-head">
-                <h3>Deals</h3>
-                <a href="../holiday_deals/holiday_deals.html" class="view-all">View All</a>
-            </div>
-
-            <div class="tabs" id="dealTabs">
-                <button class="chip active" data-value="{{tab_1_value}}">
-                    <img src="../../assets/icons/flame.svg" class="chip-icon" />
-                    Hot
-                </button>
-                <button class="chip" data-value="{{tab_2_value}}">
-                    <img src="../../assets/icons/statue-of-liberty.svg" class="chip-icon" />
-                    International
-                </button>
-                <button class="chip" data-value="{{tab_3_value}}">
-                    <img src="../../assets/icons/india-gate.png" class="chip-icon" />
-                    Domestic
-                </button>
-            </div>
-
-            <div class="deals-row">
-                <article class="card">
-                    <div class="image-container">
-                        <img src="../../assets/images/deal1.png" alt="International Group" />
-                        <div class="badge">FIXED DEPARTURES</div>
-                        <div class="overlay-text">
-                            <h4 class="title">INTERNATIONAL GROUP</h4>
-                            <h4 class="subtitle">FIXED DEPARTURES</h4>
-                            <p class="info">Packages starting from</p>
-                            <strong class="price">₹31,999*</strong>
-                        </div>
-                    </div>
-
-
-                    <div class="promo">
-                        <div class="code">PROMO CODE</div>
-                        <div class="copy-container">
-                            <span class="copy-text">ATHOLYD</span>
-                            <img src="../../assets/icons/copy.svg" alt="Copy" class="copy-icon" />
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card card--blue">
-                    <div class="image-container">
-                        <img src="../../assets/images/deal2.png" alt="International Group" />
-                        <div class="badge">FIXED DEPARTURES</div>
-                        <div class="overlay-text">
-                            <h4 class="title">INTERNATIONAL GROUP</h4>
-                            <h4 class="subtitle">FIXED DEPARTURES</h4>
-                            <p class="info">Packages starting from</p>
-                            <strong class="price">₹31,999*</strong>
-                        </div>
-                    </div>
-
-
-                    <div class="promo">
-                        <div class="code">PROMO CODE</div>
-                        <div class="copy-container">
-                            <span class="copy-text">ATHOLYD</span>
-                            <img src="../../assets/icons/copy.svg" alt="Copy" class="copy-icon" />
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="divider">
-                <div class="divider-line"></div>
-            </div>
-        </section>
-
-
-        <!-- Experiences -->
-        <section class="section">
-            <div class="section-head">
-                <h3>Experiences</h3>
-            </div>
-
-            <div class="experiences">
-                <div class="exp-item">
-                    <div class="icon"><img src="../../assets/icons/homelogo.png" alt="Recommended"></div>
-                    <p>Recommended</p>
+        <!-- SCROLLABLE CONTENT -->
+        <div class="page-scroll">
+            <!-- Deals -->
+            <section class="section">
+                <div class="section-head">
+                    <h3>Deals</h3>
+                    <a href="../holiday_deals/holiday_deals.html" class="view-all">View All</a>
                 </div>
-                <div class="exp-item">
-                    <div class="icon"><img src="../../assets/icons/love.png" alt="Honeymoon"></div>
-                    <p>Honeymoon</p>
+
+                <div class="tabs" id="dealTabs">
+                    <button class="chip active" data-value="hot">
+                        <img src="../../assets/icons/flame.svg" class="chip-icon" />
+                        Hot
+                    </button>
+                    <button class="chip" data-value="international">
+                        <img src="../../assets/icons/statue-of-liberty.svg" class="chip-icon" />
+                        International
+                    </button>
+                    <button class="chip" data-value="domestic">
+                        <img src="../../assets/icons/india-gate.png" class="chip-icon" />
+                        Domestic
+                    </button>
                 </div>
-                <div class="exp-item">
-                    <div class="icon"><img src="../../assets/icons/rafting.png" alt="Adventure"></div>
-                    <p>Adventure</p>
+
+                <div class="deals-row">
+                    <article class="card" data-category="hot">
+                        <div class="image-container">
+                            <img src="../../assets/images/list1.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="promo">
+                            <div class="code">PROMO CODE</div>
+                            <div class="copy-container">
+                                <span class="copy-text">ATHOLYD</span>
+                                <img src="../../assets/icons/copy.svg" alt="Copy" class="copy-icon" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="hot">
+                        <div class="image-container">
+                            <img src="../../assets/images/deal2.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="promo">
+                            <div class="code">PROMO CODE</div>
+                            <div class="copy-container">
+                                <span class="copy-text">ATHOLYD</span>
+                                <img src="../../assets/icons/copy.svg" alt="Copy" class="copy-icon" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="hot">
+                        <div class="image-container">
+                            <img src="../../assets/images/deal1.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <article class="card" data-category="international">
+                        <div class="image-container">
+                            <img src="../../assets/images/deal1.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="promo">
+                            <div class="code">PROMO CODE</div>
+                            <div class="copy-container">
+                                <span class="copy-text">ATHOLYD</span>
+                                <img src="../../assets/icons/copy.svg" alt="Copy" class="copy-icon" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="international">
+                        <div class="image-container">
+                            <img src="../../assets/images/deal1.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <article class="card" data-category="international">
+                        <div class="image-container">
+                            <img src="../../assets/images/deal2.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="promo">
+                            <div class="code">PROMO CODE</div>
+                            <div class="copy-container">
+                                <span class="copy-text">ATHOLYD</span>
+                                <img src="../../assets/icons/copy.svg" alt="Copy" class="copy-icon" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="domestic">
+                        <div class="image-container">
+                            <img src="../../assets/images/deal1.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <article class="card" data-category="domestic">
+                        <div class="image-container">
+                            <img src="../../assets/images/deal1.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="promo">
+                            <div class="code">PROMO CODE</div>
+                            <div class="copy-container">
+                                <span class="copy-text">ATHOLYD</span>
+                                <img src="../../assets/icons/copy.svg" alt="Copy" class="copy-icon" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" data-category="domestic">
+                        <div class="image-container">
+                            <img src="../../assets/images/deal2.png" alt="International Group" />
+                            <div class="badge">FIXED DEPARTURES</div>
+                            <div class="overlay-text">
+                                <h4 class="title">INTERNATIONAL GROUP</h4>
+                                <h4 class="subtitle">FIXED DEPARTURES</h4>
+                                <p class="info">Packages starting from</p>
+                                <strong class="price">₹31,999*</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="promo">
+                            <div class="code">PROMO CODE</div>
+                            <div class="copy-container">
+                                <span class="copy-text">ATHOLYD</span>
+                                <img src="../../assets/icons/copy.svg" alt="Copy" class="copy-icon" />
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
-                <div class="exp-item">
-                    <div class="icon"><img src="../../assets/icons/food-delivery.png" alt="Food"></div>
-                    <p>Food</p>
+                <div class="divider">
+                    <div class="divider-line"></div>
                 </div>
-                <div class="exp-item">
-                    <div class="icon"><img src="../../assets/icons/shopping-bags.png" alt="Shopping"></div>
-                    <p>Shopping</p>
+            </section>
+
+
+            <!-- Experiences -->
+            <section class="section">
+                <div class="section-head">
+                    <h3>Experiences</h3>
                 </div>
-            </div>
 
-            <div class="divider">
-                <div class="divider-line"></div>
-            </div>
-        </section>
+                <div class="experiences">
+                    <div class="exp-item">
+                        <div class="icon"><img src="../../assets/icons/homelogo.png" alt="Recommended"></div>
+                        <p>Recommended</p>
+                    </div>
+                    <div class="exp-item">
+                        <div class="icon"><img src="../../assets/icons/love.png" alt="Honeymoon"></div>
+                        <p>Honeymoon</p>
+                    </div>
+                    <div class="exp-item">
+                        <div class="icon"><img src="../../assets/icons/rafting.png" alt="Adventure"></div>
+                        <p>Adventure</p>
+                    </div>
+                    <div class="exp-item">
+                        <div class="icon"><img src="../../assets/icons/food-delivery.png" alt="Food"></div>
+                        <p>Food</p>
+                    </div>
+                    <div class="exp-item">
+                        <div class="icon"><img src="../../assets/icons/shopping-bags.png" alt="Shopping"></div>
+                        <p>Shopping</p>
+                    </div>
+                </div>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                </div>
+            </section>
 
 
-        <!-- International -->
-        <section class="section">
-            <div class="section-head">
-                <h3>International</h3>
-            </div>
+            <!-- International -->
+            <section class="section">
+                <div class="section-head">
+                    <h3>International</h3>
+                </div>
 
-            <div class="tabs" id="internationalTabs">
-                <button class="chip active" data-value="island">
-                    Island</button>
-                <button class="chip" data-value="asia">
-                    Asia</button>
-                <button class="chip" data-value="africa">
-                    Africa</button>
-                <button class="chip" data-value="australia">
-                    Australia</button>
-                <button class="chip" data-value="europe">
-                    Europe</button>
-            </div>
+                <div class="tabs" id="internationalTabs">
+                    <button class="chip active" data-value="island">
+                        Island</button>
+                    <button class="chip" data-value="asia">
+                        Asia</button>
+                    <button class="chip" data-value="africa">
+                        Africa</button>
+                    <button class="chip" data-value="australia">
+                        Australia</button>
+                    <button class="chip" data-value="europe">
+                        Europe</button>
+                </div>
 
-            <div class="international-row">
-                <article class="card card--white">
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/international1.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">₹31,99</span>
-                                <span class="per">/person</span>
+                <div class="international-row">
+                    <article class="card card--white" data-category="island">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹31,999</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
                             </div>
-                            <div class="duration">3N & 4D</div>
                         </div>
-                    </div>
 
 
-                    <div class="cardlabel">
-                        <p>Super Saver Maldives</p>
-                    </div>
-                </article>
-
-                <article class="card card--white">
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/international2.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">62,999</span>
-                                <span class="per">/person</span>
+                        <div class="cardlabel">
+                            <p>Super Saver Maldives</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="island">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">62,999</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
                             </div>
-                            <div class="duration">3N & 4D</div>
                         </div>
-                    </div>
 
-                    <div class="cardlabel">
-                        <p>Best of Maldives</p>
-                    </div>
-                </article>
-            </div>
+                        <div class="cardlabel">
+                            <p>Best of Maldives</p>
+                        </div>
+                    </article>
 
-            <div class="divider">
-                <div class="divider-line"></div>
-            </div>
-        </section>
-
-        <!-- Domestic -->
-        <section class="section">
-            <div class="section-head">
-                <h3>Domestic</h3>
-            </div>
-
-            <div class="tabs" id="domesticTabs">
-                <button class="chip active" data-value="central">
-                    Central</button>
-                <button class="chip" data-value="east">
-                    East</button>
-                <button class="chip" data-value="north">
-                    North</button>
-                <button class="chip" data-value="south">
-                    South</button>
-                <button class="chip" data-value="west">
-                    West</button>
-            </div>
-
-            <div class="international-row">
-                <article class="card card--white">
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/domestic1.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">7,100</span>
-                                <span class="per">/person</span>
+                    <article class="card card--white" data-category="asia">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">62,999</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
                             </div>
-                            <div class="duration">1N & 2D</div>
                         </div>
-                    </div>
 
-                    <div class="cardlabel">
-                        <p>Raipur short Break</p>
-                    </div>
-                </article>
-
-                <article class="card card--white">
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/domestic2.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">₹12,100</span>
-                                <span class="per">/person</span>
+                        <div class="cardlabel">
+                            <p>Best of Maldives</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="asia">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹31,99</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
                             </div>
-                            <div class="duration">1N & 2D</div>
                         </div>
-                    </div>
 
-                    <div class="cardlabel">
-                        <p>Kanha Short Break</p>
-                    </div>
-                </article>
-            </div>
 
-            <div class="divider">
-                <div class="divider-line"></div>
-            </div>
-        </section>
+                        <div class="cardlabel">
+                            <p>Super Saver Maldives</p>
+                        </div>
+                    </article>
 
-        <!-- Where To Go When -->
-        <section class="section">
-            <div class="section-head">
-                <h3>Where To Go When </h3>
-                <h4>The Best Time To Travel…</h4>
-            </div>
-
-            <div class="tabs" id="wheretogoTabs">
-                <button class="chip active" data-value="jan">
-                    Jan</button>
-                <button class="chip" data-value="feb">
-                    Feb</button>
-                <button class="chip" data-value="mar">
-                    Mar</button>
-                <button class="chip" data-value="apr">
-                    Apr</button>
-                <button class="chip" data-value="may">
-                    May</button>
-                <button class="chip" data-value="jun">
-                    Jun</button>
-                <button class="chip" data-value="july">
-                    July</button>
-            </div>
-
-            <div class="international-row">
-                <article class="card card--white">
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/wheretogo1.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">7,100</span>
-                                <span class="per">/person</span>
+                    <article class="card card--white" data-category="africa">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">62,999</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
                             </div>
-                            <div class="duration">1N & 2D</div>
                         </div>
-                    </div>
 
-                    <div class="cardlabel">
-                        <p>New Zealand</p>
-                    </div>
-                </article>
-
-                <article class="card card--white">
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/wheretogo2.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">₹12,100</span>
-                                <span class="per">/person</span>
+                        <div class="cardlabel">
+                            <p>Best of Maldives</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="africa">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹31,99</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
                             </div>
-                            <div class="duration">1N & 2D</div>
                         </div>
-                    </div>
 
-                    <div class="cardlabel">
-                        <p>Dubai</p>
-                    </div>
-                </article>
-            </div>
 
-            <div class="divider">
-                <div class="divider-line"></div>
-            </div>
-        </section>
-
-        <!-- Our Top Picks -->
-        <section class="section">
-            <div class="section-head">
-                <h3>Our Top Picks </h3>
-            </div>
-
-            <div class="international-row">
-                <article class="card card--white">
-                    <div class="akbar-choice-badge">
-                        <div class="badge-content-wrapper">
-                            <img src="../../assets/icons/akbarTravelCredit.png" alt="" class="icon" />
-                            <h4>Akbar Choice</h4>
+                        <div class="cardlabel">
+                            <p>Super Saver Maldives</p>
                         </div>
-                    </div>
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/ourtoppick1.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">₹31,999</span>
+                    </article>
+
+                    <article class="card card--white" data-category="australia">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹31,99</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
                             </div>
-                            <div class="duration">1N & 2D</div>
                         </div>
-                    </div>
 
-                    <!-- <div class="ribbon">
+
+                        <div class="cardlabel">
+                            <p>Super Saver Maldives</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="australia">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">62,999</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Best of Maldives</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="europe">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">62,999</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Best of Maldives</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="europe">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/international1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹31,99</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">3N & 4D</div>
+                            </div>
+                        </div>
+
+
+                        <div class="cardlabel">
+                            <p>Super Saver Maldives</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                </div>
+            </section>
+
+            <!-- Domestic -->
+            <section class="section">
+                <div class="section-head">
+                    <h3>Domestic</h3>
+                </div>
+
+                <div class="tabs" id="domesticTabs">
+                    <button class="chip active" data-value="central">
+                        Central</button>
+                    <button class="chip" data-value="east">
+                        East</button>
+                    <button class="chip" data-value="north">
+                        North</button>
+                    <button class="chip" data-value="south">
+                        South</button>
+                    <button class="chip" data-value="west">
+                        West</button>
+                </div>
+
+                <div class="international-row">
+                    <article class="card card--white" data-category="central">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">71,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Raipur short Break</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="central">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Kanha Short Break</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="east">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Kanha Short Break</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="east">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Raipur short Break</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="north">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Raipur short Break</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="north">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Kanha Short Break</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="south">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Kanha Short Break</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="south">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Raipur short Break</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="west">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Raipur short Break</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="west">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/domestic2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Kanha Short Break</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                </div>
+            </section>
+
+            <!-- Where To Go When -->
+            <section class="section">
+                <div class="section-head">
+                    <h3>Where To Go When </h3>
+                    <h4>The Best Time To Travel…</h4>
+                </div>
+
+                <div class="tabs" id="wheretogoTabs">
+                    <button class="chip active" data-value="jan">
+                        Jan</button>
+                    <button class="chip" data-value="feb">
+                        Feb</button>
+                    <button class="chip" data-value="mar">
+                        Mar</button>
+                    <button class="chip" data-value="apr">
+                        Apr</button>
+                    <button class="chip" data-value="may">
+                        May</button>
+                    <button class="chip" data-value="jun">
+                        Jun</button>
+                    <button class="chip" data-value="july">
+                        July</button>
+                </div>
+
+                <div class="international-row">
+                    <article class="card card--white" data-category="jan">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>New Zealand</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="jan">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Dubai</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="feb">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Dubai</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="feb">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>New Zealand</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="mar">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>New Zealand</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="mar">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Dubai</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="apr">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Dubai</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="apr">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>New Zealand</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="may">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>New Zealand</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="may">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Dubai</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="jun">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Dubai</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="jun">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>New Zealand</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--white" data-category="july">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">7,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>New Zealand</p>
+                        </div>
+                    </article>
+                    <article class="card card--white" data-category="july">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/wheretogo2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹12,100</span>
+                                    <span class="per">/person</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <div class="cardlabel">
+                            <p>Dubai</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                </div>
+            </section>
+
+            <!-- Our Top Picks -->
+            <section class="section">
+                <div class="section-head">
+                    <h3>Our Top Picks </h3>
+                </div>
+
+                <div class="international-row">
+                    <article class="card card--white">
+                        <div class="akbar-choice-badge">
+                            <div class="badge-content-wrapper">
+                                <img src="../../assets/icons/akbarTravelCredit.png" alt="" class="icon" />
+                                <h4>Akbar Choice</h4>
+                            </div>
+                        </div>
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/ourtoppick1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹31,999</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="ribbon">
                         <img src="./assets/icons/homelogo.png" alt="plane" class="ribbon-icon">
                         <span>Akbar Choice</span>
                     </div> -->
-                    <div class="cardlabel">
-                        <p>Bali</p>
-                    </div>
-                </article>
-
-                <article class="card card--white">
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/ourtoppick2.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">₹39,999</span>
-                            </div>
-                            <div class="duration">1N & 2D</div>
+                        <div class="cardlabel">
+                            <p>Bali</p>
                         </div>
-                    </div>
-                    <!-- <div class="ribbon">
+                    </article>
+
+                    <article class="card card--white">
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/ourtoppick2.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹39,999</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
+                        <!-- <div class="ribbon">
                         <img src="./assets/icons/homelogo.png" alt="plane" class="ribbon-icon">
                         <span>Akbar Choice</span>
                     </div> -->
 
-                    <div class="cardlabel">
-                        <p>Thailand</p>
-                    </div>
-                </article>
-
-                <article class="card card--white">
-                    <div class="akbar-choice-badge">
-                        <div class="badge-content-wrapper">
-                            <img src="../../assets/icons/akbarTravelCredit.png" alt="" class="icon" />
-                            <h4>Akbar Choice</h4>
+                        <div class="cardlabel">
+                            <p>Thailand</p>
                         </div>
-                    </div>
-                    <div class="image-containerRounded">
-                        <img src="../../assets/images/ourtoppick1.png" alt="International Group" />
-                        <button class="like-btn">
-                            <img src="../../assets/icons/favourite.svg" alt="Like" />
-                        </button>
-                        <div class="price-overlay">
-                            <div class="price-left">
-                                <span class="amount">₹31,99</span>
+                    </article>
+
+                    <article class="card card--white">
+                        <div class="akbar-choice-badge">
+                            <div class="badge-content-wrapper">
+                                <img src="../../assets/icons/akbarTravelCredit.png" alt="" class="icon" />
+                                <h4>Akbar Choice</h4>
                             </div>
-                            <div class="duration">1N & 2D</div>
                         </div>
-                    </div>
+                        <div class="image-containerRounded">
+                            <img src="../../assets/images/ourtoppick1.png" alt="International Group" />
+                            <button class="like-btn">
+                                <img src="../../assets/icons/favourite.svg" alt="Like" />
+                            </button>
+                            <div class="price-overlay">
+                                <div class="price-left">
+                                    <span class="amount">₹31,99</span>
+                                </div>
+                                <div class="duration">1N & 2D</div>
+                            </div>
+                        </div>
 
-                    <!-- <div class="ribbon">
+                        <!-- <div class="ribbon">
                         <img src="./assets/icons/homelogo.png" alt="plane" class="ribbon-icon">
                         <span>Akbar Choice</span>
                     </div> -->
-                    <div class="cardlabel">
-                        <p>Bali</p>
-                    </div>
-                </article>
-            </div>
-        </section>
+                        <div class="cardlabel">
+                            <p>Bali</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
 
 
         <!-- search popup -->

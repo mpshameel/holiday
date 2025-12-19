@@ -1,26 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
     // /*** Tabs and pills ***/
-    function setupChipTabs(tabId) {
+    function setupChipTabs(tabId, rowSelector = null) {
         const group = document.getElementById(tabId);
         if (!group) return;
 
         const chips = group.querySelectorAll(".chip");
+
+        // OPTIONAL content row
+        let cards = [];
+        if (rowSelector) {
+            const section = group.closest(".section");
+            const row = section?.querySelector(rowSelector);
+            if (row) {
+                cards = row.querySelectorAll(".card");
+            }
+        }
+
+        function filterCards(value) {
+            if (!cards.length) return; // ✅ FILTER POPUP SAFE
+
+            cards.forEach(card => {
+                const category = card.dataset.category;
+                card.style.display =
+                    !category || category === value ? "block" : "none";
+            });
+        }
 
         chips.forEach(chip => {
             chip.addEventListener("click", () => {
                 chips.forEach(c => c.classList.remove("active"));
                 chip.classList.add("active");
 
-                console.log(tabId + " selected:", chip.dataset.value);
+                const value = chip.dataset.value;
+
+                // store filter value (important)
+                group.dataset.selected = value;
+
+                filterCards(value);
             });
         });
+
+        // Initial state
+        const activeChip = group.querySelector(".chip.active");
+        if (activeChip) {
+            group.dataset.selected = activeChip.dataset.value;
+            filterCards(activeChip.dataset.value);
+        }
     }
 
-    // your groups
-    setupChipTabs("dealTabs");
-    setupChipTabs("internationalTabs");
-    setupChipTabs("domesticTabs");
-    setupChipTabs("wheretogoTabs");
+    setupChipTabs("dealTabs", ".deals-row");
+    setupChipTabs("internationalTabs", ".international-row");
+    setupChipTabs("domesticTabs", ".international-row");
+    setupChipTabs("wheretogoTabs", ".international-row");
     setupChipTabs("flightTabs");
 });
 

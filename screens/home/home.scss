@@ -12,6 +12,14 @@ $hero-bg-tall: '../assets/images/deal1.png';
     color: $white;
     overflow: hidden;
 
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }
+
     &--tall {
         height: 279px;
         background: url($hero-bg-tall) center/cover no-repeat;
@@ -112,7 +120,8 @@ $hero-bg-tall: '../assets/images/deal1.png';
 
 /* section headings */
 .section {
-    margin: 0;
+    // margin: 0;
+    margin: 0 0 16px 16px;
 
     &:not(:has(.tabs)) {
         .international-row {
@@ -210,9 +219,47 @@ $hero-bg-tall: '../assets/images/deal1.png';
         position: relative;
         scroll-snap-align: start;
 
+        &:has(.promo) {
+            .image-container img {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        &:not(:has(.promo)) {
+            .image-container {
+                height: 100%;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.10);
+                    z-index: 1;
+                    border-radius: $radius-xlg;
+                }
+            }
+
+            .image-container img {
+                height: 100%;
+                border-radius: $radius-xlg;
+            }
+        }
+
         .image-container {
             position: relative;
             overflow: hidden;
+            height: 142px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.10);
+                z-index: 1;
+                border-top-left-radius: $radius-xlg;
+                border-top-right-radius: $radius-xlg;
+            }
 
             img {
                 width: 100%;
@@ -474,7 +521,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
         .amount {
             font-family: $font-primary-poppins;
             font-weight: $fw-bold;
-            font-size: $fs-md;
+            font-size: $fs-base;
             color: $white;
         }
 
@@ -894,7 +941,7 @@ $height: 30px;
 
 .akbar-choice-badge {
     position: absolute;
-    top: -5px;
+    top: -7px;
     left: 0;
     z-index: 10;
 
