@@ -921,7 +921,7 @@
 
                 <div class="modify-input-group rooms-open">
                     <label class="search-label" for="month">Starting on</label>
-                    <div class="custom-display-input" id="monthDisplay">
+                    <div class="custom-display-input" id="roomResultDisplay">
                         <span class="month-part">1</span>
                         <span class="submonth-part">Room</span>
                         <span class="month-part">2</span>
@@ -1166,8 +1166,13 @@
                 </div>
 
                 <p id="addRoomBtn" class="add-room-btn">+ Add Another Room</p>
+                <div class="room-limit-message">
+                    Looks like you've reached the limit of 4 rooms!<br>
+                    You can edit or delete an existing one
+                </div>
+
                 <div class="bottom-bar-button">
-                    <button class="continue-btn">DONE</button>
+                    <button class="continue-btn" id="closeRoomPopup">DONE</button>
                 </div>
             </div>
         </div>

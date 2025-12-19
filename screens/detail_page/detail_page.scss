@@ -2859,11 +2859,12 @@
     margin: 0 0;
 
     &.active {
-        display: flex;
+        display: flex !important;
         overflow: hidden;
     }
 
     .rooms-popup {
+        position: relative;
         display: flex;
         flex-direction: column;
         animation: fadeUp 0.3s ease;
@@ -2919,7 +2920,12 @@
 
     #roomsContainer {
         flex: 1;
-        overflow: hidden;
+        overflow: visible;
+    }
+
+    #selectedRoomsContainer {
+        display: flex;
+        flex-direction: column;
     }
 
     .room-box {
@@ -3069,9 +3075,6 @@
 
     }
 
-
-
-
     .add-room-btn {
         text-align: center;
         font-family: $font-primary-poppins;
@@ -3083,11 +3086,38 @@
         margin-bottom: 110px;
     }
 
+    .room-limit-message {
+        background-color: $calenderTagBg;
+        border: 1px solid $calenderTagBg;
+        padding: 16px;
+        margin: 16px 16px 38px 16px;
+        margin-bottom: 110px;
+        border-radius: 8px;
+        text-align: center;
+        font-family: $font-primary-poppins;
+        font-size: $fs-base;
+        font-weight: $fw-semibold;
+        color: $heading;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-5px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 }
 
 /* bottombar button */
 .bottom-bar-button {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     background: $white;
     box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);

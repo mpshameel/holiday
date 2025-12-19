@@ -257,7 +257,13 @@
             width: auto;
             display: flex;
             align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
 
+            &.active {
+                background: $linkBorder;
+                border-color: $link;
+            }
 
             img {
                 width: 26px;

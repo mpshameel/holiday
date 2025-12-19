@@ -242,3 +242,19 @@ document.addEventListener('DOMContentLoaded', () => {
         activeInput = null;
     });
 });
+
+/*** Gender ***/
+document.addEventListener('DOMContentLoaded', () => {
+    const genderOptions = document.querySelectorAll('.traveller-gender');
+
+    genderOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            genderOptions.forEach(opt => opt.classList.remove('active'));
+
+            option.classList.add('active');
+
+            const selectedGender = option.querySelector('.gender').textContent;
+            console.log("Selected Gender:", selectedGender);
+        });
+    });
+});

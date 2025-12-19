@@ -324,7 +324,8 @@ calenderOverlay.addEventListener("click", (e) => {
     }
 });
 
-/*** Calender ***/
+/*** Calendar Overlay ***/
+/*** Data ***/
 const specialDays = {
     "2025-02-10": "Raksha Ba…",
     "2025-02-14": "Sri Narayana Guru",
@@ -334,95 +335,27 @@ const specialDays = {
 };
 
 const monthTags = {
-    "2025-11": "1 Holiday",
     "2025-02": "3 Holiday",
-    "2025-03": "2 Holiday",
+    "2025-03": "2 Holiday"
 };
-
-const monthsWrapper = document.getElementById("monthsWrapper");
 
 function getPriceForDate(year, month, day) {
     return day % 2 === 1 ? 324654 : null;
 }
 
-function renderMonth(year, month) {
-    const box = document.createElement("div");
-    box.classList.add("month-box");
-
-    const monthName = new Date(year, month)
-        .toLocaleString('default', { month: 'long' });
-
-    const tag = getMonthTag(year, month);
-
-    box.innerHTML = `
-    <div class="month-title">
-        ${monthName} ${year}
-        ${tag ? `<span class="month-tag">${tag}</span>` : ""}
-    </div>
-
-    <div class="cal-days" id="days-${year}-${month}"></div>
-`;
-
-
-    monthsWrapper.appendChild(box);
-
-    const daysContainer = box.querySelector(".cal-days");
-
-    const firstDay = new Date(year, month, 1).getDay();
-    const lastDate = new Date(year, month + 1, 0).getDate();
-
-    for (let i = 0; i < firstDay; i++) {
-        daysContainer.innerHTML += `<div></div>`;
-    }
-
-    for (let d = 1; d <= lastDate; d++) {
-        const dayOfWeek = new Date(year, month, d).getDay();
-        const price = getPriceForDate(year, month, d);
-
-        const isToday =
-            d === new Date().getDate() &&
-            month === new Date().getMonth() &&
-            year === new Date().getFullYear();
-
-        let classes = [];
-
-        if (isToday) classes.push("today");
-        if (dayOfWeek === 0) classes.push("sunday");
-
-
-        const tag = getDayTag(year, month, d);
-
-        if (price) {
-            classes.push("day-with-price");
-            daysContainer.innerHTML += `
-    <div class="${classes.join(" ")}">
-        ${tag ? `<span class="day-tag">${tag}</span>` : ""}
-        ${d}
-        <span class="day-price">
-            <span class="rupee-icon">₹</span>
-            ${price.toLocaleString()}
-        </span>
-    </div>
-  `;
-        } else {
-            classes.push("day-no-price");
-            daysContainer.innerHTML += `
-    <div class="${classes.join(" ")}">
-        ${tag ? `<span class="day-tag">${tag}</span>` : ""}
-        ${d}
-    </div>
-  `;
-        }
-    }
-}
-
-function renderYearRange(startYear, endYear) {
-    monthsWrapper.innerHTML = "";
-    for (let y = startYear; y <= endYear; y++) {
-        for (let m = 0; m < 12; m++) {
-            renderMonth(y, m);
-        }
-    }
+/*** HELPERS ***/
+function formatSelectedDate(year, month, day) {
+    const date = new Date(year, month, day);
+    return {
+        dayMonth: date.toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "short"
+        }),
+        weekdayYear: date.toLocaleDateString("en-GB", {
+            weekday: "short",
+            year: "numeric"
+        })
+    };
 }
 
 function getDayTag(year, month, day) {
@@ -435,140 +368,407 @@ function getMonthTag(year, month) {
     return monthTags[key] || null;
 }
 
-renderYearRange(2025, 2025);
+/*** SELECTION HANDLER ***/
+function selectDate(dayDiv) {
+    document
+        .querySelectorAll(".cal-days div.selected")
+        .forEach(el => el.classList.remove("selected", "today"));
 
-/*** Rooms Drawer ***/
-const roomsOpen = document.querySelector(".rooms-open");
-const roomsOverlay = document.querySelector(".rooms-overlay");
+    dayDiv.classList.add("selected", "today");
 
-roomsOpen.addEventListener("click", (e) => {
-    e.stopPropagation();
-    roomsOverlay.classList.add("active");
-});
+    const year = +dayDiv.dataset.year;
+    const month = +dayDiv.dataset.month;
+    const day = +dayDiv.dataset.day;
 
-roomsOverlay.querySelector(".rooms-popup").addEventListener("click", (e) => {
-    e.stopPropagation();
-});
+    const { dayMonth, weekdayYear } = formatSelectedDate(year, month, day);
 
-roomsOverlay.addEventListener("click", (e) => {
-    if (e.target === roomsOverlay) {
-        roomsOverlay.classList.remove("active");
-    }
-});
+    document.querySelector("#monthDisplay .month-part").textContent = dayMonth;
+    document.querySelector("#monthDisplay .year-part").textContent = weekdayYear;
 
+    document.getElementById("currentDate").innerHTML =
+        `${dayMonth} <span>${weekdayYear}</span>`;
+}
 
-/*** Rooms Box ***/
-addRoomBtn.addEventListener("click", () => {
-    selectedRoomsContainer.style.display = "block";
+/*** RENDER MONTH ***/
+function renderMonth(year, month) {
+    const box = document.createElement("div");
+    box.className = "month-box";
 
-    const currentRoom = roomsContainer.querySelector(".room-box");
-    if (currentRoom) {
-        const roomTitle = currentRoom.querySelector(".room-title").textContent;
-        const adults = currentRoom.querySelectorAll(".guest-item")[0].querySelector(".count").textContent;
-        const childrenWithBed = currentRoom.querySelectorAll(".guest-item")[1].querySelector(".count").textContent;
-        const childrenWithoutBed = currentRoom.querySelectorAll(".guest-item")[2].querySelector(".count").textContent;
-        const infants = currentRoom.querySelectorAll(".guest-item")[3].querySelector(".count").textContent;
-
-        const selectedRoomHTML = `
-        <div class="selected-room-box">
-            <div class="room-row">
-                <div class="room-info">
-                    <h3 class="room-title">${roomTitle}</h3>
-                    <div class="room-details">
-                        <span class="num">${adults}</span> <span class="label">Adults</span>,
-                        <span class="num">${childrenWithBed}</span> <span class="label">Children</span>,
-                        <span class="num">${infants}</span> <span class="label">Infants</span>
-                    </div>
-                </div>
-                <img src="../../assets/icons/delete.png" alt="Delete" class="delete-icon" />
-            </div>
-        </div>
-        `;
-
-        selectedRoomsContainer.insertAdjacentHTML("beforeend", selectedRoomHTML);
-        currentRoom.remove();
-    }
-
-    // Count only selected-room-box to determine next room number
-    const nextRoomNumber = selectedRoomsContainer.querySelectorAll(".selected-room-box").length + 1;
-
-    const newRoomHTML = `
-    <div class="room-box">
-        <h3 class="room-title">Room ${nextRoomNumber}</h3>
-
-        <div class="guest-item">
-            <div class="left">
-                <p class="label">Adults</p>
-                <p class="sub">Above 12 Years</p>
-            </div>
-            <div class="counter">
-                <button class="minus">−</button>
-                <span class="count">2</span>
-                <button class="plus">+</button>
-            </div>
-        </div>
-
-        <div class="guest-item">
-            <div class="left">
-                <p class="label">Child</p>
-                <p class="sub">2–12 Years (With bed)</p>
-            </div>
-            <div class="counter">
-                <button class="minus">−</button>
-                <span class="count">0</span>
-                <button class="plus">+</button>
-            </div>
-        </div>
-
-        <div class="guest-item">
-            <div class="left">
-                <p class="label">Child</p>
-                <p class="sub">2–12 Years (Without bed)</p>
-            </div>
-            <div class="counter">
-                <button class="minus">−</button>
-                <span class="count">0</span>
-                <button class="plus">+</button>
-            </div>
-        </div>
-
-        <div class="guest-item">
-            <div class="left">
-                <p class="label">Infant</p>
-                <p class="sub">0–23 Months (Without bed)</p>
-            </div>
-            <div class="counter">
-                <button class="minus">−</button>
-                <span class="count">0</span>
-                <button class="plus">+</button>
-            </div>
-        </div>
-    </div>`;
-
-    roomsContainer.insertAdjacentHTML("beforeend", newRoomHTML);
-    handleCounter(roomsContainer.lastElementChild);
-});
-
-// Function to renumber rooms
-const renumberRooms = () => {
-    const selectedRooms = selectedRoomsContainer.querySelectorAll(".selected-room-box");
-    selectedRooms.forEach((room, index) => {
-        room.querySelector(".room-title").textContent = `Room ${index + 1}`;
+    const monthName = new Date(year, month).toLocaleString("default", {
+        month: "long"
     });
 
-    const editableRooms = roomsContainer.querySelectorAll(".room-box");
-    editableRooms.forEach((room, index) => {
-        room.querySelector(".room-title").textContent = `Room ${selectedRooms.length + index + 1}`;
-    });
-};
+    const tag = getMonthTag(year, month);
 
-// Delete room from selectedRoomsContainer
-selectedRoomsContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("delete-icon")) {
-        const roomBox = e.target.closest(".selected-room-box");
-        if (roomBox) {
-            roomBox.remove();
-            renumberRooms();
+    box.innerHTML = `
+        <div class="month-title">
+            ${monthName} ${year}
+            ${tag ? `<span class="month-tag">${tag}</span>` : ""}
+        </div>
+        <div class="cal-days"></div>
+    `;
+
+    monthsWrapper.appendChild(box);
+    const daysContainer = box.querySelector(".cal-days");
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    // Empty cells
+    for (let i = 0; i < firstDay; i++) {
+        daysContainer.appendChild(document.createElement("div"));
+    }
+
+    const today = new Date();
+
+    for (let d = 1; d <= lastDate; d++) {
+        const dayDiv = document.createElement("div");
+        const date = new Date(year, month, d);
+
+        dayDiv.dataset.year = year;
+        dayDiv.dataset.month = month;
+        dayDiv.dataset.day = d;
+
+        const price = getPriceForDate(year, month, d);
+        const tagText = getDayTag(year, month, d);
+
+        dayDiv.classList.add(price ? "day-with-price" : "day-no-price");
+
+        if (date.getDay() === 0) dayDiv.classList.add("sunday");
+
+        if (
+            d === today.getDate() &&
+            month === today.getMonth() &&
+            year === today.getFullYear()
+        ) {
+            dayDiv.classList.add("today", "selected");
+            setTimeout(() => selectDate(dayDiv), 0); // ✅ initial today
+        }
+
+        if (tagText) {
+            dayDiv.innerHTML += `<span class="day-tag">${tagText}</span>`;
+        }
+
+        dayDiv.innerHTML += d;
+
+        if (price) {
+            dayDiv.innerHTML += `
+                <span class="day-price">
+                    <span class="rupee-icon">₹</span>${price.toLocaleString()}
+                </span>`;
+        }
+
+        dayDiv.addEventListener("click", () => {
+            selectDate(dayDiv);
+            calenderOverlay.classList.remove("active");
+        });
+
+        daysContainer.appendChild(dayDiv);
+    }
+}
+
+/*** RENDER YEAR RANGE ***/
+function renderYearRange(startYear, endYear) {
+    monthsWrapper.innerHTML = "";
+    for (let y = startYear; y <= endYear; y++) {
+        for (let m = 0; m < 12; m++) {
+            renderMonth(y, m);
         }
     }
+}
+
+/*** INIT ***/
+const currentYear = new Date().getFullYear();
+renderYearRange(currentYear, currentYear);
+
+
+
+/*** Rooms Drawer ***/
+/**********************
+ * 1. ELEMENTS & INITIALIZATION
+ **********************/
+const roomsOpen = document.querySelector(".rooms-open");
+const roomsOverlay = document.querySelector(".rooms-overlay");
+const roomsPopup = document.querySelector(".rooms-popup");
+const continueBtn = document.querySelector(".continue-btn");
+const monthDisplay = document.getElementById("monthDisplay");
+const addRoomBtn = document.getElementById("addRoomBtn");
+const selectedRoomsContainer = document.getElementById("selectedRoomsContainer");
+const roomsContainer = document.getElementById("roomsContainer");
+const editorRoom = document.querySelector(".room-box");
+const closeRoomPopup = document.getElementById("closeRoomPopup");
+
+let editingRoomBox = null;
+
+// Initialization: Setup Room 1 on load
+function init() {
+    const firstRoom = createNewRoomBox("2", "2", "0", "0");
+    editingRoomBox = firstRoom;
+    firstRoom.style.display = "none";
+    firstRoom.after(editorRoom);
+    handleCounter(editorRoom);
+    renumberAllRooms();
+}
+
+/**********************
+ * 2. CORE LOGIC FUNCTIONS
+ **********************/
+
+function saveCurrentEditorData() {
+    if (!editingRoomBox) return;
+    const counts = editorRoom.querySelectorAll(".count");
+
+    editingRoomBox.dataset.adults = counts[0].textContent;
+    editingRoomBox.dataset.childWithBed = counts[1].textContent;
+    editingRoomBox.dataset.childWithoutBed = counts[2].textContent;
+    editingRoomBox.dataset.infants = counts[3].textContent;
+
+    const totalChildren = +counts[1].textContent + +counts[2].textContent;
+    editingRoomBox.querySelector(".room-details").innerHTML = `
+        <b>${counts[0].textContent}</b> Adults, 
+        <b>${totalChildren}</b> Children, 
+        <b>${counts[3].textContent}</b> Infants
+    `;
+}
+
+function createNewRoomBox(adults, c1, c2, inf) {
+    const room = document.createElement("div");
+    room.className = "selected-room-box";
+    room.dataset.adults = adults;
+    room.dataset.childWithBed = c1;
+    room.dataset.childWithoutBed = c2;
+    room.dataset.infants = inf;
+
+    room.innerHTML = `
+        <div class="room-row">
+            <div class="room-info">
+                <h3 class="room-title"></h3>
+                <div class="room-details"></div>
+            </div>
+            <img src="../../assets/icons/delete.png" class="delete-icon">
+        </div>
+    `;
+    selectedRoomsContainer.appendChild(room);
+    return room;
+}
+
+function renumberAllRooms() {
+    const all = [...selectedRoomsContainer.querySelectorAll(".selected-room-box")];
+    const limitMessage = document.querySelector(".room-limit-message");
+    const addRoomBtn = document.getElementById("addRoomBtn");
+
+    all.forEach((box, i) => {
+        const title = box.querySelector(".room-title");
+        if (title) title.textContent = `Room ${i + 1}`;
+    });
+    if (editingRoomBox) {
+        const idx = all.findIndex(b => b === editingRoomBox);
+        editorRoom.querySelector(".room-title").textContent = `Room ${idx + 1}`;
+    }
+
+    if (all.length >= 4) {
+        if (limitMessage) limitMessage.style.display = "block";
+        if (addRoomBtn) addRoomBtn.style.display = "none";
+    } else {
+        if (limitMessage) limitMessage.style.display = "none";
+        if (addRoomBtn) addRoomBtn.style.display = "block";
+    }
+}
+
+function loadRoomToEditor(roomBox) {
+    const counts = editorRoom.querySelectorAll(".count");
+    counts[0].textContent = roomBox.dataset.adults;
+    counts[1].textContent = roomBox.dataset.childWithBed;
+    counts[2].textContent = roomBox.dataset.childWithoutBed;
+    counts[3].textContent = roomBox.dataset.infants;
+}
+
+function handleCounter(roomBox) {
+    roomBox.querySelectorAll(".counter").forEach(counter => {
+        const minus = counter.querySelector(".minus");
+        const plus = counter.querySelector(".plus");
+        const countEl = counter.querySelector(".count");
+        const label = counter.closest(".guest-item")?.querySelector(".label").textContent.toLowerCase() || "";
+        const min = label.includes("adult") ? 1 : 0;
+
+        minus.onclick = (e) => { e.stopPropagation(); const v = +countEl.textContent; if (v > min) countEl.textContent = v - 1; };
+        plus.onclick = (e) => { e.stopPropagation(); countEl.textContent = +countEl.textContent + 1; };
+    });
+}
+
+/**********************
+ * 3. EVENT LISTENERS
+ **********************/
+
+// Open/Close Popup
+roomsOpen.addEventListener("click", () => roomsOverlay.classList.add("active"));
+
+roomsOverlay.addEventListener("click", (e) => {
+    if (e.target === roomsOverlay) roomsOverlay.classList.remove("active");
+});
+
+roomsPopup.addEventListener("click", (e) => e.stopPropagation());
+
+if (closeRoomPopup) {
+    closeRoomPopup.addEventListener("click", (e) => {
+        console.log("Close button clicked");
+
+        if (typeof saveCurrentEditorData === "function") {
+            saveCurrentEditorData();
+        }
+
+        let finalRooms = 0;
+        let finalGuests = 0;
+
+        const allRooms = document.querySelectorAll(".selected-room-box");
+        finalRooms = allRooms.length;
+
+        allRooms.forEach((room) => {
+            const a = parseInt(room.dataset.adults) || 0;
+            const c1 = parseInt(room.dataset.childWithBed) || 0;
+            const c2 = parseInt(room.dataset.childWithoutBed) || 0;
+            const i = parseInt(room.dataset.infants) || 0;
+            finalGuests += (a + c1 + c2 + i);
+        });
+
+        const display = document.getElementById("roomResultDisplay");
+        if (display) {
+            const spans = display.querySelectorAll("span");
+
+            if (spans.length >= 4) {
+                spans[0].innerText = finalRooms;
+                spans[1].innerText = finalRooms > 1 ? "Rooms" : "Room";
+                spans[2].innerText = finalGuests;
+                spans[3].innerText = finalGuests > 1 ? "Guests" : "Guest";
+                console.log("Display updated successfully on roomResultDisplay");
+            } else {
+                console.error("Found roomResultDisplay but it doesn't have 4 spans");
+            }
+        } else {
+            console.error("Could not find element with id='roomResultDisplay'");
+        }
+
+        // 4. Close the popup
+        const overlay = document.querySelector(".rooms-overlay");
+        if (overlay) {
+            overlay.classList.remove("active");
+        }
+    });
+}
+
+// Add Room Button
+addRoomBtn.addEventListener("click", () => {
+    saveCurrentEditorData();
+    if (editingRoomBox) editingRoomBox.style.display = "block";
+    const newRoom = createNewRoomBox("2", "0", "0", "0");
+    editingRoomBox = newRoom;
+    newRoom.style.display = "none";
+    newRoom.after(editorRoom);
+    loadRoomToEditor(newRoom);
+    renumberAllRooms();
+});
+
+// Click Room to Edit or Delete
+selectedRoomsContainer.addEventListener("click", e => {
+    const roomBox = e.target.closest(".selected-room-box");
+    if (!roomBox) return;
+
+    if (e.target.classList.contains("delete-icon")) {
+        e.stopPropagation();
+        if (selectedRoomsContainer.children.length === 1) return;
+        if (editingRoomBox === roomBox) editingRoomBox = null;
+        roomBox.remove();
+        if (!editingRoomBox) {
+            const first = selectedRoomsContainer.querySelector(".selected-room-box");
+            editingRoomBox = first;
+            first.style.display = "none";
+            first.after(editorRoom);
+            loadRoomToEditor(first);
+        }
+        renumberAllRooms();
+        return;
+    }
+
+    if (editingRoomBox === roomBox) return;
+    saveCurrentEditorData();
+    if (editingRoomBox) editingRoomBox.style.display = "block";
+    editingRoomBox = roomBox;
+    loadRoomToEditor(roomBox);
+    roomBox.style.display = "none";
+    roomBox.after(editorRoom);
+    renumberAllRooms();
+});
+
+// DONE BUTTON: Update UI and Close
+continueBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // Safety
+    saveCurrentEditorData(); // Save the active editor state
+
+    const allRooms = document.querySelectorAll(".selected-room-box");
+    let totalRooms = allRooms.length;
+    let totalGuests = 0;
+
+    allRooms.forEach(room => {
+        totalGuests += parseInt(room.dataset.adults || 0) +
+            parseInt(room.dataset.childWithBed || 0) +
+            parseInt(room.dataset.childWithoutBed || 0) +
+            parseInt(room.dataset.infants || 0);
+    });
+
+    // Update your HTML Spans
+    const spans = monthDisplay.querySelectorAll("span");
+    if (spans.length >= 4) {
+        spans[0].textContent = totalRooms;
+        spans[1].textContent = totalRooms > 1 ? "Rooms" : "Room";
+        spans[2].textContent = totalGuests;
+        spans[3].textContent = totalGuests > 1 ? "Guests" : "Guest";
+    }
+
+    roomsOverlay.classList.remove("active");
+});
+
+init();
+
+
+/**********************
+ * DONE BUTTON FINAL FIX
+ **********************/
+continueBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    console.log("Done button clicked - Closing popup");
+
+    if (typeof saveCurrentEditorData === "function") {
+        saveCurrentEditorData();
+    }
+
+    const allRooms = document.querySelectorAll(".selected-room-box");
+    let totalRooms = allRooms.length;
+    let totalGuests = 0;
+
+    allRooms.forEach(room => {
+        totalGuests += (parseInt(room.dataset.adults) || 0) +
+            (parseInt(room.dataset.childWithBed) || 0) +
+            (parseInt(room.dataset.childWithoutBed) || 0) +
+            (parseInt(room.dataset.infants) || 0);
+    });
+
+    if (monthDisplay) {
+        const spans = monthDisplay.querySelectorAll("span");
+        if (spans.length >= 4) {
+            spans[0].textContent = totalRooms;
+            spans[1].textContent = totalRooms > 1 ? "Rooms" : "Room";
+            spans[2].textContent = totalGuests;
+            spans[3].textContent = totalGuests > 1 ? "Guests" : "Guest";
+        }
+    }
+
+    roomsOverlay.classList.remove("active");
+
+    roomsOverlay.style.display = "none";
+
+    setTimeout(() => {
+        roomsOverlay.style.display = "";
+    }, 400);
 });

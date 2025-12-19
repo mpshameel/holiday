@@ -108,4 +108,68 @@ document.body.addEventListener("click", (e) => {
 
 monthCloseBtn?.addEventListener("click", closeMonthPopup);
 
+// /*** Year Months ***/
+document.addEventListener('DOMContentLoaded', () => {
+    const yearDisplay = document.getElementById('currentYearDisplay');
+    const prevYearBtn = document.getElementById('prevYear');
+    const nextYearBtn = document.getElementById('nextYear');
+    const monthButtons = document.querySelectorAll('.month-grid button');
 
+    const today = new Date();
+    const realYear = today.getFullYear();
+    const realMonth = today.getMonth();
+
+    let displayedYear = realYear;
+
+    function updateMonthPicker() {
+        yearDisplay.textContent = displayedYear;
+
+        monthButtons.forEach((btn, index) => {
+            btn.classList.remove('disabled');
+            btn.classList.remove('active');
+
+            if (displayedYear === realYear) {
+                if (index < realMonth) {
+                    btn.classList.add('disabled');
+                }
+            } else if (displayedYear < realYear) {
+                btn.classList.add('disabled');
+            }
+        });
+
+        prevYearBtn.style.opacity = (displayedYear <= realYear) ? "0.3" : "1";
+        prevYearBtn.style.pointerEvents = (displayedYear <= realYear) ? "none" : "auto";
+
+        nextYearBtn.style.opacity = (displayedYear >= realYear + 1) ? "0.3" : "1";
+        nextYearBtn.style.pointerEvents = (displayedYear >= realYear + 1) ? "none" : "auto";
+    }
+
+    prevYearBtn.addEventListener('click', () => {
+        if (displayedYear > realYear) {
+            displayedYear--;
+            updateMonthPicker();
+        }
+    });
+
+    nextYearBtn.addEventListener('click', () => {
+        if (displayedYear < realYear + 1) {
+            displayedYear++;
+            updateMonthPicker();
+        }
+    });
+
+    monthButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (!this.classList.contains('disabled')) {
+                monthButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const selectedMonth = this.textContent;
+                console.log(`Selected: ${selectedMonth} ${displayedYear}`);
+
+            }
+        });
+    });
+
+    updateMonthPicker();
+});

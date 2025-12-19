@@ -528,7 +528,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
         .per {
             font-family: $font-primary-poppins;
             font-weight: $fw-regular;
-            font-size: $fs-base;
+            font-size: $fs-sm;
             color: $white;
         }
 
@@ -899,6 +899,12 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 &:hover,
                 &.active {
                     color: $brand;
+                }
+
+                &.disabled {
+                    color: $badgebg;
+                    cursor: not-allowed;
+                    pointer-events: none;
                 }
             }
         }

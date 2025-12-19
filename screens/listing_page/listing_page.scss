@@ -1435,6 +1435,12 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 &.active {
                     color: $brand;
                 }
+
+                &.disabled {
+                    color: $badgebg;
+                    cursor: not-allowed;
+                    pointer-events: none;
+                }
             }
         }
 
