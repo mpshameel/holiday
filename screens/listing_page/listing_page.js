@@ -1,67 +1,54 @@
 /*** Modify Search Drawer ***/
 const searchDrawer = document.getElementById("searchDrawer");
-const searchDrawerCloseBtn = document.getElementById("closeDrawer");
+const searchPopup = document.getElementById("searchPopup");
+const searchBackBtn = searchPopup?.querySelector(".icon-btn");
 
 const openDrawer = () => searchDrawer?.classList.add("active");
 const closeDrawer = () => searchDrawer?.classList.remove("active");
 
+const openSearch = () => searchPopup?.classList.add("active");
+const closeSearch = () => searchPopup?.classList.remove("active");
+
 document.addEventListener("click", (e) => {
     const insideAppbar = e.target.closest(".appbar-text-column") || e.target.closest(".right-img-edit");
-
     const insideDrawer = e.target.closest("#searchDrawer .drawer-content");
+    const insidePopup = e.target.closest("#searchPopup .bottom-search-content");
+    const isDestinationTrigger = e.target.closest(".from-city-group");
 
     if (insideAppbar) {
         openDrawer();
         return;
     }
 
-    if (searchDrawer?.classList.contains("active") && !insideDrawer) {
+    if (isDestinationTrigger) {
+        openSearch();
+        return;
+    }
+
+    if (searchDrawer?.classList.contains("active") && !insideDrawer && !insidePopup) {
         closeDrawer();
     }
-});
 
-const fromCityGroup = document.querySelector(".from-city-group");
-const destinationInput = fromCityGroup.querySelector("#destination");
-const dropdown = fromCityGroup.querySelector(".from-city-dropdown");
-const cityItems = [...fromCityGroup.querySelectorAll(".city-item")];
-
-// Open dropdown
-destinationInput.addEventListener("input", () => {
-    const value = destinationInput.value.toLowerCase().trim();
-    let hasMatch = false;
-
-    cityItems.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        const match = text.includes(value);
-        item.style.display = match ? "block" : "none";
-        if (match) hasMatch = true;
-    });
-
-    if (hasMatch) {
-        fromCityGroup.classList.add("open");
-    } else {
-        fromCityGroup.classList.remove("open");
+    if (e.target === searchPopup) {
+        closeSearch();
     }
 });
 
-// Open on focus
-destinationInput.addEventListener("focus", () => {
-    fromCityGroup.classList.add("open");
+searchBackBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeSearch();
 });
 
-// Select city
-cityItems.forEach(item => {
+const cityItems = searchPopup?.querySelectorAll(".city-item");
+cityItems?.forEach(item => {
     item.addEventListener("click", () => {
-        destinationInput.value = item.textContent;
-        fromCityGroup.classList.remove("open");
+        const cityName = item.querySelector(".city-name")?.textContent;
+        const mainInput = document.getElementById("destination");
+        if (mainInput && cityName) {
+            mainInput.value = cityName;
+        }
+        closeSearch();
     });
-});
-
-// Close on outside click
-document.addEventListener("click", (e) => {
-    if (!fromCityGroup.contains(e.target)) {
-        fromCityGroup.classList.remove("open");
-    }
 });
 
 
