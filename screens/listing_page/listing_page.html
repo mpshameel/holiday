@@ -79,7 +79,9 @@
                 <h3>Showing 54 trips</h3>
             </div>
 
-            <div class="holiday-card" onclick="window.location.href='../detail_page/detail_page.html'">
+            <div class="holiday-card">
+                <a href="../detail_page/detail_page.html" class="card-link"
+                    aria-label="View holiday package details"></a>
                 <div class="akbar-choice-badge">
                     <div class="badge-content-wrapper">
                         <img src="../../assets/icons/akbarTravelCredit.png" alt="" class="icon" />
@@ -141,6 +143,8 @@
             </div>
 
             <div class="holiday-card">
+                <a href="../detail_page/detail_page.html" class="card-link"
+                    aria-label="View holiday package details"></a>
                 <div class="image-section">
                     <!-- <div class="ribbon">Akbar Choice</div> -->
                     <img src="../../assets/images/wheretogo1.png" alt="Washington New York Boston" class="main-image" />
@@ -271,9 +275,19 @@
 
                 <h3 class="drawer-title">Modify Search</h3>
 
-                <div class="modify-input-group">
+                <div class="modify-input-group from-city-group">
                     <label class="search-label" for="destination">Where do you want to go?</label>
-                    <input type="text" id="destination" placeholder="New York" />
+
+                    <input type="text" id="destination" placeholder="New York" autocomplete="off" />
+
+                    <div class="from-city-dropdown">
+                        <div class="city-item">New York</div>
+                        <div class="city-item">Los Angeles</div>
+                        <div class="city-item">Chicago</div>
+                        <div class="city-item">Houston</div>
+                        <div class="city-item">San Francisco</div>
+                        <div class="city-item">Boston</div>
+                    </div>
                 </div>
 
                 <div class="modify-input-group updateMonth">

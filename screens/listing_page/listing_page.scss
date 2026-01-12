@@ -391,6 +391,20 @@ $hero-bg-tall: '../assets/images/deal1.png';
     $cut-depth: 10px;
     $height: 30px;
 
+    .card-link {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        text-decoration: none;
+    }
+
+    .card-like-btn,
+    button,
+    a:not(.card-link) {
+        position: relative;
+        z-index: 2;
+    }
+
     .akbar-choice-badge {
         position: absolute;
         top: -10px;
@@ -1278,6 +1292,53 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 }
             }
         }
+
+        .from-city-group {
+            position: relative;
+
+            input {
+                cursor: text;
+            }
+
+            .from-city-dropdown {
+                position: absolute;
+                top: calc(100% + 4px);
+                left: 0;
+                width: 100%;
+                background: $white;
+                border: 1px solid $travellerEditOuter;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                display: none;
+                overflow: hidden;
+                z-index: 50;
+                max-height: 240px;
+                overflow-y: auto;
+            }
+
+            .city-item {
+                padding: 12px 20px;
+                font-family: $font-primary-poppins;
+                font-size: $fs-md;
+                font-weight: $fw-semibold;
+                color: $heading;
+                border-bottom: 1px solid $skyblueBorder;
+                background: $white;
+                cursor: pointer;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background: $skyblue;
+                }
+            }
+
+            &.open .from-city-dropdown {
+                display: block;
+            }
+        }
+
 
         .custom-display-input {
             display: flex;

@@ -20,6 +20,51 @@ document.addEventListener("click", (e) => {
     }
 });
 
+const fromCityGroup = document.querySelector(".from-city-group");
+const destinationInput = fromCityGroup.querySelector("#destination");
+const dropdown = fromCityGroup.querySelector(".from-city-dropdown");
+const cityItems = [...fromCityGroup.querySelectorAll(".city-item")];
+
+// Open dropdown
+destinationInput.addEventListener("input", () => {
+    const value = destinationInput.value.toLowerCase().trim();
+    let hasMatch = false;
+
+    cityItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const match = text.includes(value);
+        item.style.display = match ? "block" : "none";
+        if (match) hasMatch = true;
+    });
+
+    if (hasMatch) {
+        fromCityGroup.classList.add("open");
+    } else {
+        fromCityGroup.classList.remove("open");
+    }
+});
+
+// Open on focus
+destinationInput.addEventListener("focus", () => {
+    fromCityGroup.classList.add("open");
+});
+
+// Select city
+cityItems.forEach(item => {
+    item.addEventListener("click", () => {
+        destinationInput.value = item.textContent;
+        fromCityGroup.classList.remove("open");
+    });
+});
+
+// Close on outside click
+document.addEventListener("click", (e) => {
+    if (!fromCityGroup.contains(e.target)) {
+        fromCityGroup.classList.remove("open");
+    }
+});
+
+
 /*** Month Popup ***/
 const monthPopup = document.getElementById("monthPopup");
 const monthCloseBtn = monthPopup?.querySelector(".close-popup");
@@ -122,6 +167,12 @@ document.addEventListener("click", (e) => {
     ) {
         closeFilterDrawer();
     }
+
+    filterPopup?.addEventListener("click", (e) => {
+        if (e.target.closest(".continue-btn")) {
+            closeFilterDrawer();
+        }
+    });
 });
 
 /*** Filter Tabs ***/
