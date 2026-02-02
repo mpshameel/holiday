@@ -1888,7 +1888,7 @@
     align-items: end;
     justify-content: flex-end;
     transition: opacity 0.3s ease;
-    z-index: 9999;
+    z-index: 99999;
     left: 50%;
     transform: translateX(-50%);
     max-width: 420px;
@@ -2533,6 +2533,18 @@
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
+
+                input {
+                    border: none;
+                    background: transparent;
+                    outline: none;
+                    font-family: $font-primary-poppins;
+                    font-size: $fs-lg;
+                    font-weight: $fw-semibold;
+                    color: $heading;
+                    width: 100%;
+                    cursor: pointer;
+                }
 
                 .month-part {
                     font-family: $font-primary-poppins;

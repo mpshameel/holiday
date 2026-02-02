@@ -903,15 +903,19 @@
                 <h3 class="drawer-title">Modify Search</h3>
 
                 <div class="modify-input-group from-city-group">
-                    <label class="search-label" for="from">From CIty</label>
-                    <input type="text" id="destination" placeholder="New York" readonly />
+                    <label class="search-label" for="from">From City</label>
+
+                    <div class="type-row from-city-select">
+                        <input type="text" id="destination" placeholder="New York" readonly />
+                        <img src="../../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
+                    </div>
 
                     <div class="from-city-dropdown">
                         <div class="city-item">New York</div>
                     </div>
                 </div>
 
-                <div class="modify-input-group calender-open">
+                <div class="modify-input-group calender-open" data-target="startDate">
                     <label class="search-label" for="month">Starting on</label>
                     <div class="custom-display-input" id="monthDisplay">
                         <span class="month-part">31 Aug</span>
@@ -1000,7 +1004,7 @@
                         </div>
                     </div>
 
-                    <div class="modify-input-group calender-open">
+                    <div class="modify-input-group calender-open" data-target="travelDate">
                         <div class="left-column">
                             <label class="search-label" for="month">Travel Date</label>
                             <div class="custom-display-input" id="monthDisplay">

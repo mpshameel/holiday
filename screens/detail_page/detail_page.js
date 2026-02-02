@@ -306,8 +306,17 @@ document.addEventListener("click", () => {
 
 
 /*** Calender Drawer ***/
+let activeCalendarTarget = null;
 const calenderOpen = document.querySelector(".calender-open");
 const calenderOverlay = document.querySelector(".calender-overlay");
+
+document.querySelectorAll(".calender-open").forEach(el => {
+    el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        activeCalendarTarget = el;
+        calenderOverlay.classList.add("active");
+    });
+});
 
 calenderOpen.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -382,11 +391,10 @@ function selectDate(dayDiv) {
 
     const { dayMonth, weekdayYear } = formatSelectedDate(year, month, day);
 
-    document.querySelector("#monthDisplay .month-part").textContent = dayMonth;
-    document.querySelector("#monthDisplay .year-part").textContent = weekdayYear;
-
-    document.getElementById("currentDate").innerHTML =
-        `${dayMonth} <span>${weekdayYear}</span>`;
+    if (activeCalendarTarget) {
+        activeCalendarTarget.querySelector(".month-part").textContent = dayMonth;
+        activeCalendarTarget.querySelector(".year-part").textContent = weekdayYear;
+    }
 }
 
 /*** RENDER MONTH ***/

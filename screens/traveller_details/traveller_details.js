@@ -1,5 +1,6 @@
 /*** Gst Popup ***/
 const gstPopup = document.getElementById("gstPopup");
+const gstSubmitBtn = document.getElementById("gstSubmitBtn");
 
 const openGstDrawer = () => gstPopup?.classList.add("active");
 const closeGstDrawer = () => gstPopup?.classList.remove("active");
@@ -16,6 +17,11 @@ document.addEventListener("click", (e) => {
     ) {
         closeGstDrawer();
     }
+});
+
+gstSubmitBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeGstDrawer();
 });
 
 
