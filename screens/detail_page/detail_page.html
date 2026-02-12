@@ -875,9 +875,10 @@
                         <div class="modify-input-group country-code">
                             <div class="left-column">
                                 <label class="search-label" for="code">Country Code</label>
-                                <div class="country-input-row">
-                                    <img src="../../assets/icons/indianFlag.png" alt="India" class="flag-icon" />
-                                    <h2>(+91)</h2>
+                                <div class="country-input-row country-trigger" id="trigger-download"
+                                    style="cursor: pointer;">
+                                    <img src="https://flagcdn.com/w40/in.png" alt="India" class="flag-icon" />
+                                    <h2 class="dial-display">(+91)</h2>
                                     <img src="../../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
                                 </div>
                             </div>
@@ -980,9 +981,9 @@
                         <div class="modify-input-group country-code">
                             <div class="left-column">
                                 <label class="search-label" for="code">Country Code</label>
-                                <div class="country-input-row">
-                                    <img src="../../assets/icons/indianFlag.png" alt="India" class="flag-icon" />
-                                    <h2>(+91)</h2>
+                                <div class="country-input-row country-trigger" id="trigger-callback">
+                                    <img src="https://flagcdn.com/w40/in.png" alt="India" class="flag-icon" />
+                                    <h2 class="dial-display">(+91)</h2>
                                     <img src="../../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
                                 </div>
                             </div>
@@ -1177,6 +1178,24 @@
 
                 <div class="bottom-bar-button">
                     <button class="continue-btn" id="closeRoomPopup">DONE</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom sheet country search Popup -->
+        <div class="bottom-sheet-overlay" id="sheetOverlay">
+            <div class="bottom-sheet" id="countryBottomSheet">
+                <div class="sheet-header">
+                    <div class="drag-handle"></div>
+                    <h3>Select Country</h3>
+                </div>
+                <div class="sheet-body">
+                    <div class="search-container">
+                        <input type="text" id="countrySearchInput" placeholder="Search name or code..."
+                            autocomplete="off">
+                    </div>
+                    <ul class="country-list" id="countryListUl">
+                    </ul>
                 </div>
             </div>
         </div>

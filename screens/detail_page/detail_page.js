@@ -433,26 +433,46 @@ function renderMonth(year, month) {
         const dayDiv = document.createElement("div");
         const date = new Date(year, month, d);
 
+        // 1. Check if date is in the past (resetting hours to compare only dates)
+        const todayCopy = new Date();
+        todayCopy.setHours(0, 0, 0, 0);
+        const isPast = date < todayCopy;
+
+        // 2. Get price
+        const price = getPriceForDate(year, month, d);
+
+        // 3. Logic to Disable: Past dates OR no price
+        const isDisabled = isPast || !price;
+
         dayDiv.dataset.year = year;
         dayDiv.dataset.month = month;
         dayDiv.dataset.day = d;
 
-        const price = getPriceForDate(year, month, d);
         const tagText = getDayTag(year, month, d);
 
-        dayDiv.classList.add(price ? "day-with-price" : "day-no-price");
+        if (isDisabled) {
+            dayDiv.classList.add("day-disabled");
+        } else {
+            dayDiv.classList.add("day-with-price");
+            dayDiv.addEventListener("click", () => {
+                selectDate(dayDiv);
+                calenderOverlay.classList.remove("active");
+            });
+        }
 
         if (date.getDay() === 0) dayDiv.classList.add("sunday");
 
-        if (
+        // Handle today/selection only if not disabled
+        if (!isDisabled &&
             d === today.getDate() &&
             month === today.getMonth() &&
             year === today.getFullYear()
         ) {
             dayDiv.classList.add("today", "selected");
-            setTimeout(() => selectDate(dayDiv), 0); // ✅ initial today
+            setTimeout(() => selectDate(dayDiv), 0);
         }
 
+        // Append Content
         if (tagText) {
             dayDiv.innerHTML += `<span class="day-tag">${tagText}</span>`;
         }
@@ -461,15 +481,10 @@ function renderMonth(year, month) {
 
         if (price) {
             dayDiv.innerHTML += `
-                <span class="day-price">
-                    <span class="rupee-icon">₹</span>${price.toLocaleString()}
-                </span>`;
+            <span class="day-price">
+                <span class="rupee-icon">₹</span>${price.toLocaleString()}
+            </span>`;
         }
-
-        dayDiv.addEventListener("click", () => {
-            selectDate(dayDiv);
-            calenderOverlay.classList.remove("active");
-        });
 
         daysContainer.appendChild(dayDiv);
     }
@@ -779,4 +794,91 @@ continueBtn.addEventListener("click", (e) => {
     setTimeout(() => {
         roomsOverlay.style.display = "";
     }, 400);
+});
+
+
+/*** Country Code List ***/
+document.addEventListener("DOMContentLoaded", () => {
+    const sheetOverlay = document.getElementById("sheetOverlay");
+    const listUl = document.getElementById("countryListUl");
+    let allCountries = [];
+    let activeTrigger = null;
+
+    // 1. Fetch data
+    async function loadCountryData() {
+        try {
+            const res = await fetch("https://restcountries.com/v3.1/all?fields=name,idd,cca2");
+            const data = await res.json();
+            allCountries = data.map(c => ({
+                name: c.name.common,
+                code: c.idd.root + (c.idd.suffixes ? c.idd.suffixes[0] : ""),
+                iso: c.cca2.toLowerCase()
+            })).sort((a, b) => a.name.localeCompare(b.name));
+        } catch (err) {
+            console.error("Failed to load countries:", err);
+        }
+    }
+
+    // 2. Click logic for everything
+    document.addEventListener("click", (e) => {
+        // Find the country selector trigger
+        const trigger = e.target.closest(".country-trigger");
+
+        // OPEN SHEET
+        if (trigger && sheetOverlay) {
+            activeTrigger = trigger;
+            sheetOverlay.classList.add("active");
+            renderList(allCountries);
+            return;
+        }
+
+        // CLOSE SHEET (Click on background)
+        if (sheetOverlay && e.target === sheetOverlay) {
+            sheetOverlay.classList.remove("active");
+        }
+
+        // SELECT COUNTRY
+        const item = e.target.closest(".country-item");
+        if (item && activeTrigger) {
+            const code = item.getAttribute("data-code");
+            const iso = item.getAttribute("data-iso");
+
+            // Update elements within the active trigger
+            const flagImg = activeTrigger.querySelector(".flag-icon");
+            const dialDisplay = activeTrigger.querySelector(".dial-display");
+
+            if (flagImg) flagImg.src = `https://flagcdn.com/w40/${iso}.png`;
+            if (dialDisplay) dialDisplay.innerText = `(${code})`;
+
+            sheetOverlay.classList.remove("active");
+            activeTrigger = null;
+        }
+    });
+
+    // 3. Search logic
+    const searchInput = document.getElementById("countrySearchInput");
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = allCountries.filter(c =>
+                c.name.toLowerCase().includes(term) || c.code.includes(term)
+            );
+            renderList(filtered);
+        });
+    }
+
+    function renderList(data) {
+        if (!listUl) return;
+        listUl.innerHTML = data.map(c => `
+            <li class="country-item" data-code="${c.code}" data-iso="${c.iso}">
+                <div class="country-info-left">
+                    <img src="https://flagcdn.com/w40/${c.iso}.png" class="list-flag">
+                    <span class="country-name-text">${c.name}</span>
+                </div>
+                <span class="country-dial-code">${c.code}</span>
+            </li>
+        `).join("");
+    }
+
+    loadCountryData();
 });

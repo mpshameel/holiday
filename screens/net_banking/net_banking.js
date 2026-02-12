@@ -13,3 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+/*** Select Bank ***/
+document.addEventListener("DOMContentLoaded", () => {
+    const bankGrid = document.querySelector(".bank-grid");
+
+    if (bankGrid) {
+        bankGrid.addEventListener("click", (e) => {
+            const card = e.target.closest(".bank-card");
+
+            if (card) {
+                const allCards = bankGrid.querySelectorAll(".bank-card");
+                allCards.forEach(c => c.classList.remove("active"));
+
+                card.classList.add("active");
+
+                const bankName = card.querySelector("span").innerText;
+                console.log("Selected Bank:", bankName);
+            }
+        });
+    }
+});
