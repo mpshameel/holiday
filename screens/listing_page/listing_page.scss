@@ -1685,3 +1685,55 @@ $hero-bg-tall: '../assets/images/deal1.png';
         }
     }
 }
+
+/* no result container */
+.no-result-container {
+    display: none;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-result-box {
+    text-align: center;
+
+    img {
+        width: 140px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $brand;
+        margin-bottom: 2px;
+    }
+
+    p {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-regular;
+        font-size: $fs-xs;
+        color: $codetxt;
+        margin-bottom: 16px;
+    }
+
+    button {
+        padding: 12px 32px;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(135deg, $brand, $link);
+        cursor: pointer;
+        transition: 0.3s;
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-base;
+        color: $white;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

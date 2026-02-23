@@ -1,3 +1,12 @@
+/*** Like Button ***/
+document.addEventListener("click", function (e) {
+    const likeBtn = e.target.closest(".card-like-btn");
+    if (!likeBtn) return;
+
+    likeBtn.classList.toggle("liked");
+});
+
+
 /*** Copy Promo Code ***/
 const showTooltip = (container, text) => {
     if (container.querySelector(".copy-tooltip")) return;

@@ -342,3 +342,31 @@
         transform: translateY(-50%) translateX(0);
     }
 }
+
+/* no result container */
+.no-result-container {
+    display: none;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-result-box {
+    text-align: center;
+
+    img {
+        width: 140px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-semibold;
+        font-size: $fs-md;
+        color: $brand;
+        margin-bottom: 2px;
+    }
+
+}
