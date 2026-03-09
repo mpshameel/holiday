@@ -379,107 +379,145 @@
             <h3>Fare Summary</h3>
             <div class="divider-line"></div>
 
-            <div class="fare-summary-detail-content">
-                <div class="summary-item item-package">
-                    <div class="summary-left">
-                        <p class="label">Package Cost</p>
-                        <p class="sub">Room: 1, Guest: 2</p>
+            <div id="fare-shimmer">
+
+                <div class="skeleton-summary-item">
+                    <div class="skeleton-stack">
+                        <div class="skeleton-label shimmer-animated"></div>
+                        <div class="skeleton-sub shimmer-animated"></div>
                     </div>
-                    <p class="value"><span class="currency">₹</span>294,470</p>
+                    <div class="skeleton-value shimmer-animated"></div>
                 </div>
 
-                <div class="summary-item item-discount">
-                    <p class="label">Discount</p>
-                    <p class="value green"><span class="currency">₹</span>0</p>
+                <div class="skeleton-summary-item">
+                    <div class="skeleton-label shimmer-animated"></div>
+                    <div class="skeleton-value shimmer-animated"></div>
                 </div>
 
-                <div class="divider-line"></div>
+                <div class="skeleton-divider"></div>
 
-                <div class="summary-item item-package-cost">
-                    <p class="label">Package Cost After Discount</p>
-                    <p class="value"><span class="currency">₹</span>294,470</p>
+                <div class="skeleton-summary-item">
+                    <div class="skeleton-label shimmer-animated"></div>
+                    <div class="skeleton-value shimmer-animated"></div>
                 </div>
 
-                <div class="summary-item item-gst-detailFs">
-                    <p class="label">GST (5%)</p>
-                    <p class="value"><span class="currency">₹</span>14,724</p>
-                </div>
-                <div class="divider-line"></div>
-
-                <div class="summary-item item-total-detailFs">
-                    <p class="label bold">Total Amount</p>
-                    <p class="value bold"><span class="currency">₹</span>309,194</p>
+                <div class="skeleton-summary-item">
+                    <div class="skeleton-label shimmer-animated" style="width: 120px;"></div>
+                    <div class="skeleton-value shimmer-animated"></div>
                 </div>
 
-                <div class="summary-item item-tcs-detailFs">
-                    <p class="label">
-                        TCS (5%) <span class="claim">Claimable <img src="../../assets/icons/info.png" alt="info"
-                                class="open-tcs-btn" /></span>
-                    </p>
-                    <p class="value"><span class="currency">₹</span>15,460</p>
-                </div>
-                <!-- Tcs SUB -->
-                <div class="tcs-sub">
-                    <div class="sub-item">
-                        <p class="sub">TCS (5%) on ₹1,000,000</p>
-                        <p class="sub value">₹50,000</p>
-                    </div>
+                <div class="skeleton-divider"></div>
 
-                    <div class="sub-item">
-                        <p class="sub">TCS (20%) on ₹331,142</p>
-                        <p class="sub value">₹66,228</p>
-                    </div>
+                <div class="skeleton-summary-item grand">
+                    <div class="skeleton-label-lg shimmer-animated"></div>
+                    <div class="skeleton-value-lg shimmer-animated"></div>
                 </div>
-                <div class="divider-line"></div>
+            </div>
 
-                <div class="summary-item grand detailFs">
-                    <p class="label detailFs">Grand Total</p>
-                    <p class="value detailFs"><span class="currency">₹</span>324,654</p>
-                </div>
-                <div class="divider-line"></div>
-
-                <div class="paytype-box">
-                    <label class="payment-option">
-                        <div class="radio-group">
-                            <label class="custom-radio">
-                                <input type="radio" name="duration" />
-                                <span class="radio-check"></span>
-                            </label>
+            <div id="fare-actual-content" style="display: none;">
+                <div class="fare-summary-detail-content">
+                    <div class="summary-item item-package">
+                        <div class="summary-left">
+                            <p class="label">Package Cost</p>
+                            <p class="sub">Room: 1, Guest: 2</p>
                         </div>
-                        <div class="option-content">
-                            <p class="title">Pay Full Payment</p>
-                            <p class="sub">Amount you pay now to reserve</p>
-                        </div>
-                        <p class="value"><span class="currency">₹</span>324,654</p>
-                    </label>
+                        <p class="value"><span class="currency">₹</span>294,470</p>
+                    </div>
+
+                    <div class="summary-item item-discount">
+                        <p class="label">Discount</p>
+                        <p class="value green"><span class="currency">₹</span>0</p>
+                    </div>
 
                     <div class="divider-line"></div>
 
-                    <label class="payment-option">
-                        <div class="radio-group">
-                            <label class="custom-radio">
-                                <input type="radio" name="duration" />
-                                <span class="radio-check"></span>
-                            </label>
-                        </div>
-                        <div class="option-content">
-                            <p class="title">Part Payment</p>
-                            <p class="sub">Amount you pay now to reserve</p>
-                        </div>
-                        <p class="value"><span class="currency">₹</span>₹5,000</p>
-                    </label>
-                </div>
-
-                <div class="divider-line"></div>
-
-                <div class="summary-row you-pay">
-                    <div>
-                        <p class="you-pay-title">You Pay</p>
-                        <p class="you-pay-sub">Amount due later</p>
+                    <div class="summary-item item-package-cost">
+                        <p class="label">Package Cost After Discount</p>
+                        <p class="value"><span class="currency">₹</span>294,470</p>
                     </div>
-                    <p class="value big"><span class="currency">₹</span>324,654</p>
+
+                    <div class="summary-item item-gst-detailFs">
+                        <p class="label">GST (5%)</p>
+                        <p class="value"><span class="currency">₹</span>14,724</p>
+                    </div>
+                    <div class="divider-line"></div>
+
+                    <div class="summary-item item-total-detailFs">
+                        <p class="label bold">Total Amount</p>
+                        <p class="value bold"><span class="currency">₹</span>309,194</p>
+                    </div>
+
+                    <div class="summary-item item-tcs-detailFs">
+                        <p class="label">
+                            TCS (5%) <span class="claim">Claimable <img src="../../assets/icons/info.png" alt="info"
+                                    class="open-tcs-btn" /></span>
+                        </p>
+                        <p class="value"><span class="currency">₹</span>15,460</p>
+                    </div>
+                    <!-- Tcs SUB -->
+                    <div class="tcs-sub">
+                        <div class="sub-item">
+                            <p class="sub">TCS (5%) on ₹1,000,000</p>
+                            <p class="sub value">₹50,000</p>
+                        </div>
+
+                        <div class="sub-item">
+                            <p class="sub">TCS (20%) on ₹331,142</p>
+                            <p class="sub value">₹66,228</p>
+                        </div>
+                    </div>
+                    <div class="divider-line"></div>
+
+                    <div class="summary-item grand detailFs">
+                        <p class="label detailFs">Grand Total</p>
+                        <p class="value detailFs"><span class="currency">₹</span>324,654</p>
+                    </div>
+                    <div class="divider-line"></div>
+
+                    <div class="paytype-box">
+                        <label class="payment-option">
+                            <div class="radio-group">
+                                <label class="custom-radio">
+                                    <input type="radio" name="duration" />
+                                    <span class="radio-check"></span>
+                                </label>
+                            </div>
+                            <div class="option-content">
+                                <p class="title">Pay Full Payment</p>
+                                <p class="sub">Amount you pay now to reserve</p>
+                            </div>
+                            <p class="value"><span class="currency">₹</span>324,654</p>
+                        </label>
+
+                        <div class="divider-line"></div>
+
+                        <label class="payment-option">
+                            <div class="radio-group">
+                                <label class="custom-radio">
+                                    <input type="radio" name="duration" />
+                                    <span class="radio-check"></span>
+                                </label>
+                            </div>
+                            <div class="option-content">
+                                <p class="title">Part Payment</p>
+                                <p class="sub">Amount you pay now to reserve</p>
+                            </div>
+                            <p class="value"><span class="currency">₹</span>₹5,000</p>
+                        </label>
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                    <div class="summary-row you-pay">
+                        <div>
+                            <p class="you-pay-title">You Pay</p>
+                            <p class="you-pay-sub">Amount due later</p>
+                        </div>
+                        <p class="value big"><span class="currency">₹</span>324,654</p>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         <!-- TCS Popup -->
@@ -501,24 +539,42 @@
 
         <!-- Bottom Nav Bar -->
         <div class="bottom-bar">
-            <div class="left-section">
-                <div class="guest-info">
-                    <p class="guest-count">02 Guests</p>
-                    <div class="price-row">
-                        <span class="price"><span class="rupee">₹</span>3,24,654</span>
-                        <i class="fa-solid fa-angle-up"></i>
+            <div id="footer-shimmer" class="footer-shimmer-wrapper">
+                <div class="footer-left-skeleton">
+                    <div class="skel-text-xs shimmer-animated"></div>
+                    <div class="skel-price-row">
+                        <div class="skel-text-lg shimmer-animated"></div>
+                        <div class="skel-icon-circle shimmer-animated"></div>
                     </div>
-                    <div class="deal-applied">
-                        <img src="../../assets/icons/percentage.png" alt="discount" />
-                        <span>Deal Applied</span>
-                    </div>
+                    <div class="skel-deal-pill shimmer-animated"></div>
+                </div>
+                <div class="footer-right-skeleton">
+                    <div class="skel-btn shimmer-animated"></div>
                 </div>
             </div>
 
-            <div class="right-section">
-                <button class="continue-btn"
-                    onclick="window.location.href='../booking_confirmed/booking_confirmed.html'">CONTINUE</button>
+            <div id="footer-actual-content"
+                style="display: none; width: 100%; justify-content: space-between; align-items: center;">
+                <div class="left-section">
+                    <div class="guest-info">
+                        <p class="guest-count">02 Guests</p>
+                        <div class="price-row">
+                            <span class="price"><span class="rupee">₹</span>3,24,654</span>
+                            <i class="fa-solid fa-angle-up"></i>
+                        </div>
+                        <div class="deal-applied">
+                            <img src="../../assets/icons/percentage.png" alt="discount" />
+                            <span>Deal Applied</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-section">
+                    <button class="continue-btn"
+                        onclick="window.location.href='../booking_confirmed/booking_confirmed.html'">CONTINUE</button>
+                </div>
             </div>
+
         </div>
     </main>
 

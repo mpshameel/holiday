@@ -184,56 +184,40 @@ if (openRequestBtn && requestPopup && callBackPopup) {
 
 /*** Promo Drawer ***/
 document.addEventListener('DOMContentLoaded', () => {
-
-    const offers_link = document.querySelector('.offers-link');
     const promoDrawer = document.getElementById('promoDrawer');
     const overlay2 = document.querySelector('.overlay');
-
-    const couponAppliedPopup = document.getElementById('couponAppliedPopup');
+    const successPopup = document.getElementById('couponAppliedPopup');
+    const declinedPopup = document.getElementById('couponDeclinedPopup');
     const applyButtons = promoDrawer.querySelectorAll('.apply-btn');
-    if (offers_link && promoDrawer && overlay2) {
+
+    const offers_link = document.querySelector('.offers-link');
+    if (offers_link) {
         offers_link.addEventListener('click', () => {
             promoDrawer.classList.add('active');
             overlay2.style.display = 'block';
         });
-
-        overlay2.addEventListener('click', () => {
-            promoDrawer.classList.remove('active');
-            overlay2.style.display = 'none';
-        });
     }
 
-    const showSuccessPopup = (couponCode) => {
-        promoDrawer.classList.remove('active');
-        overlay2.style.display = 'none';
-
-        couponAppliedPopup.classList.add('active');
-
-        console.log(`Coupon applied: ${couponCode}`);
-
-        setTimeout(() => {
-            couponAppliedPopup.classList.remove('active');
-            console.log("Success popup closed.");
-        }, 3000);
-    };
-
-    applyButtons.forEach(button => {
+    applyButtons.forEach((button, index) => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
 
-            let appliedCode = 'N/A';
+            promoDrawer.classList.remove('active');
+            overlay2.style.display = 'none';
 
-            const promoCard = e.target.closest('.promo-card');
-            if (promoCard) {
-                const couponInput = promoCard.querySelector('.promo-right input[type="text"]');
-                appliedCode = couponInput ? couponInput.value : 'N/A';
+            if (index === 1) {
+                declinedPopup.classList.add('active');
             } else {
-                const mainInput = promoDrawer.querySelector('.promo-input input[type="text"]');
-                appliedCode = mainInput ? mainInput.value : 'N/A';
+                successPopup.classList.add('active');
+                setTimeout(() => {
+                    successPopup.classList.remove('active');
+                }, 3000);
             }
-
-            showSuccessPopup(appliedCode);
         });
+    });
+
+    document.getElementById('closeOopsBtn').addEventListener('click', () => {
+        declinedPopup.classList.remove('active');
     });
 });
 
@@ -881,4 +865,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     loadCountryData();
+});
+
+
+/*** Fare Summary Shimmer ***/
+const guestInfoBtn = document.querySelector('.guest-info');
+const fareSummaryDrawer = document.querySelector('.fare-summary');
+const fareShimmer = document.getElementById('fare-shimmer');
+const fareActual = document.getElementById('fare-actual-content');
+
+guestInfoBtn.addEventListener('click', () => {
+    fareSummaryDrawer.classList.add('show');
+    fareShimmer.style.display = 'block';
+    fareActual.style.display = 'none';
+
+    setTimeout(() => {
+        fareShimmer.style.transition = "opacity 0.3s ease";
+        fareShimmer.style.opacity = "0";
+
+        setTimeout(() => {
+            fareShimmer.style.display = 'none';
+            fareShimmer.style.opacity = "1";
+
+            fareActual.style.display = 'block';
+        }, 300);
+    }, 2000);
+});
+
+/*** Footer Shimmer ***/
+window.addEventListener('DOMContentLoaded', () => {
+    const footerShimmer = document.getElementById('footer-shimmer');
+    const footerContent = document.getElementById('footer-actual-content');
+
+    setTimeout(() => {
+        footerShimmer.style.transition = "opacity 0.4s ease";
+        footerShimmer.style.opacity = "0";
+
+        setTimeout(() => {
+            footerShimmer.style.display = "none";
+            footerContent.style.display = "flex";
+        }, 400);
+
+    }, 2000);
 });

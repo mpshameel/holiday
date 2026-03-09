@@ -255,7 +255,10 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 content: "";
                 position: absolute;
                 inset: 0;
-                background: rgba(0, 0, 0, 0.10);
+                background: linear-gradient(to bottom,
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba(0, 0, 0, 0.4) 60%,
+                        rgba(0, 0, 0, 0.8) 100%);
                 z-index: 1;
                 border-top-left-radius: $radius-xlg;
                 border-top-right-radius: $radius-xlg;
@@ -264,6 +267,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
             img {
                 width: 100%;
                 display: block;
+                z-index: 0;
                 border-top-left-radius: $radius-xlg;
                 border-top-right-radius: $radius-xlg;
             }
@@ -290,6 +294,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
             bottom: 0;
             left: 16px;
             color: $white;
+            z-index: 2;
         }
 
         .title {
@@ -298,6 +303,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
             font-size: $fs-lg;
             color: $heading;
             margin: 0;
+            z-index: 2;
         }
 
         .subtitle {
@@ -306,6 +312,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
             font-size: $fs-lg;
             color: $subtitle;
             margin: 0;
+            z-index: 2;
         }
 
         .info {
@@ -314,6 +321,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
             font-size: $fs-xs;
             color: $heading;
             margin: 5px 0 0 0;
+            z-index: 2;
         }
 
         .price {
@@ -323,6 +331,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
             font-size: $fs-price;
             color: $priceColor;
             margin: 0;
+            z-index: 2;
         }
 
         .promo {
@@ -471,12 +480,23 @@ $hero-bg-tall: '../assets/images/deal1.png';
         position: relative;
         overflow: hidden;
 
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(35deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.3) 100%);
+            z-index: 1;
+            pointer-events: none;
+            border-radius: $radius-xlg;
+        }
+
         img {
             width: 100%;
             display: block;
             border-radius: $radius-xlg;
             height: 188px;
             width: 205px;
+            z-index: 0;
         }
     }
 
@@ -503,7 +523,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        gap: 8px;
         padding: 8px 10px;
         border-radius: $radius-lg;
 
@@ -516,6 +536,8 @@ $hero-bg-tall: '../assets/images/deal1.png';
             display: flex;
             align-items: baseline;
             gap: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .amount {
@@ -540,6 +562,8 @@ $hero-bg-tall: '../assets/images/deal1.png';
             padding: 4px 10px;
             border-radius: $radius-md;
             letter-spacing: 0.5px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
     }
 
@@ -1014,4 +1038,151 @@ $height: 30px;
         }
     }
 
+}
+
+/* shimmer */
+@keyframes shimmer-load {
+    0% {
+        background-position: -420px 0;
+    }
+
+    100% {
+        background-position: 420px 0;
+    }
+}
+
+.shimmer-animated {
+    background: linear-gradient(90deg, #ececec 25%, #f5f5f5 50%, #ececec 75%);
+    background-size: 420px 100%;
+    animation: shimmer-load 1.8s infinite linear;
+}
+
+.scrollable-shimmer {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.skeleton-hero {
+    height: 340px;
+    width: 100%;
+    border-bottom-left-radius: 60px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 30px;
+
+    .skeleton-search {
+        width: 85%;
+        height: 50px;
+        border-radius: 25px;
+        background: #fff;
+    }
+}
+
+.skeleton-content-padding {
+    padding: 20px;
+}
+
+.skeleton-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 12px;
+
+    .skeleton-title {
+        width: 100px;
+        height: 18px;
+        border-radius: 4px;
+    }
+
+    .skeleton-link {
+        width: 50px;
+        height: 12px;
+        border-radius: 4px;
+    }
+}
+
+.skeleton-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    .skeleton-chip {
+        width: 85px;
+        height: 35px;
+        border-radius: 8px;
+    }
+
+    .skeleton-month {
+        width: 55px;
+        height: 30px;
+        border-radius: 6px;
+    }
+}
+
+.skeleton-horizontal-scroll {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+
+    .skeleton-deal-card {
+        min-width: 280px;
+        height: 160px;
+        border-radius: 12px;
+    }
+}
+
+.skeleton-experiences {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    .skeleton-circle-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+
+        .skeleton-circle {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+        }
+
+        .skeleton-text-sm {
+            width: 45px;
+            height: 10px;
+            border-radius: 2px;
+        }
+    }
+}
+
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    .skeleton-grid-card {
+        .skeleton-card-img {
+            width: 100%;
+            height: 130px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+
+        .skeleton-card-text {
+            width: 80%;
+            height: 12px;
+            border-radius: 2px;
+        }
+    }
 }

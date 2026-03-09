@@ -9,6 +9,34 @@
 </head>
 
 <body>
+
+    <div id="page-loader" class="loader-wrapper">
+        <div class="loader-container">
+            <div class="animation-box">
+                <div class="cloud c1"></div>
+                <div class="cloud c2"></div>
+
+                <svg viewBox="0 0 100 100" class="flight-svg">
+                    <circle cx="50" cy="50" r="35" class="track" />
+
+                    <g class="plane-group">
+                        <image href="../../assets/icons/flight.svg" x="-10" y="-10" width="20" height="20"
+                            class="branded-plane" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="text-content">
+                <h2 class="loader-text">Preparing Your Journey</h2>
+                <p class="loader-subtext">Fetching the best holiday deals for you...</p>
+            </div>
+
+            <div class="loading-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
     <main class="wrap">
         <!-- Hero -->
         <header class="hero  hero--short">
@@ -73,8 +101,46 @@
             </button>
         </div>
 
+        <div class="wrap">
+            <div id="shimmer-wrapper" class="scrollable-shimmer">
+                <div class="skeleton-list-padding">
+
+                    <div class="skeleton-count shimmer-animated"></div>
+
+                    <div class="skeleton-trip-card">
+                        <div class="skeleton-trip-img shimmer-animated"></div>
+                        <div class="skeleton-trip-details">
+                            <div class="skeleton-line-long shimmer-animated"></div>
+                            <div class="skeleton-line-short shimmer-animated"></div>
+                            <div class="skeleton-pills">
+                                <div class="skeleton-pill shimmer-animated"></div>
+                                <div class="skeleton-pill shimmer-animated"></div>
+                                <div class="skeleton-pill shimmer-animated"></div>
+                            </div>
+                            <div class="skeleton-footer-row">
+                                <div class="skeleton-icons shimmer-animated"></div>
+                                <div class="skeleton-price-block shimmer-animated"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skeleton-trip-card">
+                        <div class="skeleton-trip-img shimmer-animated"></div>
+                        <div class="skeleton-trip-details">
+                            <div class="skeleton-line-long shimmer-animated"></div>
+                            <div class="skeleton-footer-row">
+                                <div class="skeleton-icons shimmer-animated"></div>
+                                <div class="skeleton-price-block shimmer-animated"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <!-- Trip list -->
-        <section class="section section--short">
+        <section class="section section--short" id="main-content" style="display: none;">
             <div class="section-title">
                 <h3>Showing 54 trips</h3>
             </div>
@@ -778,6 +844,11 @@
         </div>
 
 
+        <div class="scroll-boundary">
+            <button id="scrollToggle" class="scroll-toggle-btn" aria-label="Scroll Toggle">
+                <img src="../../assets/icons/price_arrow.png" alt="scroll arrow" id="scrollIcon" />
+            </button>
+        </div>
 
     </main>
 

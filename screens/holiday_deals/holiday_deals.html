@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Go Explore — Holiday-Deals</title>
     <link rel="stylesheet" href="../../css/holiday_deals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
@@ -193,8 +194,43 @@
         <!-- No Result Container -->
         <div id="noResult" class="no-result-container">
             <div class="no-result-box">
-                <img src="../../assets/icons/404.webp" alt="No Result" />
-                <h3>Package not found 404</h3>
+                <img src="../../assets/icons/404.webp" alt="No Result" class="error-img" />
+                <p class="error-subtitle">THE PAGE WAS NOT FOUND</p>
+
+                <div class="help-box-minimal">
+                    <div class="support-item">
+                        <div class="icon call-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="support-text">
+                            <p class="label">Call us on</p>
+                            <p class="value">02268818888</p>
+                        </div>
+                    </div>
+
+                    <div class="support-item">
+                        <div class="icon time-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="support-text">
+                            <p class="label">Timing</p>
+                            <p class="value">9am to 5pm</p>
+                        </div>
+                    </div>
+
+                    <div class="support-item">
+                        <div class="icon whatsapp-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div class="support-text">
+                            <p class="value">WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../home/home.html" class="back-home-btn">
+                    <i class="fa-solid fa-arrow-left"></i> BACK TO HOME
+                </a>
             </div>
         </div>
 

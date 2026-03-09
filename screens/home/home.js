@@ -182,3 +182,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateMonthPicker();
 });
+
+
+// /*** Shimmer ***/
+window.onload = function () {
+    const shimmer = document.getElementById('shimmer-wrapper');
+    const content = document.getElementById('main-content');
+
+    setTimeout(() => {
+        shimmer.style.transition = "opacity 0.5s ease";
+        shimmer.style.opacity = "0";
+
+        setTimeout(() => {
+            shimmer.style.display = "none";
+            content.style.display = "block";
+        }, 500);
+    }, 2000);
+};

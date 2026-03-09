@@ -345,28 +345,109 @@
 
 /* no result container */
 .no-result-container {
-    display: none;
     width: 100%;
-    min-height: 60vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $white;
 }
 
 .no-result-box {
+    width: 100%;
+    max-width: 420px;
     text-align: center;
+    padding: 20px;
 
-    img {
-        width: 140px;
-        margin-bottom: 20px;
+    .error-img {
+        width: 120px;
+        margin-bottom: 10px;
     }
 
-    h3 {
-        font-family: $font-primary-poppins;
+    .error-title {
+        font-size: 32px;
+        font-weight: $fw-bold;
+        color: #333;
+        margin: 0;
+    }
+
+    .error-subtitle {
+        font-size: $fs-sm;
         font-weight: $fw-semibold;
-        font-size: $fs-md;
-        color: $brand;
-        margin-bottom: 2px;
+        color: #666;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
     }
+}
 
+.help-box-minimal {
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 40px;
+    border: 1px solid $lightGrey;
+    border-radius: 20px;
+    padding: 30px 40px;
+
+    .support-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon {
+            font-size: 20px;
+            width: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .call-icon {
+            color: #d9534f;
+        }
+
+        .time-icon {
+            color: #f0ad4e;
+        }
+
+        .whatsapp-icon {
+            color: #25D366;
+        }
+
+
+        .support-text {
+            .label {
+                font-size: 11px;
+                color: #999;
+                text-transform: capitalize;
+                margin: 0;
+            }
+
+            .value {
+                font-size: 14px;
+                font-weight: $fw-bold;
+                color: #333;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.back-home-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: $fs-sm;
+    font-weight: $fw-bold;
+    color: $brand;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateX(-5px);
+    }
 }
