@@ -73,16 +73,26 @@ $hero-bg-tall: '../assets/images/deal1.png';
 
     .svgbox {
         position: absolute;
-        bottom: 0;
+        bottom: -1px;
         left: 0;
         width: 100%;
         height: 71px;
         z-index: 3;
+        pointer-events: none;
 
         svg {
             width: 100%;
-            height: 71px;
+            // height: 71px;
+            height: 101%;
             display: block;
+            border: none;
+            outline: none;
+            shape-rendering: geometricPrecision;
+
+            path {
+                stroke: none;
+                stroke-width: 0;
+            }
         }
     }
 }
