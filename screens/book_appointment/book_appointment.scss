@@ -213,22 +213,20 @@
     .booking-card {
         position: absolute;
         bottom: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: $white;
-        width: 90%;
-        // margin: 0 16px;
-        border-radius: 15px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        left: 0;
+        width: 100%;
         z-index: 10;
 
         .input-box {
-            width: 100%;
-            padding: 12px;
-            box-shadow: 0 6px 5px rgba(0, 0, 0, 0.05);
-            background: $white;
-            display: block;
-            border-radius: $radius-md;
+            width: 92%;
+            margin: 0 auto;
+            padding: 15px 15px 20px 15px;
+            background: #fff;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
         }
 
         h2 {
@@ -239,6 +237,30 @@
             margin-left: 14px;
             margin-bottom: 6px;
             text-transform: uppercase;
+        }
+
+        .location-scroll-wrapper {
+            display: flex;
+            align-items: flex-start;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            padding: 0 4%;
+            gap: 8px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .location-item {
+                flex: 0 0 100%;
+                scroll-snap-align: center;
+                background: $white;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                margin-bottom: 10px;
+            }
         }
 
         .location-input {
@@ -273,7 +295,6 @@
 
         .location-details {
             margin: 16px;
-
 
             .title-row {
                 display: flex;
