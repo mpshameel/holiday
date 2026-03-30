@@ -695,6 +695,39 @@
     }
 }
 
+/* select time */
+.time-picker-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid $skyblueBorder;
+    border-radius: $radius-lg;
+    z-index: 100;
+    margin-top: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    &.show {
+        display: block;
+    }
+
+    .time-slot {
+        padding: 10px 12px;
+        font-family: $font-primary-poppins;
+        font-size: $fs-md;
+        cursor: pointer;
+        color: $heading;
+
+        &:hover {
+            background-color: $skyblue;
+        }
+    }
+}
+
 /* thankyou component */
 .thankyou-popup {
     position: fixed;

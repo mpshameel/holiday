@@ -191,12 +191,21 @@
                         <img src="../../assets/icons/calendar2 .svg" alt="calendar" class="calender-icon" />
                     </div>
 
-                    <div class="modify-input-group">
-                        <div class="left-column">
-                            <label class="search-label" for="from">Price Category</label>
-                            <input type="text" id="destination" placeholder="Standard" />
+                    <div class="modify-input-group" style="position: relative;">
+                        <div class="left-column" id="timeSelectorTrigger" style="cursor: pointer;">
+                            <label class="search-label" for="time">Select Time</label>
+                            <input type="text" id="selectedTimeInput" placeholder="" readonly />
                         </div>
                         <img src="../../assets/icons/arrow-down.png" alt="dropdown" class="dropdown-icon" />
+
+                        <div id="timePicker" class="time-picker-dropdown">
+                            <div class="time-slot">09:00 AM</div>
+                            <div class="time-slot">10:00 AM</div>
+                            <div class="time-slot">11:00 AM</div>
+                            <div class="time-slot">12:00 PM</div>
+                            <div class="time-slot">02:00 PM</div>
+                            <div class="time-slot">04:00 PM</div>
+                        </div>
                     </div>
                 </form>
 
