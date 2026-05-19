@@ -768,3 +768,57 @@ function renderYearRange(startYear, endYear) {
 /*** INIT ***/
 const currentYear = new Date().getFullYear();
 renderYearRange(currentYear, currentYear);
+
+
+/*** Read More Intro ***/
+const readMoreBtn = document.getElementById("readMoreBtn");
+const tourDescription = document.getElementById("tourDescription");
+
+readMoreBtn.addEventListener("click", () => {
+    tourDescription.classList.toggle("expanded");
+
+    if (tourDescription.classList.contains("expanded")) {
+        readMoreBtn.innerText = "Read Less";
+    } else {
+        readMoreBtn.innerText = "Read More";
+    }
+});
+
+
+/*** Footer Faq ***/
+document.addEventListener('DOMContentLoaded', () => {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    const hiddenItems = document.querySelectorAll('.accordion-item.hidden');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function () {
+            const currentItem = this.parentElement;
+
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                if (item !== currentItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            currentItem.classList.toggle('active');
+        });
+    });
+
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            const isHidden = hiddenItems[0].classList.contains('hidden');
+
+            hiddenItems.forEach(item => {
+                if (isHidden) {
+                    item.classList.remove('hidden');
+                    showMoreBtn.textContent = 'Show less';
+                } else {
+                    item.classList.add('hidden');
+                    item.classList.remove('active');
+                    showMoreBtn.textContent = 'Show more';
+                }
+            });
+        });
+    }
+});
