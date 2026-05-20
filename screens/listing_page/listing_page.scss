@@ -3547,7 +3547,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
 
 /* seo-footer */
 .seo-footer {
-    padding: 24px 16px;
+    padding: 24px 0;
     background-color: $white;
     font-family: $font-primary-poppins;
 
@@ -3560,6 +3560,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
 
     .links-container {
         margin-bottom: 32px;
+        padding: 0 16px;
 
         .links-group {
             margin-bottom: 20px;
