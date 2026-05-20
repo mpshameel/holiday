@@ -7,6 +7,7 @@
 $hero-bg-short: '../assets/images/deal1.png';
 $hero-bg-tall: '../assets/images/deal1.png';
 
+
 /* hreo */
 .hero {
     position: relative;
@@ -224,7 +225,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 9px 2px 9px 5px;
+    padding: 9px 2px 0 5px;
     gap: 12px;
 
     transform: translateY(-30%);
@@ -370,7 +371,7 @@ $hero-bg-tall: '../assets/images/deal1.png';
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0px 16px 16px 0;
+        padding: 0px 16px 0 0;
 
         h3 {
             font-family: $font-primary-poppins;
@@ -381,6 +382,44 @@ $hero-bg-tall: '../assets/images/deal1.png';
             margin-bottom: 10px;
         }
     }
+}
+
+/* trip page scroll */
+.trip-page {
+    height: 100vh;
+    overflow: hidden;
+
+    #main-content {
+        height: 150vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .holiday-scroll-area {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 400px;
+    }
+}
+
+/* holiday scroll */
+.holiday-scroll-area {
+    padding-top: 15px;
+    height: 100vh;
+    overflow-y: auto;
+    padding-right: 6px;
+    scroll-behavior: smooth;
+}
+
+.holiday-scroll-area::-webkit-scrollbar {
+    width: 4px;
+}
+
+.holiday-scroll-area::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
 }
 
 /* holiday card */
@@ -3180,22 +3219,138 @@ $hero-bg-tall: '../assets/images/deal1.png';
     }
 }
 
+/* tour-intro-readmore section */
+.tour-intro-readmore-section {
+    padding: 0 0 30px;
+
+    .tour-intro-readmore-card {
+        background: $white;
+        border-radius: 18px;
+        padding: 12px 16px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+}
+
+.tour-description {
+    position: relative;
+    overflow: hidden;
+    max-height: 48px;
+    transition: max-height 0.45s ease;
+
+    p {
+        font-family: $font-primary-poppins;
+        font-weight: $fw-regular;
+        color: $heading;
+        font-size: $fs-sm;
+        margin: 0;
+        line-height: 1.8;
+    }
+
+    .read-more-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        border: none;
+        background: $white;
+
+        color: $link;
+        font-family: $font-primary-poppins;
+        font-size: $fs-md;
+        font-weight: $fw-medium;
+
+        cursor: pointer;
+
+        padding-bottom: 10px;
+        padding-top: 4px;
+
+        z-index: 5;
+        line-height: 0.7;
+    }
+
+    &.expanded {
+
+        .read-more-btn {
+            position: relative;
+            display: flex;
+            margin-left: auto;
+            margin-top: 16px;
+            background: transparent;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 28px;
+
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 0),
+                rgba(255, 255, 255, 0.95),
+                $white );
+
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+}
+
 /* tour-intro-section */
-.tour-intro-section {
-    padding: 6px 16px 16px;
+#tourPopup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+
+    background: $white;
+
+    border-radius: 24px 24px 0 0;
+
+    height: 90vh;
+
+    z-index: 9999;
+
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    &.active {
+        transform: translateY(0);
+    }
+
+    .tour-description {
+        max-height: none;
+        overflow: visible;
+
+        &::after {
+            display: none;
+        }
+    }
 
     .tour-intro-card {
         background: $white;
         border-radius: 18px;
-        padding: 16px;
+        padding: 12px 16px 0;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
     }
 
     .tour-title-row {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 8px;
-        margin-bottom: 12px;
+        margin-bottom: 6px;
 
         .tour-star {
             color: $priceColor;
@@ -3203,95 +3358,57 @@ $hero-bg-tall: '../assets/images/deal1.png';
             line-height: 1;
         }
 
+        .title-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         h3 {
             font-family: $font-primary-poppins;
-            font-size: $fs-lg;
+            font-size: $fs-md;
             font-weight: $fw-semibold;
             color: $heading;
             margin: 0;
         }
     }
 
-    .tour-description {
-        position: relative;
-        overflow: hidden;
-        max-height: 95px;
-        transition: max-height 0.45s ease;
+    .tour-read-more-content {
+        padding-top: 20px;
 
-        p {
+        h4 {
             font-family: $font-primary-poppins;
-            font-weight: $fw-regular;
+            font-size: $fs-lg;
+            font-weight: $fw-semibold;
             color: $heading;
-            font-size: $fs-sm;
-            margin: 0;
-            line-height: 1.8;
-            padding-bottom: 16px;
+            margin: 0 0 14px;
         }
 
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 45px;
-            background: linear-gradient(to bottom,
-                    rgba(255, 255, 255, 0),
-                    $white);
-            transition: opacity 0.3s ease;
-        }
+        ul {
+            padding-left: 18px;
+            margin: 0 0 20px;
 
-        .tour-read-more-content {
-            padding-top: 20px;
-
-            h4 {
+            li {
                 font-family: $font-primary-poppins;
-                font-size: $fs-lg;
-                font-weight: $fw-semibold;
-                color: $heading;
-                margin: 0 0 14px;
-            }
+                font-size: 13px;
+                line-height: 1.9;
+                color: $link;
+                margin-bottom: 2px;
 
-            ul {
-                padding-left: 18px;
-                margin: 0 0 20px;
-
-                li {
-                    font-family: $font-primary-poppins;
-                    font-size: 13px;
-                    line-height: 1.9;
-                    color: $link;
-                    margin-bottom: 2px;
-
-                    &::marker {
-                        color: $heading;
-                    }
+                &::marker {
+                    color: $heading;
                 }
-            }
-        }
-
-        &.expanded {
-            max-height: none;
-            overflow: visible;
-
-            &::after {
-                display: none;
             }
         }
     }
 
-    .read-more-btn {
-        border: none;
-        background: transparent;
-        color: $link;
-        font-family: $font-primary-poppins;
-        font-size: $fs-md;
-        font-weight: $fw-medium;
-        padding-top: 8px;
-        cursor: pointer;
+    &.expanded {
+        max-height: none;
+        overflow: visible;
 
-        display: flex;
-        margin-left: auto;
+        &::after {
+            display: none;
+        }
     }
 
     .package-table-section {
@@ -3364,6 +3481,67 @@ $hero-bg-tall: '../assets/images/deal1.png';
                 margin: 0 6px;
             }
         }
+    }
+}
+
+#tourPopup .tour-intro-card {
+    flex: 1;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    padding: 12px 16px 0;
+}
+
+#tourPopup .tour-description {
+    flex: 1;
+    min-height: 0;
+
+    max-height: none !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    padding-bottom: 80px;
+
+    &::after {
+        display: none;
+    }
+}
+
+#tourPopup .tour-description::-webkit-scrollbar {
+    width: 4px;
+}
+
+#tourPopup .tour-description::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+.tour-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 9998;
+    max-width: 420px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
     }
 }
 

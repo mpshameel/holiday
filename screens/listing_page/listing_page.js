@@ -391,9 +391,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // /*** Top Bottom Arrow ***/
 const scrollBtn = document.getElementById('scrollToggle');
+const scrollArea = document.querySelector('.holiday-scroll-area');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
+scrollArea.addEventListener('scroll', () => {
+    if (scrollArea.scrollTop > 400) {
         scrollBtn.classList.add('pointing-up');
     } else {
         scrollBtn.classList.remove('pointing-up');
@@ -401,13 +402,21 @@ window.addEventListener('scroll', () => {
 });
 
 scrollBtn.addEventListener('click', () => {
+
     if (scrollBtn.classList.contains('pointing-up')) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-        window.scrollTo({
-            top: document.documentElement.scrollHeight,
+
+        scrollArea.scrollTo({
+            top: 0,
             behavior: 'smooth'
         });
+
+    } else {
+
+        scrollArea.scrollTo({
+            top: scrollArea.scrollHeight,
+            behavior: 'smooth'
+        });
+
     }
 });
 
@@ -772,17 +781,27 @@ renderYearRange(currentYear, currentYear);
 
 /*** Read More Intro ***/
 const readMoreBtn = document.getElementById("readMoreBtn");
-const tourDescription = document.getElementById("tourDescription");
+const tourPopup = document.getElementById("tourPopup");
+const popupOverlay = document.getElementById("tourPopupOverlay");
+const popupCloseBtn = document.getElementById("popupCloseBtn");
 
 readMoreBtn.addEventListener("click", () => {
-    tourDescription.classList.toggle("expanded");
+    tourPopup.classList.add("active");
+    popupOverlay.classList.add("active");
 
-    if (tourDescription.classList.contains("expanded")) {
-        readMoreBtn.innerText = "Read Less";
-    } else {
-        readMoreBtn.innerText = "Read More";
-    }
+    document.body.style.overflow = "hidden";
 });
+
+function closePopup() {
+    tourPopup.classList.remove("active");
+    popupOverlay.classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+popupCloseBtn.addEventListener("click", closePopup);
+
+popupOverlay.addEventListener("click", closePopup);
 
 
 /*** Footer Faq ***/
